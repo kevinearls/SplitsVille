@@ -44,6 +44,7 @@
 		C3C65D072BC85ABF00B21711 /* SplitsVilleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitsVilleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleUITests.swift; sourceTree = "<group>"; };
 		C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C3C65D1D2BCAD5D600B21711 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		C3C65CE42BC85ABD00B21711 = {
 			isa = PBXGroup;
 			children = (
+				C3C65D1D2BCAD5D600B21711 /* README.md */,
 				C3C65CEF2BC85ABD00B21711 /* SplitsVille */,
 				C3C65D002BC85ABF00B21711 /* SplitsVilleTests */,
 				C3C65D0A2BC85ABF00B21711 /* SplitsVilleUITests */,
