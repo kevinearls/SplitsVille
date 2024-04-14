@@ -14,17 +14,24 @@ struct SplashScreenView: View {
   @State private var systemImageSize = 50.0
   @State private var scale = CGSize(width: 0.8, height: 0.8)
   @State private var zStackOpacity = 1.0
+  @State var isDollarSignSpinning = true
 
   var body: some View {
     ZStack {
       Color.green.ignoresSafeArea()
       ZStack {
-        Image(systemName: "dollarsign")    // TODO pick one randomly from a know set?
+        Image(systemName: "dollarsign")    // TODO pick one randomly from a known set?
           .foregroundStyle(.white)
           .font(.system(size: systemImageSize))   // TODO create a constant
           .opacity(systemImageOpacity)
+          .rotationEffect(.degrees(isDollarSignSpinning ? 360 : 0))
       }
       .scaleEffect(scale)
+      .onAppear {
+        withAnimation(.easeIn(duration: 3)) {
+          isDollarSignSpinning.toggle()
+        }
+      }
     }
     .opacity(zStackOpacity)
     .onAppear {
