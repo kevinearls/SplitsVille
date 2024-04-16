@@ -13,9 +13,8 @@ struct SplitsVilleApp: App {
     private var hasSeenOnboardingView = false
   var body: some Scene {
     WindowGroup {
-      // FIXME - should we show splash screen before onboarding?
       if hasSeenOnboardingView {
-        ContainerView()
+        ContentView()
       } else {
         OnboardingView()
       }
