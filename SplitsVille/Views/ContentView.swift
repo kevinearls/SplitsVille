@@ -19,7 +19,7 @@ struct ContentView: View {
 
   var body: some View {
     TabView(selection: $selection) {
-      UsersView()
+      UsersListView()
         .tabItem {
           Text("Users")
           Image(systemName: "person")
