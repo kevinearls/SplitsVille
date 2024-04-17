@@ -20,6 +20,10 @@
 		C3C65D022BC85ABF00B21711 /* SplitsVilleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D012BC85ABF00B21711 /* SplitsVilleTests.swift */; };
 		C3C65D0C2BC85ABF00B21711 /* SplitsVilleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */; };
 		C3C65D0E2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */; };
+		C3F0AA192BCFC6B600CC8AB2 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA182BCFC6B600CC8AB2 /* UsersView.swift */; };
+		C3F0AA1B2BCFC6C400CC8AB2 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1A2BCFC6C400CC8AB2 /* TripsView.swift */; };
+		C3F0AA1F2BCFC6EB00CC8AB2 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */; };
+		C3F0AA212BCFCB4400CC8AB2 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA202BCFCB4400CC8AB2 /* TransactionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleUITests.swift; sourceTree = "<group>"; };
 		C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C3C65D1D2BCAD5D600B21711 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C3F0AA182BCFC6B600CC8AB2 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		C3F0AA1A2BCFC6C400CC8AB2 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
+		C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		C3F0AA202BCFCB4400CC8AB2 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +181,12 @@
 		C3C65D202BCADF3A00B21711 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */,
 				C33B23BE2BCD550C00750F14 /* Onboarding */,
 				C3C65CF22BC85ABD00B21711 /* ContentView.swift */,
+				C3F0AA182BCFC6B600CC8AB2 /* UsersView.swift */,
+				C3F0AA1A2BCFC6C400CC8AB2 /* TripsView.swift */,
+				C3F0AA202BCFCB4400CC8AB2 /* TransactionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,12 +322,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F0AA1F2BCFC6EB00CC8AB2 /* CurrencyView.swift in Sources */,
 				C3C65CF32BC85ABD00B21711 /* ContentView.swift in Sources */,
 				C33B23B92BCD526D00750F14 /* OnboardingItem.swift in Sources */,
 				C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */,
 				C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */,
+				C3F0AA212BCFCB4400CC8AB2 /* TransactionsView.swift in Sources */,
 				C33B23C22BCD55B300750F14 /* OnboardingView.swift in Sources */,
+				C3F0AA192BCFC6B600CC8AB2 /* UsersView.swift in Sources */,
 				C33B23BD2BCD54C900750F14 /* Constants.swift in Sources */,
+				C3F0AA1B2BCFC6C400CC8AB2 /* TripsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
