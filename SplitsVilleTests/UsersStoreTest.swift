@@ -10,7 +10,7 @@ import XCTest
 
 final class UsersStoreTest: XCTestCase {
   func testExample() throws {
-    var store = UsersStore()
+    let store = UsersStore()
 
     XCTAssertNotNil(store)
     XCTAssertEqual(0, store.users.count)

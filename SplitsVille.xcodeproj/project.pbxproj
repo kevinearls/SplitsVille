@@ -32,6 +32,10 @@
 		C3F0AA2F2BD0326700CC8AB2 /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2E2BD0326700CC8AB2 /* AddUserView.swift */; };
 		C3F0AA312BD035BD00CC8AB2 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA302BD035BD00CC8AB2 /* UserDetailView.swift */; };
 		C3F0AA332BD03D3E00CC8AB2 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA322BD03D3E00CC8AB2 /* UserRowView.swift */; };
+		C3F0AA352BD03F8700CC8AB2 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA342BD03F8600CC8AB2 /* Trip.swift */; };
+		C3F0AA382BD0403600CC8AB2 /* TripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA372BD0403600CC8AB2 /* TripStore.swift */; };
+		C3F0AA3A2BD0409D00CC8AB2 /* TripTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */; };
+		C3F0AA3C2BD0419900CC8AB2 /* TripStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA3B2BD0419900CC8AB2 /* TripStoreTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		C3F0AA2E2BD0326700CC8AB2 /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
 		C3F0AA302BD035BD00CC8AB2 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		C3F0AA322BD03D3E00CC8AB2 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
+		C3F0AA342BD03F8600CC8AB2 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		C3F0AA372BD0403600CC8AB2 /* TripStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStore.swift; sourceTree = "<group>"; };
+		C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTest.swift; sourceTree = "<group>"; };
+		C3F0AA3B2BD0419900CC8AB2 /* TripStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStoreTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 		C33B23B62BCD523800750F14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C3F0AA362BD03F9700CC8AB2 /* Trips */,
 				C3F0AA292BD02F5100CC8AB2 /* User */,
 				C33B23B72BCD524600750F14 /* Onboarding */,
 			);
@@ -184,6 +193,8 @@
 				C33B23BA2BCD52AF00750F14 /* OnboardingItemTest.swift */,
 				C3F0AA262BD0294B00CC8AB2 /* UserTests.swift */,
 				C3F0AA2C2BD02FFB00CC8AB2 /* UsersStoreTest.swift */,
+				C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */,
+				C3F0AA3B2BD0419900CC8AB2 /* TripStoreTest.swift */,
 			);
 			path = SplitsVilleTests;
 			sourceTree = "<group>";
@@ -229,6 +240,15 @@
 				C3F0AA2A2BD02F8D00CC8AB2 /* UsersStore.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		C3F0AA362BD03F9700CC8AB2 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				C3F0AA342BD03F8600CC8AB2 /* Trip.swift */,
+				C3F0AA372BD0403600CC8AB2 /* TripStore.swift */,
+			);
+			path = Trips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,11 +392,13 @@
 				C3F0AA2B2BD02F8D00CC8AB2 /* UsersStore.swift in Sources */,
 				C3F0AA212BCFCB4400CC8AB2 /* TransactionsView.swift in Sources */,
 				C33B23C22BCD55B300750F14 /* OnboardingView.swift in Sources */,
+				C3F0AA382BD0403600CC8AB2 /* TripStore.swift in Sources */,
 				C3F0AA192BCFC6B600CC8AB2 /* UsersListView.swift in Sources */,
 				C33B23BD2BCD54C900750F14 /* Constants.swift in Sources */,
 				C3F0AA1B2BCFC6C400CC8AB2 /* TripsView.swift in Sources */,
 				C3F0AA312BD035BD00CC8AB2 /* UserDetailView.swift in Sources */,
 				C3F0AA332BD03D3E00CC8AB2 /* UserRowView.swift in Sources */,
+				C3F0AA352BD03F8700CC8AB2 /* Trip.swift in Sources */,
 				C3F0AA232BD01D2E00CC8AB2 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,9 +407,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F0AA3A2BD0409D00CC8AB2 /* TripTest.swift in Sources */,
 				C3F0AA272BD0294B00CC8AB2 /* UserTests.swift in Sources */,
 				C3C65D022BC85ABF00B21711 /* SplitsVilleTests.swift in Sources */,
 				C3F0AA2D2BD02FFB00CC8AB2 /* UsersStoreTest.swift in Sources */,
+				C3F0AA3C2BD0419900CC8AB2 /* TripStoreTest.swift in Sources */,
 				C33B23BB2BCD52AF00750F14 /* OnboardingItemTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
