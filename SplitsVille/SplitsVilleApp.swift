@@ -10,11 +10,12 @@ import SwiftUI
 @main
 struct SplitsVilleApp: App {
   @AppStorage(Constants.Onboarding.currentOnboardingVersion)
-    private var hasSeenOnboardingView = false
+  private var hasSeenOnboardingView = false
   var body: some Scene {
     WindowGroup {
       if hasSeenOnboardingView {
         ContentView()
+          .environmentObject(UsersStore())
       } else {
         OnboardingView()
       }
