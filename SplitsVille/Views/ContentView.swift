@@ -8,23 +8,23 @@
 import SwiftUI
 
 enum Tabs {
-  case users
+  case friends
   case trips
   case currency
   case transactions
 }
 
 struct ContentView: View {
-  @State private var selection: Tabs = .users
+  @State private var selection: Tabs = .friends
 
   var body: some View {
     TabView(selection: $selection) {
-      UsersListView()
+      FriendsListView()
         .tabItem {
-          Text("Users")
+          Text("Friends")
           Image(systemName: "person")
         }
-        .tag(Tabs.users)
+        .tag(Tabs.friends)
 
       TripsView()   // FIXME call everything groups or trips
         .tabItem {
@@ -50,6 +50,7 @@ struct ContentView: View {
   }
 }
 
-#Preview {
-  ContentView()
-}
+// TODO fix this?  For some reason this is crashing xcode, even though the app runs
+//#Preview {
+//  ContentView()
+//}

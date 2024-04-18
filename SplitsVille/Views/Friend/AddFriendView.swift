@@ -1,5 +1,5 @@
 //
-//  AddUser.swift
+//  AddFriendView.swift
 //  SplitsVille
 //
 //  Created by Kevin Earls on 17/04/2024.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct AddUserView: View {
+struct AddFriendView: View {
   @Binding var showModal: Bool
-  @EnvironmentObject var userStore: UsersStore
+  @EnvironmentObject var friendStore: FriendStore
   @State var firstName: String = ""
   @State var lastName: String = ""
 
@@ -25,8 +25,8 @@ struct AddUserView: View {
         }
         Section {
           Button("Add") {
-            let newUser = User(firstName: firstName, lastName: lastName)
-            userStore.addUser(user: newUser)
+            let newFriend = Friend(firstName: firstName, lastName: lastName)
+            friendStore.addFriend(friend: newFriend)
             showModal = false
           }
           .padding()
@@ -44,6 +44,6 @@ struct AddUserView: View {
 }
 
 #Preview {
-  AddUserView(showModal: .constant(true))
-    .environmentObject(UsersStore())
+  AddFriendView(showModal: .constant(true))
+    .environmentObject(FriendStore())
 }

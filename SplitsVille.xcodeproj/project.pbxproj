@@ -20,18 +20,18 @@
 		C3C65D022BC85ABF00B21711 /* SplitsVilleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D012BC85ABF00B21711 /* SplitsVilleTests.swift */; };
 		C3C65D0C2BC85ABF00B21711 /* SplitsVilleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */; };
 		C3C65D0E2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */; };
-		C3F0AA192BCFC6B600CC8AB2 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA182BCFC6B600CC8AB2 /* UsersListView.swift */; };
+		C3F0AA192BCFC6B600CC8AB2 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */; };
 		C3F0AA1B2BCFC6C400CC8AB2 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1A2BCFC6C400CC8AB2 /* TripsView.swift */; };
 		C3F0AA1F2BCFC6EB00CC8AB2 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */; };
 		C3F0AA212BCFCB4400CC8AB2 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA202BCFCB4400CC8AB2 /* TransactionsView.swift */; };
-		C3F0AA232BD01D2E00CC8AB2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA222BD01D2E00CC8AB2 /* User.swift */; };
+		C3F0AA232BD01D2E00CC8AB2 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA222BD01D2E00CC8AB2 /* Friend.swift */; };
 		C3F0AA252BD020B700CC8AB2 /* InitialsAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA242BD020B700CC8AB2 /* InitialsAvatarView.swift */; };
-		C3F0AA272BD0294B00CC8AB2 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA262BD0294B00CC8AB2 /* UserTests.swift */; };
-		C3F0AA2B2BD02F8D00CC8AB2 /* UsersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2A2BD02F8D00CC8AB2 /* UsersStore.swift */; };
-		C3F0AA2D2BD02FFB00CC8AB2 /* UsersStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2C2BD02FFB00CC8AB2 /* UsersStoreTest.swift */; };
-		C3F0AA2F2BD0326700CC8AB2 /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2E2BD0326700CC8AB2 /* AddUserView.swift */; };
-		C3F0AA312BD035BD00CC8AB2 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA302BD035BD00CC8AB2 /* UserDetailView.swift */; };
-		C3F0AA332BD03D3E00CC8AB2 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA322BD03D3E00CC8AB2 /* UserRowView.swift */; };
+		C3F0AA272BD0294B00CC8AB2 /* FriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA262BD0294B00CC8AB2 /* FriendsTests.swift */; };
+		C3F0AA2B2BD02F8D00CC8AB2 /* FriendStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2A2BD02F8D00CC8AB2 /* FriendStore.swift */; };
+		C3F0AA2D2BD02FFB00CC8AB2 /* FriendsStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2C2BD02FFB00CC8AB2 /* FriendsStoreTest.swift */; };
+		C3F0AA2F2BD0326700CC8AB2 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2E2BD0326700CC8AB2 /* AddFriendView.swift */; };
+		C3F0AA312BD035BD00CC8AB2 /* FriendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA302BD035BD00CC8AB2 /* FriendDetailView.swift */; };
+		C3F0AA332BD03D3E00CC8AB2 /* FriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA322BD03D3E00CC8AB2 /* FriendRowView.swift */; };
 		C3F0AA352BD03F8700CC8AB2 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA342BD03F8600CC8AB2 /* Trip.swift */; };
 		C3F0AA382BD0403600CC8AB2 /* TripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA372BD0403600CC8AB2 /* TripStore.swift */; };
 		C3F0AA3A2BD0409D00CC8AB2 /* TripTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */; };
@@ -73,18 +73,18 @@
 		C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleUITests.swift; sourceTree = "<group>"; };
 		C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C3C65D1D2BCAD5D600B21711 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C3F0AA182BCFC6B600CC8AB2 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
 		C3F0AA1A2BCFC6C400CC8AB2 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		C3F0AA202BCFCB4400CC8AB2 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
-		C3F0AA222BD01D2E00CC8AB2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C3F0AA222BD01D2E00CC8AB2 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		C3F0AA242BD020B700CC8AB2 /* InitialsAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsAvatarView.swift; sourceTree = "<group>"; };
-		C3F0AA262BD0294B00CC8AB2 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
-		C3F0AA2A2BD02F8D00CC8AB2 /* UsersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStore.swift; sourceTree = "<group>"; };
-		C3F0AA2C2BD02FFB00CC8AB2 /* UsersStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStoreTest.swift; sourceTree = "<group>"; };
-		C3F0AA2E2BD0326700CC8AB2 /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
-		C3F0AA302BD035BD00CC8AB2 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
-		C3F0AA322BD03D3E00CC8AB2 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
+		C3F0AA262BD0294B00CC8AB2 /* FriendsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTests.swift; sourceTree = "<group>"; };
+		C3F0AA2A2BD02F8D00CC8AB2 /* FriendStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendStore.swift; sourceTree = "<group>"; };
+		C3F0AA2C2BD02FFB00CC8AB2 /* FriendsStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsStoreTest.swift; sourceTree = "<group>"; };
+		C3F0AA2E2BD0326700CC8AB2 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+		C3F0AA302BD035BD00CC8AB2 /* FriendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailView.swift; sourceTree = "<group>"; };
+		C3F0AA322BD03D3E00CC8AB2 /* FriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRowView.swift; sourceTree = "<group>"; };
 		C3F0AA342BD03F8600CC8AB2 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		C3F0AA372BD0403600CC8AB2 /* TripStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStore.swift; sourceTree = "<group>"; };
 		C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTest.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F0AA362BD03F9700CC8AB2 /* Trips */,
-				C3F0AA292BD02F5100CC8AB2 /* User */,
+				C3F0AA292BD02F5100CC8AB2 /* Friend */,
 				C33B23B72BCD524600750F14 /* Onboarding */,
 			);
 			path = Model;
@@ -191,8 +191,8 @@
 			children = (
 				C3C65D012BC85ABF00B21711 /* SplitsVilleTests.swift */,
 				C33B23BA2BCD52AF00750F14 /* OnboardingItemTest.swift */,
-				C3F0AA262BD0294B00CC8AB2 /* UserTests.swift */,
-				C3F0AA2C2BD02FFB00CC8AB2 /* UsersStoreTest.swift */,
+				C3F0AA262BD0294B00CC8AB2 /* FriendsTests.swift */,
+				C3F0AA2C2BD02FFB00CC8AB2 /* FriendsStoreTest.swift */,
 				C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */,
 				C3F0AA3B2BD0419900CC8AB2 /* TripStoreTest.swift */,
 			);
@@ -211,7 +211,7 @@
 		C3C65D202BCADF3A00B21711 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C3F0AA282BD02D7F00CC8AB2 /* User */,
+				C3F0AA282BD02D7F00CC8AB2 /* Friend */,
 				C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */,
 				C33B23BE2BCD550C00750F14 /* Onboarding */,
 				C3C65CF22BC85ABD00B21711 /* ContentView.swift */,
@@ -221,25 +221,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C3F0AA282BD02D7F00CC8AB2 /* User */ = {
+		C3F0AA282BD02D7F00CC8AB2 /* Friend */ = {
 			isa = PBXGroup;
 			children = (
-				C3F0AA2E2BD0326700CC8AB2 /* AddUserView.swift */,
+				C3F0AA2E2BD0326700CC8AB2 /* AddFriendView.swift */,
 				C3F0AA242BD020B700CC8AB2 /* InitialsAvatarView.swift */,
-				C3F0AA182BCFC6B600CC8AB2 /* UsersListView.swift */,
-				C3F0AA302BD035BD00CC8AB2 /* UserDetailView.swift */,
-				C3F0AA322BD03D3E00CC8AB2 /* UserRowView.swift */,
+				C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */,
+				C3F0AA302BD035BD00CC8AB2 /* FriendDetailView.swift */,
+				C3F0AA322BD03D3E00CC8AB2 /* FriendRowView.swift */,
 			);
-			path = User;
+			path = Friend;
 			sourceTree = "<group>";
 		};
-		C3F0AA292BD02F5100CC8AB2 /* User */ = {
+		C3F0AA292BD02F5100CC8AB2 /* Friend */ = {
 			isa = PBXGroup;
 			children = (
-				C3F0AA222BD01D2E00CC8AB2 /* User.swift */,
-				C3F0AA2A2BD02F8D00CC8AB2 /* UsersStore.swift */,
+				C3F0AA222BD01D2E00CC8AB2 /* Friend.swift */,
+				C3F0AA2A2BD02F8D00CC8AB2 /* FriendStore.swift */,
 			);
-			path = User;
+			path = Friend;
 			sourceTree = "<group>";
 		};
 		C3F0AA362BD03F9700CC8AB2 /* Trips */ = {
@@ -384,22 +384,22 @@
 			files = (
 				C3F0AA1F2BCFC6EB00CC8AB2 /* CurrencyView.swift in Sources */,
 				C3F0AA252BD020B700CC8AB2 /* InitialsAvatarView.swift in Sources */,
-				C3F0AA2F2BD0326700CC8AB2 /* AddUserView.swift in Sources */,
+				C3F0AA2F2BD0326700CC8AB2 /* AddFriendView.swift in Sources */,
 				C3C65CF32BC85ABD00B21711 /* ContentView.swift in Sources */,
 				C33B23B92BCD526D00750F14 /* OnboardingItem.swift in Sources */,
 				C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */,
 				C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */,
-				C3F0AA2B2BD02F8D00CC8AB2 /* UsersStore.swift in Sources */,
+				C3F0AA2B2BD02F8D00CC8AB2 /* FriendStore.swift in Sources */,
 				C3F0AA212BCFCB4400CC8AB2 /* TransactionsView.swift in Sources */,
 				C33B23C22BCD55B300750F14 /* OnboardingView.swift in Sources */,
 				C3F0AA382BD0403600CC8AB2 /* TripStore.swift in Sources */,
-				C3F0AA192BCFC6B600CC8AB2 /* UsersListView.swift in Sources */,
+				C3F0AA192BCFC6B600CC8AB2 /* FriendsListView.swift in Sources */,
 				C33B23BD2BCD54C900750F14 /* Constants.swift in Sources */,
 				C3F0AA1B2BCFC6C400CC8AB2 /* TripsView.swift in Sources */,
-				C3F0AA312BD035BD00CC8AB2 /* UserDetailView.swift in Sources */,
-				C3F0AA332BD03D3E00CC8AB2 /* UserRowView.swift in Sources */,
+				C3F0AA312BD035BD00CC8AB2 /* FriendDetailView.swift in Sources */,
+				C3F0AA332BD03D3E00CC8AB2 /* FriendRowView.swift in Sources */,
 				C3F0AA352BD03F8700CC8AB2 /* Trip.swift in Sources */,
-				C3F0AA232BD01D2E00CC8AB2 /* User.swift in Sources */,
+				C3F0AA232BD01D2E00CC8AB2 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,9 +408,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3F0AA3A2BD0409D00CC8AB2 /* TripTest.swift in Sources */,
-				C3F0AA272BD0294B00CC8AB2 /* UserTests.swift in Sources */,
+				C3F0AA272BD0294B00CC8AB2 /* FriendsTests.swift in Sources */,
 				C3C65D022BC85ABF00B21711 /* SplitsVilleTests.swift in Sources */,
-				C3F0AA2D2BD02FFB00CC8AB2 /* UsersStoreTest.swift in Sources */,
+				C3F0AA2D2BD02FFB00CC8AB2 /* FriendsStoreTest.swift in Sources */,
 				C3F0AA3C2BD0419900CC8AB2 /* TripStoreTest.swift in Sources */,
 				C33B23BB2BCD52AF00750F14 /* OnboardingItemTest.swift in Sources */,
 			);

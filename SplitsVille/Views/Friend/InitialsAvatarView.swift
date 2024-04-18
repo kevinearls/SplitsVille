@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct InitialsAvatar: View {
-  let user: User
+  let friend: Friend
 
   var body: some View {
     HStack {
       ZStack {
         Circle()
-          .foregroundColor(Color(user.avatarColor))
+          .foregroundColor(Color(friend.avatarColor))
           .frame(width: 100, height: 100)    // TODO create constants?
 
-        Text(user.initials)
+        Text(friend.initials)
           .foregroundStyle(.white)
           .font(.system(size: 59))
       }
@@ -26,5 +26,5 @@ struct InitialsAvatar: View {
 }
 
 #Preview {
-  InitialsAvatar(user: User(firstName: "Fred", lastName: "Flintstone"))
+  InitialsAvatar(friend: Friend(firstName: "Fred", lastName: "Flintstone"))
 }

@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Friend.swift
 //  SplitsVille
 //
 //  Created by Kevin Earls on 17/04/2024.
@@ -26,7 +26,8 @@ let knownAvatarColors = [
   Constants.AvatarColor.yellow
 ]
 
-struct User: Codable, Equatable, Identifiable, Hashable {
+// TODO add a preferred currency - default to euros?
+struct Friend: Codable, Equatable, Identifiable, Hashable {
   var id = UUID()
   let firstName: String
   let lastName: String
