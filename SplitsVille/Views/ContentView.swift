@@ -26,7 +26,7 @@ struct ContentView: View {
         }
         .tag(Tabs.friends)
 
-      TripsView()   // FIXME call everything groups or trips
+      TripsListView()   // FIXME call everything groups or trips
         .tabItem {
           Text("Trips")
           Image(systemName: "person.3")

@@ -16,6 +16,7 @@ struct SplitsVilleApp: App {
       if hasSeenOnboardingView {
         ContentView()
           .environmentObject(FriendStore())
+          .environmentObject(TripStore())
       } else {
         OnboardingView()
       }
