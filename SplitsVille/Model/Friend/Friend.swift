@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-// TODO is there a better way to do this?  Also, figure out
-// multiline_literal_brackets warning in SwiftLint
+// TODO add a list of trips?
+// TODO is there a better way to do this?
 let knownAvatarColors = [
   Constants.AvatarColor.blue,
   Constants.AvatarColor.brown,
