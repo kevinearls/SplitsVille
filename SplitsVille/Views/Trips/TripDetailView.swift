@@ -20,7 +20,7 @@ struct TripDetailView: View {
       List {
         ForEach(friendsStore.friends) { friend in
           HStack {
-            Text("\(friend.firstName) \(friend.firstName)")
+            Text("\(friend.firstName) \(friend.lastName)")
               .font(.title)
             Spacer()
             Spacer()

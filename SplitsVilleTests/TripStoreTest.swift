@@ -24,4 +24,16 @@ final class TripStoreTest: XCTestCase {
     XCTAssertTrue(store.trips.contains(portugal))
     XCTAssertTrue(store.trips.contains(football))
   }
+
+  func testAddFriendToTrip() {
+    let store = TripStore()
+    let football = Trip(name: "Olympic Football", location: "Bordeaux")
+    store.addTrip(trip: football)
+
+    let fred = Friend(firstName: "Fred", lastName: "Flintstone")
+    store.addFriendToTrip(friend: fred, trip: football)
+    let footballTrip = store.trips[0]
+    XCTAssertEqual(1, footballTrip.friends.count)
+    XCTAssertTrue(footballTrip.friends.contains(fred))
+  }
 }
