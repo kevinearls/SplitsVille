@@ -12,5 +12,9 @@ struct Trip: Codable, Equatable, Identifiable, Hashable {
   var id = UUID()
   let name: String
   let location: String
-  var people: [Friend] = []
+  var friends: [Friend] = []
+
+  mutating func addFriend(friend: Friend) {
+    friends.append(friend)
+  }
 }

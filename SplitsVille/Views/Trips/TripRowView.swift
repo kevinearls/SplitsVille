@@ -20,5 +20,5 @@ struct TripRowView: View {
 }
 
 #Preview {
-  TripRowView(trip: Trip(name: "Vacation", location: "Hawaii"))
+  TripRowView(trip: Trip(name: "Fabulous Vacation", location: "Hawaii"))
 }
