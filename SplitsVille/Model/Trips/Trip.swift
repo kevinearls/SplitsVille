@@ -11,5 +11,5 @@ struct Trip: Codable, Equatable, Identifiable, Hashable {
   var id = UUID()
   let name: String
   let location: String
-  var people: [User] = []
+  var people: [Friend] = []
 }
