@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO are there other fields we need here?  Data?  Image?
 struct Trip: Codable, Equatable, Identifiable, Hashable {
   var id = UUID()
   let name: String
