@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
-// FIXME!  This is not updating the checkbox -- how did I fix this for TaskList?
 struct TripDetailView: View {
-  @EnvironmentObject var friendsStore: FriendStore
-  @EnvironmentObject var tripStore: TripStore
+  @Query private var friends: [Friend]
   @State private var isPresented = false
 
   var trip: Trip
@@ -18,7 +17,7 @@ struct TripDetailView: View {
     VStack {
       // TODO add title, instructions
       List {
-        ForEach(friendsStore.friends) { friend in
+        ForEach(friends) { friend in
           HStack {
             Text("\(friend.firstName) \(friend.lastName)")
               .font(.title)
@@ -27,7 +26,7 @@ struct TripDetailView: View {
             Image(systemName: trip.friends.contains(friend) ? "checkmark.square" : "square")
               .foregroundColor(trip.friends.contains(friend) ? Color.green : Color.red)
               .onTapGesture {
-                tripStore.addFriendToTrip(friend: friend, trip: trip)
+                trip.addFriend(friend: friend)
               }
           }
         }
@@ -39,21 +38,5 @@ struct TripDetailView: View {
 }
 
 #Preview {
-  let fred = Friend(firstName: "Fred", lastName: "Flintstone")
-  let barney = Friend(firstName: "Barney", lastName: "Rubble")
-  var fabulousTrip = Trip(name: "Fabulous Vacation", location: "Hawaii")
-  fabulousTrip.addFriend(friend: fred)
-
-  return TripDetailView(trip: fabulousTrip)
-    .environmentObject({ () -> FriendStore in
-      let friendStore = FriendStore()
-      friendStore.addFriend(friend: fred)
-      friendStore.addFriend(friend: barney)
-      return friendStore
-    }() )
-    .environmentObject({ () -> TripStore in
-      let tripStore = TripStore()
-      tripStore.addTrip(trip: fabulousTrip)
-      return tripStore
-    }() )
+  TripDetailView(trip: Trip(name: "Fabulous Vacation", location: "Hawaii"))
 }

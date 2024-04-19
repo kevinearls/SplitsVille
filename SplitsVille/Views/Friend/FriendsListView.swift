@@ -8,15 +8,16 @@
 // TODO add space at top?
 // TODO display a message if there are no users
 import SwiftUI
+import SwiftData
 
 struct FriendsListView: View {
-  @EnvironmentObject var friendsStore: FriendStore
+  @Query private var friends: [Friend]
   @State private var isPresented = false
   var body: some View {
     VStack(alignment: .leading) {
       NavigationStack {
         List {
-          ForEach(friendsStore.friends) { friend in
+          ForEach(friends) { friend in
             NavigationLink(value: friend) {
               FriendRowView(friend: friend)
             }
@@ -40,10 +41,11 @@ struct FriendsListView: View {
         AddFriendView(showModal: $isPresented)
       }
     }
+    .padding()
   }
 }
 
 #Preview {
   FriendsListView()
-    .environmentObject(FriendStore())
+    .modelContainer(for: Friend.self)
 }

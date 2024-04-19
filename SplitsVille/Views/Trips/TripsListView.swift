@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TripsListView: View {
-  @EnvironmentObject var tripsStore: TripStore
+  @Query private var trips: [Trip]
   @State private var isPresented = false
 
     var body: some View {
     VStack(alignment: .leading) {
       NavigationStack {
         List {
-          ForEach(tripsStore.trips) { trip in
+          ForEach(trips) { trip in
             NavigationLink(value: trip) {
               TripRowView(trip: trip)
             }
@@ -39,10 +40,10 @@ struct TripsListView: View {
         AddTripView(showModal: $isPresented)
       }
     }
+    .padding()
   }
 }
 
 #Preview {
   TripsListView()
-    .environmentObject(TripStore())
 }

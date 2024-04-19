@@ -31,15 +31,11 @@
 		C3F0AA232BD01D2E00CC8AB2 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA222BD01D2E00CC8AB2 /* Friend.swift */; };
 		C3F0AA252BD020B700CC8AB2 /* InitialsAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA242BD020B700CC8AB2 /* InitialsAvatarView.swift */; };
 		C3F0AA272BD0294B00CC8AB2 /* FriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA262BD0294B00CC8AB2 /* FriendsTests.swift */; };
-		C3F0AA2B2BD02F8D00CC8AB2 /* FriendStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2A2BD02F8D00CC8AB2 /* FriendStore.swift */; };
-		C3F0AA2D2BD02FFB00CC8AB2 /* FriendsStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2C2BD02FFB00CC8AB2 /* FriendsStoreTest.swift */; };
 		C3F0AA2F2BD0326700CC8AB2 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA2E2BD0326700CC8AB2 /* AddFriendView.swift */; };
 		C3F0AA312BD035BD00CC8AB2 /* FriendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA302BD035BD00CC8AB2 /* FriendDetailView.swift */; };
 		C3F0AA332BD03D3E00CC8AB2 /* FriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA322BD03D3E00CC8AB2 /* FriendRowView.swift */; };
 		C3F0AA352BD03F8700CC8AB2 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA342BD03F8600CC8AB2 /* Trip.swift */; };
-		C3F0AA382BD0403600CC8AB2 /* TripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA372BD0403600CC8AB2 /* TripStore.swift */; };
 		C3F0AA3A2BD0409D00CC8AB2 /* TripTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */; };
-		C3F0AA3C2BD0419900CC8AB2 /* TripStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA3B2BD0419900CC8AB2 /* TripStoreTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,15 +84,11 @@
 		C3F0AA222BD01D2E00CC8AB2 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		C3F0AA242BD020B700CC8AB2 /* InitialsAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsAvatarView.swift; sourceTree = "<group>"; };
 		C3F0AA262BD0294B00CC8AB2 /* FriendsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTests.swift; sourceTree = "<group>"; };
-		C3F0AA2A2BD02F8D00CC8AB2 /* FriendStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendStore.swift; sourceTree = "<group>"; };
-		C3F0AA2C2BD02FFB00CC8AB2 /* FriendsStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsStoreTest.swift; sourceTree = "<group>"; };
 		C3F0AA2E2BD0326700CC8AB2 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		C3F0AA302BD035BD00CC8AB2 /* FriendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailView.swift; sourceTree = "<group>"; };
 		C3F0AA322BD03D3E00CC8AB2 /* FriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRowView.swift; sourceTree = "<group>"; };
 		C3F0AA342BD03F8600CC8AB2 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		C3F0AA372BD0403600CC8AB2 /* TripStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStore.swift; sourceTree = "<group>"; };
 		C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTest.swift; sourceTree = "<group>"; };
-		C3F0AA3B2BD0419900CC8AB2 /* TripStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStoreTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,9 +203,7 @@
 				C3C65D012BC85ABF00B21711 /* SplitsVilleTests.swift */,
 				C33B23BA2BCD52AF00750F14 /* OnboardingItemTest.swift */,
 				C3F0AA262BD0294B00CC8AB2 /* FriendsTests.swift */,
-				C3F0AA2C2BD02FFB00CC8AB2 /* FriendsStoreTest.swift */,
 				C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */,
-				C3F0AA3B2BD0419900CC8AB2 /* TripStoreTest.swift */,
 				C30AF6882BD16ACD00F081E3 /* TripsTest.swift */,
 			);
 			path = SplitsVilleTests;
@@ -257,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				C3F0AA222BD01D2E00CC8AB2 /* Friend.swift */,
-				C3F0AA2A2BD02F8D00CC8AB2 /* FriendStore.swift */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -266,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				C3F0AA342BD03F8600CC8AB2 /* Trip.swift */,
-				C3F0AA372BD0403600CC8AB2 /* TripStore.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -410,11 +398,9 @@
 				C33B23B92BCD526D00750F14 /* OnboardingItem.swift in Sources */,
 				C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */,
 				C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */,
-				C3F0AA2B2BD02F8D00CC8AB2 /* FriendStore.swift in Sources */,
 				C3F0AA212BCFCB4400CC8AB2 /* TransactionsView.swift in Sources */,
 				C33B23C22BCD55B300750F14 /* OnboardingView.swift in Sources */,
 				C30AF67F2BD10DC500F081E3 /* TripRowView.swift in Sources */,
-				C3F0AA382BD0403600CC8AB2 /* TripStore.swift in Sources */,
 				C3F0AA192BCFC6B600CC8AB2 /* FriendsListView.swift in Sources */,
 				C33B23BD2BCD54C900750F14 /* Constants.swift in Sources */,
 				C3F0AA1B2BCFC6C400CC8AB2 /* TripsListView.swift in Sources */,
@@ -433,8 +419,6 @@
 				C3F0AA3A2BD0409D00CC8AB2 /* TripTest.swift in Sources */,
 				C3F0AA272BD0294B00CC8AB2 /* FriendsTests.swift in Sources */,
 				C3C65D022BC85ABF00B21711 /* SplitsVilleTests.swift in Sources */,
-				C3F0AA2D2BD02FFB00CC8AB2 /* FriendsStoreTest.swift in Sources */,
-				C3F0AA3C2BD0419900CC8AB2 /* TripStoreTest.swift in Sources */,
 				C33B23BB2BCD52AF00750F14 /* OnboardingItemTest.swift in Sources */,
 				C30AF6892BD16ACD00F081E3 /* TripsTest.swift in Sources */,
 			);

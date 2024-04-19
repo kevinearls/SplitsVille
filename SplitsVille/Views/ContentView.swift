@@ -51,6 +51,7 @@ struct ContentView: View {
 }
 
 // TODO fix this?  For some reason this is crashing xcode, even though the app runs
-// #Preview {
-//   ContentView()
-// }
+#Preview {
+  ContentView()
+    .modelContainer(for: [Friend.self, Trip.self])
+}

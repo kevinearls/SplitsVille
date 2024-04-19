@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddTripView: View {
+  @Environment(\.modelContext)
+  private var modelContext
+
+  @Query private var friends: [Friend]
   @Binding var showModal: Bool
-  @EnvironmentObject var tripStore: TripStore
   @State var name: String = ""
   @State var location: String = ""
   var body: some View {
@@ -24,7 +28,7 @@ struct AddTripView: View {
       Section {
         Button("Add") {
           let newTrip = Trip(name: name, location: location)
-          tripStore.addTrip(trip: newTrip)
+          modelContext.insert(newTrip)
           showModal = false
         }
         .padding()
@@ -43,5 +47,5 @@ struct AddTripView: View {
 
 #Preview {
   AddTripView(showModal: .constant(true))
-    .environmentObject(FriendStore())
+    .modelContainer(for: Trip.self)
 }

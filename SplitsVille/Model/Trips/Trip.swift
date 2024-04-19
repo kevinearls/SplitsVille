@@ -6,15 +6,24 @@
 //
 
 import Foundation
+import SwiftData
 
-// TODO are there other fields we need here?  Data?  Image?
-struct Trip: Codable, Equatable, Identifiable, Hashable {
+@Model
+final class Trip: Equatable, Identifiable, Hashable {
   var id = UUID()
   let name: String
   let location: String
+  @Relationship()
   var friends: [Friend] = []
 
-  mutating func addFriend(friend: Friend) {
+  init(id: UUID = UUID(), name: String, location: String, friends: [Friend] = []) {
+    self.id = id
+    self.name = name
+    self.location = location
+    self.friends = friends
+  }
+
+  public func addFriend(friend: Friend) {
     friends.append(friend)
   }
 }
