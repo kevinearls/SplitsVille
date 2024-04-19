@@ -7,8 +7,8 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
-// TODO add a list of trips?
 // TODO is there a better way to do this?
 let knownAvatarColors = [
   Constants.AvatarColor.blue,
@@ -27,13 +27,14 @@ let knownAvatarColors = [
 ]
 
 // TODO add a preferred currency - default to euros?
-struct Friend: Codable, Equatable, Identifiable, Hashable {
+@Model
+final class Friend: Identifiable {
   var id = UUID()
   let firstName: String
   let lastName: String
   let initials: String
   let avatarColor: String
-  init(firstName: String, lastName: String) {  // TODO create a failable initializer?
+  init(firstName: String, lastName: String) {
     self.firstName = firstName
     self.lastName = lastName
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SplitsVilleApp: App {
@@ -15,8 +16,7 @@ struct SplitsVilleApp: App {
     WindowGroup {
       if hasSeenOnboardingView {
         ContentView()
-          .environmentObject(FriendStore())
-          .environmentObject(TripStore())
+          .modelContainer(for: [Friend.self, Trip.self])
       } else {
         OnboardingView()
       }

@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddFriendView: View {
+  @Environment(\.modelContext)
+  private var modelContext
+
   @Binding var showModal: Bool
-  @EnvironmentObject var friendStore: FriendStore
+  @Query private var friends: [Friend]
   @State var firstName: String = ""
   @State var lastName: String = ""
 
@@ -26,7 +30,7 @@ struct AddFriendView: View {
         Section {
           Button("Add") {
             let newFriend = Friend(firstName: firstName, lastName: lastName)
-            friendStore.addFriend(friend: newFriend)
+            modelContext.insert(newFriend)
             showModal = false
           }
           .padding()
@@ -45,5 +49,5 @@ struct AddFriendView: View {
 
 #Preview {
   AddFriendView(showModal: .constant(true))
-    .environmentObject(FriendStore())
+    .modelContainer(for: Friend.self)
 }

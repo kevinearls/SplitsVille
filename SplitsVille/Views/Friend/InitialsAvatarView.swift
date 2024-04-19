@@ -27,4 +27,5 @@ struct InitialsAvatar: View {
 
 #Preview {
   InitialsAvatar(friend: Friend(firstName: "Fred", lastName: "Flintstone"))
+    .modelContainer(for: Friend.self)
 }

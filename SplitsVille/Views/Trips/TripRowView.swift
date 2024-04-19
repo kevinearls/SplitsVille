@@ -21,4 +21,5 @@ struct TripRowView: View {
 
 #Preview {
   TripRowView(trip: Trip(name: "Fabulous Vacation", location: "Hawaii"))
+    .modelContainer(for: Trip.self)
 }
