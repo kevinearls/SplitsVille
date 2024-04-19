@@ -10,10 +10,11 @@ import XCTest
 
 final class FriendsTests: XCTestCase {
   func testSimple() throws {
-    let fred = Friend(firstName: "Fred", lastName: "Flintstone")
+    let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
     XCTAssertEqual("Fred", fred.firstName)
     XCTAssertEqual("Flintstone", fred.lastName)
     XCTAssertEqual("FF", fred.initials)
     XCTAssertNotNil(fred.avatarColor)
+    XCTAssertEqual(fred.currency, Constants.Currency.EUR.rawValue)
   }
 }

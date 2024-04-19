@@ -16,6 +16,7 @@ struct AddFriendView: View {
   @Query private var friends: [Friend]
   @State var firstName: String = ""
   @State var lastName: String = ""
+  @State private var selectedCurrency: Constants.Currency = .USD
 
   var body: some View {
     Form {
@@ -29,7 +30,7 @@ struct AddFriendView: View {
         }
         Section {
           Button("Add") {
-            let newFriend = Friend(firstName: firstName, lastName: lastName)
+            let newFriend = Friend(firstName: firstName, lastName: lastName, currency: selectedCurrency.rawValue)
             modelContext.insert(newFriend)
             showModal = false
           }
@@ -42,6 +43,13 @@ struct AddFriendView: View {
           .padding()
         TextField("Last Name", text: $lastName, axis: .vertical)
           .padding()
+        Picker("Currency", selection: $selectedCurrency) {
+          ForEach(Constants.Currency.allCases) { option in
+            Text(String(describing: option))
+              .font(.largeTitle)
+          }
+        }
+        .pickerStyle(.menu)
       }
     }
   }

@@ -31,4 +31,17 @@ enum Constants {
     static let yellow = "yellowAvatar"
     static let teal = "tealAvatar"
   }
+
+  enum Currency: String, CaseIterable, Identifiable {
+    case USD // US Dollars
+    case EUR // Euros
+    case GBP // Great British Pounds
+    case CHF // Swiss Francs
+    case CAD // Canadian Dollars
+    case JPY // Japanese Yes
+    case MXN // Mexican Peso
+    case INR // Indian rupees
+
+    var id: Self { self }
+  }
 }

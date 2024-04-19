@@ -12,12 +12,12 @@ struct FriendRowView: View {
   var body: some View {
     HStack {
       InitialsAvatar(friend: friend)
-      Text(friend.lastName + ", " + friend.firstName)
+      Text(friend.lastName + ", " + friend.firstName + "  " + friend.currency)
         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
     }
   }
 }
 
 #Preview {
-  FriendRowView(friend: Friend(firstName: "Fred", lastName: "Flintstone"))
+  FriendRowView(friend: Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR"))
 }
