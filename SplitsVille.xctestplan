@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "1F1F3FCD-CB6F-418E-BB7E-2879674FD10F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SplitsVille.xcodeproj",
+      "identifier" : "C3C65CEC2BC85ABD00B21711",
+      "name" : "SplitsVille"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SplitsVille.xcodeproj",
+        "identifier" : "C3C65CFC2BC85ABF00B21711",
+        "name" : "SplitsVilleTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SplitsVille.xcodeproj",
+        "identifier" : "C3C65D062BC85ABF00B21711",
+        "name" : "SplitsVilleUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

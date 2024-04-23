@@ -6,9 +6,17 @@
 //
 
 import XCTest
+import SwiftData
 @testable import SplitsVille
 
 final class FriendsTests: XCTestCase {
+  private var context: ModelContext!
+  
+  @MainActor
+  override func setUp() {
+    context = mockContainer.mainContext
+  }
+  
   func testSimple() throws {
     let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
     XCTAssertEqual("Fred", fred.firstName)
