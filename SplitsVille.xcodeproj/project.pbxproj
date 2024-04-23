@@ -25,6 +25,7 @@
 		C3C65CF82BC85ABF00B21711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C65CF72BC85ABF00B21711 /* Preview Assets.xcassets */; };
 		C3C65D0C2BC85ABF00B21711 /* SplitsVilleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */; };
 		C3C65D0E2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */; };
+		C3EFF0DA2BD7BB9F00716E9F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFF0D92BD7BB9F00716E9F /* Currency.swift */; };
 		C3F0AA192BCFC6B600CC8AB2 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */; };
 		C3F0AA1B2BCFC6C400CC8AB2 /* TripsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1A2BCFC6C400CC8AB2 /* TripsListView.swift */; };
 		C3F0AA1F2BCFC6EB00CC8AB2 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */; };
@@ -80,6 +81,7 @@
 		C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C3C65D1D2BCAD5D600B21711 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C3EFF0D82BD6A29700716E9F /* SplitsVille.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SplitsVille.xctestplan; sourceTree = "<group>"; };
+		C3EFF0D92BD7BB9F00716E9F /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
 		C3F0AA1A2BCFC6C400CC8AB2 /* TripsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListView.swift; sourceTree = "<group>"; };
 		C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				C3F0AA292BD02F5100CC8AB2 /* Friend */,
 				C33B23B72BCD524600750F14 /* Onboarding */,
 				C36006572BD2C4020026ACCF /* Money.swift */,
+				C3EFF0D92BD7BB9F00716E9F /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +237,9 @@
 		C3C65D202BCADF3A00B21711 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C3EFF0DD2BD7C70D00716E9F /* Balances */,
+				C3EFF0DC2BD7C70300716E9F /* Transactions */,
+				C3EFF0DB2BD7C6F700716E9F /* Currency */,
 				C30AF67D2BD10D1A00F081E3 /* Trips */,
 				C3F0AA282BD02D7F00CC8AB2 /* Friend */,
 				C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */,
@@ -242,6 +248,27 @@
 				C3F0AA202BCFCB4400CC8AB2 /* TransactionsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C3EFF0DB2BD7C6F700716E9F /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
+		C3EFF0DC2BD7C70300716E9F /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		C3EFF0DD2BD7C70D00716E9F /* Balances */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Balances;
 			sourceTree = "<group>";
 		};
 		C3F0AA282BD02D7F00CC8AB2 /* Friend */ = {
@@ -409,6 +436,7 @@
 				C3F0AA2F2BD0326700CC8AB2 /* AddFriendView.swift in Sources */,
 				C3C65CF32BC85ABD00B21711 /* ContentView.swift in Sources */,
 				C33B23B92BCD526D00750F14 /* OnboardingItem.swift in Sources */,
+				C3EFF0DA2BD7BB9F00716E9F /* Currency.swift in Sources */,
 				C36006582BD2C4020026ACCF /* Money.swift in Sources */,
 				C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */,
 				C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */,

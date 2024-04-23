@@ -45,5 +45,18 @@ struct TripsListView: View {
 }
 
 #Preview {
-  TripsListView()
+let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+  let container = try! ModelContainer(for: Friend.self, Trip.self, configurations: configuration)
+  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
+  let barney = Friend(firstName: "Barney", lastName: "Rubble", currency: "GBP")
+
+  let context = container.mainContext
+  context.insert(fred)
+  context.insert(barney)
+
+  let trip = Trip(name: "Fabulous Vacation", location: "Hawaii")
+  context.insert(trip)
+
+  return TripsListView()
+    .modelContainer(container)
 }

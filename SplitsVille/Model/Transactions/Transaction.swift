@@ -29,4 +29,3 @@ final class Transaction: Identifiable {
     self.sharedWith = sharedWith
   }
 }
-

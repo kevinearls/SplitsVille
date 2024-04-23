@@ -44,8 +44,10 @@ struct AddTripView: View {
   }
 }
 
-
 #Preview {
-  AddTripView(showModal: .constant(true))
-    .modelContainer(for: Trip.self)
+  let config = ModelConfiguration(isStoredInMemoryOnly: true)
+  let container = try! ModelContainer(for: Friend.self, configurations: config)
+
+  return AddTripView(showModal: .constant(true))
+    .modelContainer(container)
 }

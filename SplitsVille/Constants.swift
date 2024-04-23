@@ -32,16 +32,9 @@ enum Constants {
     static let teal = "tealAvatar"
   }
 
-  enum Currency: String, CaseIterable, Identifiable {
-    case USD // US Dollars
-    case EUR // Euros
-    case GBP // Great British Pounds
-    case CHF // Swiss Francs
-    case CAD // Canadian Dollars
-    case JPY // Japanese Yes
-    case MXN // Mexican Peso
-    case INR // Indian rupees
-
-    var id: Self { self }
+  enum InitialsAvatar {
+    static let frameHeight: CGFloat = 85.0
+    static let frameWidth: CGFloat = 85.0
+    static let initialsSize: CGFloat = frameHeight * 0.6
   }
 }

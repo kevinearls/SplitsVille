@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct InitialsAvatar: View {
   let friend: Friend
@@ -15,17 +16,31 @@ struct InitialsAvatar: View {
       ZStack {
         Circle()
           .foregroundColor(Color(friend.avatarColor))
-          .frame(width: 100, height: 100)    // TODO create constants?
+          .frame(width: Constants.InitialsAvatar.frameWidth, height: Constants.InitialsAvatar.frameHeight)
 
         Text(friend.initials)
           .foregroundStyle(.white)
-          .font(.system(size: 59))
+          .font(.system(size: Constants.InitialsAvatar.initialsSize))
       }
     }
   }
 }
 
-#Preview {
-  InitialsAvatar(friend: Friend(firstName: "Fred", lastName: "Flintstone"))
-    .modelContainer(for: Friend.self)
+#Preview("Light, Portrait") {
+  let config = ModelConfiguration(isStoredInMemoryOnly: true)
+  let container = try! ModelContainer(for: Friend.self, configurations: config)
+  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
+
+  return InitialsAvatar(friend: fred)
+    .modelContainer(container)
 }
+
+#Preview("Dark, Landscape", traits: .landscapeLeft, body: {
+  let config = ModelConfiguration(isStoredInMemoryOnly: true)
+  let container = try! ModelContainer(for: Friend.self, configurations: config)
+  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
+
+  return InitialsAvatar(friend: fred)
+    .preferredColorScheme(.dark)
+    .modelContainer(container)
+})

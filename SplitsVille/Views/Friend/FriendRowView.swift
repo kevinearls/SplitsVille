@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FriendRowView: View {
   var friend: Friend
@@ -13,11 +14,16 @@ struct FriendRowView: View {
     HStack {
       InitialsAvatar(friend: friend)
       Text(friend.lastName + ", " + friend.firstName + "  " + friend.currency)
-        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        .font(.title2)
     }
   }
 }
 
 #Preview {
-  FriendRowView(friend: Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR"))
+  let config = ModelConfiguration(isStoredInMemoryOnly: true)
+  let container = try! ModelContainer(for: Friend.self, configurations: config)
+  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
+
+  return FriendRowView(friend: fred)
+    .modelContainer(container)
 }

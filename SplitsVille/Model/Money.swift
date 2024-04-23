@@ -9,5 +9,5 @@ import Foundation
 
 struct XXXMoney {
   var amount: Decimal
-  var currency: Constants.Currency
+  var currency: Currency
 }
