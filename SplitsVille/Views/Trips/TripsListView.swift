@@ -44,19 +44,15 @@ struct TripsListView: View {
   }
 }
 
-#Preview {
-let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-  let container = try! ModelContainer(for: Friend.self, Trip.self, configurations: configuration)
-  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
-  let barney = Friend(firstName: "Barney", lastName: "Rubble", currency: "GBP")
-
-  let context = container.mainContext
-  context.insert(fred)
-  context.insert(barney)
-
-  let trip = Trip(name: "Fabulous Vacation", location: "Hawaii")
-  context.insert(trip)
-
+#Preview("Light, Portrait") {
+  let previewContainer = PreviewController.previewContainer
   return TripsListView()
-    .modelContainer(container)
+    .modelContainer(previewContainer)
+}
+
+#Preview("Dark, Landscape") {
+  let previewContainer = PreviewController.previewContainer
+  return TripsListView()
+    .preferredColorScheme(.dark)
+    .modelContainer(previewContainer)
 }

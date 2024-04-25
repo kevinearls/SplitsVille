@@ -18,14 +18,17 @@ struct FriendDetailView: View {
   }
 }
 
-#Preview {
-  let config = ModelConfiguration(isStoredInMemoryOnly: true)
-  let container = try! ModelContainer(for: Friend.self, configurations: config)
-  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
+#Preview("Light, Portrait") {
+  let previewContainer = PreviewController.previewContainer
 
-  let context = container.mainContext
-  context.insert(fred)
+  return FriendDetailView(friend: PreviewController.barney)
+    .modelContainer(previewContainer)
+}
 
-  return FriendDetailView(friend: fred)
-    .modelContainer(container)
+#Preview("Dark, Landscape", traits: .landscapeLeft) {
+  let previewContainer = PreviewController.previewContainer
+
+  return FriendDetailView(friend: PreviewController.barney)
+    .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+    .modelContainer(previewContainer)
 }

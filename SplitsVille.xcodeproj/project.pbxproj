@@ -26,6 +26,7 @@
 		C3C65D0C2BC85ABF00B21711 /* SplitsVilleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */; };
 		C3C65D0E2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */; };
 		C3EFF0DA2BD7BB9F00716E9F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFF0D92BD7BB9F00716E9F /* Currency.swift */; };
+		C3EFF0DF2BD7D89F00716E9F /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFF0DE2BD7D89F00716E9F /* PreviewController.swift */; };
 		C3F0AA192BCFC6B600CC8AB2 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */; };
 		C3F0AA1B2BCFC6C400CC8AB2 /* TripsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1A2BCFC6C400CC8AB2 /* TripsListView.swift */; };
 		C3F0AA1F2BCFC6EB00CC8AB2 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */; };
@@ -82,6 +83,7 @@
 		C3C65D1D2BCAD5D600B21711 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C3EFF0D82BD6A29700716E9F /* SplitsVille.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SplitsVille.xctestplan; sourceTree = "<group>"; };
 		C3EFF0D92BD7BB9F00716E9F /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C3EFF0DE2BD7D89F00716E9F /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
 		C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
 		C3F0AA1A2BCFC6C400CC8AB2 /* TripsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListView.swift; sourceTree = "<group>"; };
 		C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				C33B23BE2BCD550C00750F14 /* Onboarding */,
 				C3C65CF22BC85ABD00B21711 /* ContentView.swift */,
 				C3F0AA202BCFCB4400CC8AB2 /* TransactionsView.swift */,
+				C3EFF0DE2BD7D89F00716E9F /* PreviewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				C3F0AA312BD035BD00CC8AB2 /* FriendDetailView.swift in Sources */,
 				C30AF6832BD10E0400F081E3 /* AddTripView.swift in Sources */,
 				C3F0AA332BD03D3E00CC8AB2 /* FriendRowView.swift in Sources */,
+				C3EFF0DF2BD7D89F00716E9F /* PreviewController.swift in Sources */,
 				C3F0AA352BD03F8700CC8AB2 /* Trip.swift in Sources */,
 				C3F0AA232BD01D2E00CC8AB2 /* Friend.swift in Sources */,
 			);

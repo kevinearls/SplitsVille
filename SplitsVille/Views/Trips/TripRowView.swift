@@ -22,19 +22,14 @@ struct TripRowView: View {
 }
 
 #Preview {
-  let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-  let container = try! ModelContainer(for: Friend.self, Trip.self, configurations: configuration)
-  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
-  let barney = Friend(firstName: "Barney", lastName: "Rubble", currency: "GBP")
-
-  let context = container.mainContext
-  context.insert(fred)
-  context.insert(barney)
-
-  let trip = Trip(name: "Fabulous Vacation", location: "Hawaii")
-  context.insert(trip)
-
-  return TripRowView(trip: trip)
-    .modelContainer(container)
+  let previewContainer = PreviewController.previewContainer
+  return TripRowView(trip: PreviewController.trip1)
+    .modelContainer(previewContainer)
 }
 
+#Preview("Dark, Landscape", traits: .landscapeLeft) {
+  let previewContainer = PreviewController.previewContainer
+  return TripRowView(trip: PreviewController.trip1)
+    .preferredColorScheme(.dark)
+    .modelContainer(previewContainer)
+}

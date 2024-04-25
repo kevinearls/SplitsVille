@@ -39,29 +39,14 @@ struct TripDetailView: View {
 }
 
 #Preview("Light, Portrait") {
-  let config = ModelConfiguration(isStoredInMemoryOnly: true)
-  let container = try! ModelContainer(for: Friend.self, Trip.self, configurations: config)
-  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
-  let barney = Friend(firstName: "Barney", lastName: "Rubble", currency: "GBP")
-
-  let context = container.mainContext
-  context.insert(fred)
-  context.insert(barney)
-
-  let trip = Trip(name: "Fabulous Vacation", location: "Hawaii")
-  context.insert(trip)
-
-
-  return TripDetailView(trip: trip)
-    .modelContainer(container)
+  let previewContainer = PreviewController.previewContainer
+  return TripDetailView(trip: PreviewController.trip1)
+    .modelContainer(previewContainer)
 }
 
-// #Preview("Dark, Landscape", traits: .landscapeLeft, body: {
-//   let config = ModelConfiguration(isStoredInMemoryOnly: true)
-//   let container = try! ModelContainer(for: Friend.self, configurations: config)
-//   let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
-//
-//   return InitialsAvatar(friend: fred)
-//     .preferredColorScheme(.dark)
-//     .modelContainer(container)
-// })
+#Preview("Dark, Landscape", traits: .landscapeLeft) {
+  let previewContainer = PreviewController.previewContainer
+  return TripDetailView(trip: PreviewController.trip1)
+    .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+    .modelContainer(previewContainer)
+}

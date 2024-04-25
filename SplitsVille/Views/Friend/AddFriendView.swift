@@ -11,7 +11,6 @@ import SwiftData
 struct AddFriendView: View {
   @Environment(\.modelContext)
   private var modelContext
-
   @Binding var showModal: Bool
   @Query private var friends: [Friend]
   @State var firstName: String = ""
@@ -56,9 +55,7 @@ struct AddFriendView: View {
 }
 
 #Preview {
-  let config = ModelConfiguration(isStoredInMemoryOnly: true)
-  let container = try! ModelContainer(for: Friend.self, configurations: config)
-
+  let previewContainer = PreviewController.previewContainer
   return AddFriendView(showModal: .constant(true))
-    .modelContainer(container)
+    .modelContainer(previewContainer)
 }

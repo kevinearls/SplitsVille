@@ -10,6 +10,8 @@ import SwiftData
 
 struct InitialsAvatar: View {
   let friend: Friend
+    @Query private var friends: [Friend]
+
 
   var body: some View {
     HStack {
@@ -27,20 +29,14 @@ struct InitialsAvatar: View {
 }
 
 #Preview("Light, Portrait") {
-  let config = ModelConfiguration(isStoredInMemoryOnly: true)
-  let container = try! ModelContainer(for: Friend.self, configurations: config)
-  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
-
-  return InitialsAvatar(friend: fred)
-    .modelContainer(container)
+  let previewContainer = PreviewController.previewContainer
+  return InitialsAvatar(friend: PreviewController.fred)
+    .modelContainer(previewContainer)
 }
 
-#Preview("Dark, Landscape", traits: .landscapeLeft, body: {
-  let config = ModelConfiguration(isStoredInMemoryOnly: true)
-  let container = try! ModelContainer(for: Friend.self, configurations: config)
-  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
-
-  return InitialsAvatar(friend: fred)
+#Preview("Dark, Landscape", traits: .landscapeLeft) {
+  let previewContainer = PreviewController.previewContainer
+  return InitialsAvatar(friend: PreviewController.barney)
+    .modelContainer(previewContainer)
     .preferredColorScheme(.dark)
-    .modelContainer(container)
-})
+}

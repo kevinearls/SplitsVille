@@ -19,11 +19,17 @@ struct FriendRowView: View {
   }
 }
 
-#Preview {
-  let config = ModelConfiguration(isStoredInMemoryOnly: true)
-  let container = try! ModelContainer(for: Friend.self, configurations: config)
-  let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
+#Preview("Light, Portrait") {
+  let previewContainer = PreviewController.previewContainer
 
-  return FriendRowView(friend: fred)
-    .modelContainer(container)
+  return FriendRowView(friend: PreviewController.fred)
+    .modelContainer(previewContainer)
+}
+
+#Preview("Dark, Landscape", traits: .landscapeLeft) {
+  let previewContainer = PreviewController.previewContainer
+
+  return FriendRowView(friend: PreviewController.fred)
+    .preferredColorScheme(.dark)
+    .modelContainer(previewContainer)
 }
