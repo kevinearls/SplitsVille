@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C307C4A22BDD60A600ED9348 /* EraseMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C307C4A12BDD60A600ED9348 /* EraseMe.swift */; };
+		C307C4A42BDD611F00ED9348 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C307C4A32BDD611F00ED9348 /* TestData.swift */; };
 		C30AF67F2BD10DC500F081E3 /* TripRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AF67E2BD10DC500F081E3 /* TripRowView.swift */; };
 		C30AF6812BD10DD800F081E3 /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AF6802BD10DD800F081E3 /* TripDetailView.swift */; };
 		C30AF6832BD10E0400F081E3 /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AF6822BD10E0400F081E3 /* AddTripView.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C307C4A12BDD60A600ED9348 /* EraseMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EraseMe.swift; sourceTree = "<group>"; };
+		C307C4A32BDD611F00ED9348 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		C30AF67E2BD10DC500F081E3 /* TripRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRowView.swift; sourceTree = "<group>"; };
 		C30AF6802BD10DD800F081E3 /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
 		C30AF6822BD10E0400F081E3 /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				C3F0AA262BD0294B00CC8AB2 /* FriendsTests.swift */,
 				C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */,
 				C371BF682BD43BBB00E4CF4E /* MockContainer.swift */,
+				C307C4A12BDD60A600ED9348 /* EraseMe.swift */,
+				C307C4A32BDD611F00ED9348 /* TestData.swift */,
 			);
 			path = SplitsVilleTests;
 			sourceTree = "<group>";
@@ -464,7 +470,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3F0AA3A2BD0409D00CC8AB2 /* TripTest.swift in Sources */,
+				C307C4A22BDD60A600ED9348 /* EraseMe.swift in Sources */,
 				C3F0AA272BD0294B00CC8AB2 /* FriendsTests.swift in Sources */,
+				C307C4A42BDD611F00ED9348 /* TestData.swift in Sources */,
 				C371BF692BD43BBB00E4CF4E /* MockContainer.swift in Sources */,
 				C33B23BB2BCD52AF00750F14 /* OnboardingItemTest.swift in Sources */,
 			);

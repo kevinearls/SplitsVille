@@ -10,12 +10,30 @@ import SwiftData
 @testable import SplitsVille
 
 final class FriendsTests: XCTestCase {
+
+  @MainActor
   func testSimple() throws {
-    let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: "EUR")
+    let fred = TestData.fred
+
     XCTAssertEqual("Fred", fred.firstName)
     XCTAssertEqual("Flintstone", fred.lastName)
     XCTAssertEqual("FF", fred.initials)
     XCTAssertNotNil(fred.avatarColor)
     XCTAssertEqual(fred.currency, Currency.EUR.rawValue)
   }
+
+  // FIXME move these tests to more appropriate places.  Neither really does
+  // much other than increase coverage numbers
+  @MainActor
+  func testPreviewController() throws {
+    let container = PreviewController.previewContainer
+    XCTAssertEqual(1, container.configurations.count)
+  }
+
+  func testCurrency() throws {
+    let euros = Currency.EUR
+    XCTAssertEqual("EUR", euros.rawValue)
+  }
+
+
 }
