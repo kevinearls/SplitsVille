@@ -8,6 +8,8 @@
 import Foundation
 import SwiftData
 
+// TODO add start and end dates, image?, deleteFriend
+
 @Model
 final class Trip: Equatable, Identifiable, Hashable {
   var id = UUID()
@@ -25,5 +27,11 @@ final class Trip: Equatable, Identifiable, Hashable {
 
   public func addFriend(friend: Friend) {
     friends.append(friend)
+  }
+
+  public func removeFriend(friend: Friend) {
+    if let index = friends.firstIndex(of: friend) {
+      friends.remove(at: index)
+    }
   }
 }

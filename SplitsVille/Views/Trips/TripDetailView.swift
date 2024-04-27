@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftData
-
 struct TripDetailView: View {
   @Query private var friends: [Friend]
   @State private var isPresented = false
@@ -28,7 +27,11 @@ struct TripDetailView: View {
             Image(systemName: trip.friends.contains(friend) ? "checkmark.square" : "square")
               .foregroundColor(trip.friends.contains(friend) ? Color.green : Color.red)
               .onTapGesture {
-                trip.addFriend(friend: friend)
+                if trip.friends.contains(friend) {
+                  trip.removeFriend(friend: friend)
+                } else {
+                  trip.addFriend(friend: friend)
+                }
               }
           }
         }

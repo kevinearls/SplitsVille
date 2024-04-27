@@ -8,6 +8,8 @@
 import Foundation
 import SwiftData
 
+
+// TODO add Date, ability to take photos of a receipt?
 @Model
 final class Transaction: Identifiable {
   var id = UUID()
@@ -15,17 +17,21 @@ final class Transaction: Identifiable {
   @Relationship()
   let trip: Trip
   @Relationship()
-  let payer: Friend
+  let paidBy: Friend
   let desc: String  // TODO rename
   @Relationship()
-  let sharedWith: [Friend]
+  var sharedWith: [Friend]
 
-  init(id: UUID = UUID(), currency: String, trip: Trip, payer: Friend, desc: String, sharedWith: [Friend]) {
+  init(id: UUID = UUID(), currency: String, trip: Trip, payer: Friend, desc: String, sharedWith: [Friend] = []) {
     self.id = id
     self.currency = currency
     self.trip = trip
-    self.payer = payer
+    self.paidBy = payer
     self.desc = desc
     self.sharedWith = sharedWith
+  }
+
+  public func addSharedWith(friend: Friend) {
+    sharedWith.append(friend)
   }
 }

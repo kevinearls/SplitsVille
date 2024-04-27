@@ -45,4 +45,16 @@ final class TripTest: XCTestCase {
     XCTAssertTrue(trip.friends.contains(TestData.fred))
     XCTAssertTrue(trip.friends.contains(TestData.barney))
   }
+
+  @MainActor
+  func testRemoveFriend() {
+    TestData.trip1.addFriend(friend: TestData.fred)
+    TestData.trip1.addFriend(friend: TestData.barney)
+    XCTAssertEqual(2, TestData.trip1.friends.count)
+
+    TestData.trip1.removeFriend(friend: TestData.barney)
+    XCTAssertEqual(1, TestData.trip1.friends.count)
+    XCTAssertTrue(TestData.trip1.friends.contains(TestData.fred))
+    XCTAssertFalse(TestData.trip1.friends.contains(TestData.barney))
+  }
 }
