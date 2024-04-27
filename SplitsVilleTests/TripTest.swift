@@ -11,6 +11,7 @@ import SwiftUI
 @testable import SplitsVille
 
 final class TripTest: XCTestCase {
+  // swiftlint:disable:next implicitly_unwrapped_optional
   var context: ModelContext!
 
   @MainActor

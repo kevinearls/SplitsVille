@@ -10,7 +10,6 @@ import SwiftData
 @testable import SplitsVille
 
 final class FriendsTests: XCTestCase {
-
   @MainActor
   func testSimple() throws {
     let fred = TestData.fred
@@ -34,6 +33,4 @@ final class FriendsTests: XCTestCase {
     let euros = Currency.EUR
     XCTAssertEqual("EUR", euros.rawValue)
   }
-
-
 }

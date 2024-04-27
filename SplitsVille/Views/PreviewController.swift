@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @MainActor
-class PreviewController {
+enum PreviewController {
   static let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: Currency.EUR.rawValue)
   static let wilma = Friend(firstName: "Wilma", lastName: "Flintstone", currency: Currency.EUR.rawValue)
   static let barney = Friend(firstName: "Barney", lastName: "Rubble", currency: Currency.GBP.rawValue)
