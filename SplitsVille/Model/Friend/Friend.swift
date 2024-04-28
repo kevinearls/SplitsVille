@@ -32,6 +32,9 @@ final class Friend: Identifiable {
   var id = UUID()
   let firstName: String
   let lastName: String
+  var fullName: String {
+    firstName + " " + lastName
+  }
   let currency: String   // FIXME wtf?  why won't this let me make this a Constants.Currency????
   let initials: String
   let avatarColor: String

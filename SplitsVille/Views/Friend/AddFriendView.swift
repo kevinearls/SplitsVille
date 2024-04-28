@@ -42,6 +42,7 @@ struct AddFriendView: View {
           .padding()
         TextField("Last Name", text: $lastName, axis: .vertical)
           .padding()
+        // TODO look into TextField with currency option!
         Picker("Currency", selection: $selectedCurrency) {
           ForEach(Currency.allCases) { option in
             Text(String(describing: option))

@@ -33,10 +33,10 @@ struct ContentView: View {
         }
         .tag(Tabs.trips)
 
-      TransactionsView()
+      TransactionsListView()
         .tabItem {
           Text("Transactions")
-          Image(systemName: "person")  // TODO find a new image
+          Image(systemName: "purchased")
         }
         .tag(Tabs.transactions)
 

@@ -16,7 +16,7 @@ struct SplitsVilleApp: App {
     WindowGroup {
       if hasSeenOnboardingView {
         ContentView()
-          .modelContainer(for: [Friend.self, Trip.self])
+          .modelContainer(for: [Friend.self, Trip.self, Transaction.self])
       } else {
         OnboardingView()
       }

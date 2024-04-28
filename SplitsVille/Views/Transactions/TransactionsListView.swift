@@ -1,5 +1,5 @@
 //
-//  TripsListView.swift
+//  TransactionsListView.swift
 //  SplitsVille
 //
 //  Created by Kevin Earls on 17/04/2024.
@@ -8,22 +8,25 @@
 import SwiftUI
 import SwiftData
 
-struct TripsListView: View {
-  @Query private var trips: [Trip]
+// FIXME sort and seperate transactions by trip
+struct TransactionsListView: View {
+  @Query(sort: \Transaction.trip.name)
+  private var transactions: [Transaction]
   @State private var isPresented = false
 
   var body: some View {
     VStack(alignment: .leading) {
       NavigationStack {
         List {
-          ForEach(trips) { trip in
-            NavigationLink(value: trip) {
-              TripRowView(trip: trip)
+          ForEach(transactions) { transaction in
+            NavigationLink(value: transaction) {
+              TransactionRowView(transaction: transaction)
             }
           }
+          .listRowBackground(Color.yellow)
         }
-        .navigationDestination(for: Trip.self) { trip in
-          TripDetailView(trip: trip)
+        .navigationDestination(for: Transaction.self) { transaction in
+          TransactionDetailView(transaction: transaction)
         }
         .toolbar {
           ToolbarItem(placement: .navigationBarTrailing) {
@@ -32,12 +35,12 @@ struct TripsListView: View {
             })
           }
           ToolbarItem(placement: .navigationBarLeading) {
-            Text("Trips").font(.largeTitle)
+            Text("Transactions").font(.largeTitle)
           }
         }
       }
       .sheet(isPresented: $isPresented) {
-        AddTripView(showModal: $isPresented)
+        AddTransactionView(showModal: $isPresented)
       }
     }
     .padding()
@@ -46,13 +49,13 @@ struct TripsListView: View {
 
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
-  return TripsListView()
+  return TransactionsListView()
     .modelContainer(previewContainer)
 }
 
-#Preview("Dark, Landscape") {
+#Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
-  return TripsListView()
+  return TransactionsListView()
     .preferredColorScheme(.dark)
     .modelContainer(previewContainer)
 }

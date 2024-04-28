@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 @testable import SplitsVille
 
+// FIXME do I still need this?
 @MainActor
 var mockContainer: ModelContainer {
   do {
