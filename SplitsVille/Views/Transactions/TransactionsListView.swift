@@ -8,22 +8,40 @@
 import SwiftUI
 import SwiftData
 
-// FIXME sort and seperate transactions by trip
 struct TransactionsListView: View {
   @Query(sort: \Transaction.trip.name)
   private var transactions: [Transaction]
+  @Query private var trips: [Trip]
+  @State private var selectedTrip: Trip!
+  
+  private var transactionsForThisTrip: [Transaction] {
+    var transactionsToShow = transactions
+    if selectedTrip != nil {
+      transactionsToShow = transactionsToShow.filter {
+        $0.trip == selectedTrip
+      }
+    }
+    return transactionsToShow
+  }
   @State private var isPresented = false
-
+  
   var body: some View {
     VStack(alignment: .leading) {
       NavigationStack {
+        List(trips, id: \.self, selection: $selectedTrip) { trip in
+          Text("\(trip.name)")
+        }
+        .navigationTitle("Which Trip?")
+        // FIXME why is there so much wasted space here?
+      }
+      
+      NavigationStack {
         List {
-          ForEach(transactions) { transaction in
+          ForEach(transactionsForThisTrip) { transaction in
             NavigationLink(value: transaction) {
               TransactionRowView(transaction: transaction)
             }
           }
-          .listRowBackground(Color.yellow)
         }
         .navigationDestination(for: Transaction.self) { transaction in
           TransactionDetailView(transaction: transaction)
@@ -35,15 +53,16 @@ struct TransactionsListView: View {
             })
           }
           ToolbarItem(placement: .navigationBarLeading) {
-            Text("Transactions").font(.largeTitle)
+            Text("Transactions")
+              .font(.largeTitle)
           }
         }
-      }
-      .sheet(isPresented: $isPresented) {
-        AddTransactionView(showModal: $isPresented)
+        
+        .sheet(isPresented: $isPresented) {
+          AddTransactionView(showModal: $isPresented)
+        }
       }
     }
-    .padding()
   }
 }
 

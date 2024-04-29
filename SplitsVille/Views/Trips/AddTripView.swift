@@ -11,7 +11,7 @@ import SwiftData
 struct AddTripView: View {
   @Environment(\.modelContext)
   private var modelContext
-
+  
   @Query private var friends: [Friend]
   @Binding var showModal: Bool
   @State var name: String = ""
@@ -23,6 +23,13 @@ struct AddTripView: View {
           showModal = false
         }
         .padding()
+        Spacer()
+      }
+      Section {
+        Text("Add a Trip")
+          .font(.title3)
+          .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+          .padding()
         Spacer()
       }
       Section {

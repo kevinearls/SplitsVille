@@ -16,7 +16,7 @@ struct AddFriendView: View {
   @State var firstName: String = ""
   @State var lastName: String = ""
   @State private var selectedCurrency: Currency = .USD
-
+  
   var body: some View {
     Form {
       HStack {  // TODO move this into its own view?
@@ -25,6 +25,13 @@ struct AddFriendView: View {
             showModal = false
           }
           .padding()
+          Spacer()
+        }
+        Section {
+          Text("Add a friend")
+            .font(.title3)
+            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            .padding()
           Spacer()
         }
         Section {

@@ -13,12 +13,21 @@ struct TransactionRowView: View {
     HStack {
       VStack {
         // FIXME format the amount - reformat this whole view
-        Text("\(transaction.desc) \(transaction.amount) \(transaction.currency)" )
-        Text("\(transaction.paidBy.fullName)")
-        Text("\(transaction.trip.name)")
+        HStack {
+          Text("\(transaction.desc)")
+            .fontWeight(.bold)
+          Spacer()
+          Text("\(transaction.amount) \(transaction.currency)" )
+        }
+        HStack {
+          Text("Paid by: \(transaction.paidBy.fullName)")
+          Spacer()
+          Text("\(transaction.trip.name)")
+        }
       }
+      .padding(3)
+      .border(Color.accentColor)
     }
-    .cornerRadius(10)
   }
 }
 

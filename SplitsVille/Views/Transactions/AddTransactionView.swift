@@ -11,7 +11,6 @@ import SwiftData
 struct AddTransactionView: View {
   @Environment(\.modelContext)
   private var modelContext
-
   @Query private var friends: [Friend]
   @Query private var trips: [Trip]
   @Binding var showModal: Bool
@@ -21,6 +20,16 @@ struct AddTransactionView: View {
   @State private var paidBy: Friend!
   @State private var selectedTrip: Trip!
 
+  //  private var friendsOnThisTrip: [Friend] {
+  //    var friendsToShow = friends  // TODO or []?
+  //    if selectedTrip != nil {
+  //      friendsToShow = friendsToShow.filter {
+  //        selectedTrip.friends.contains($0)
+  //      }
+  //    }
+  //    return friendsToShow
+  //  }
+
   var body: some View {
     HStack {
       Section {
@@ -28,6 +37,12 @@ struct AddTransactionView: View {
           showModal = false
         }
         .padding()
+        Spacer()
+      }
+      Section {
+        Text("Add a transaction")
+          .font(.title2)
+          .padding()
         Spacer()
       }
       Section {
@@ -47,7 +62,6 @@ struct AddTransactionView: View {
       .disabled(desc.isEmpty || amount == 0 || paidBy == nil || selectedTrip == nil)
     }
     VStack {
-      Text("Add a transaction").font(.headline)
       TextField("Description:", text: $desc)
         .padding()
       HStack {
@@ -57,23 +71,36 @@ struct AddTransactionView: View {
           .padding()
       }
       NavigationStack {
-        List(friends, id: \.self, selection: $paidBy) { friend in
-          Text("\(friend.firstName)")
-        }
-        .navigationTitle("Who paid for this?")
-      }
-      NavigationStack {
         List(trips, id: \.self, selection: $selectedTrip) { trip in
           Text("\(trip.name)")
         }
-        .navigationTitle("Which Trip")
+        .navigationTitle("Which Trip?")
+        // FIXME why is there so much wasted space here?
+      }
+      if selectedTrip != nil {
+        NavigationStack {
+          List(friends, id: \.self, selection: $paidBy) { friend in  // TODO do I need id?
+            //if selectedTrip.friends.contains(friend) { // TODO get this to work as a filter
+              Text("\(friend.firstName)")
+            //}
+          }
+          .navigationTitle("Who paid for this?")
+        }
       }
     }
   }
 }
 
-#Preview {
+#Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
   return AddTransactionView(showModal: .constant(true))
     .modelContainer(previewContainer)
 }
+
+#Preview("Dark, Landscape", traits: .landscapeLeft) {
+  let previewContainer = PreviewController.previewContainer
+  return AddTransactionView(showModal: .constant(true))
+    .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+    .modelContainer(previewContainer)
+}
+

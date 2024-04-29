@@ -21,7 +21,15 @@ enum PreviewController {
     amount: 15.75,
     payer: fred,
     trip: nightOutInBedrock,
-    desc: "DinosaurBurgers"
+    desc: "Dinosaur Burgers"
+  )
+
+  static let friedClams = Transaction(
+    currency: Currency.EUR.rawValue,
+    amount: 21.00,
+    payer: betty,
+    trip: anotherNightOut,
+    desc: "Fried clams"
   )
 
   static let previewContainer: ModelContainer = {
@@ -38,8 +46,11 @@ enum PreviewController {
       context.insert(anotherNightOut)
       nightOutInBedrock.addFriend(friend: fred)
       nightOutInBedrock.addFriend(friend: barney)
+      anotherNightOut.addFriend(friend: betty)
+      anotherNightOut.addFriend(friend: wilma)
 
       context.insert(dinosaurBurgers)
+      context.insert(friedClams)
 
       return container
     } catch {
