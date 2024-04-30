@@ -17,18 +17,10 @@ struct AddTransactionView: View {
   @State var desc: String = ""
   @State private var selectedCurrency: Currency = .USD
   @State private var amount: Decimal = 0.0
+  // swiftlint:disable:next implicitly_unwrapped_optional
   @State private var paidBy: Friend!
+  // swiftlint:disable:next implicitly_unwrapped_optional
   @State private var selectedTrip: Trip!
-
-  //  private var friendsOnThisTrip: [Friend] {
-  //    var friendsToShow = friends  // TODO or []?
-  //    if selectedTrip != nil {
-  //      friendsToShow = friendsToShow.filter {
-  //        selectedTrip.friends.contains($0)
-  //      }
-  //    }
-  //    return friendsToShow
-  //  }
 
   var body: some View {
     HStack {
@@ -47,14 +39,16 @@ struct AddTransactionView: View {
       }
       Section {
         Button("Add") {
-          let newTransaction = Transaction(
-            currency: selectedCurrency.rawValue,
-            amount: amount,
-            payer: paidBy!,
-            trip: selectedTrip!,
-            desc: desc
-          )
-          modelContext.insert(newTransaction)
+          if let paidBy = paidBy, let selectedTrip = selectedTrip {
+            let newTransaction = Transaction(
+              currency: selectedCurrency.rawValue,
+              amount: amount,
+              payer: paidBy,
+              trip: selectedTrip,
+              desc: desc
+            )
+            modelContext.insert(newTransaction)
+          }
           showModal = false
         }
         .padding()
@@ -80,9 +74,9 @@ struct AddTransactionView: View {
       if selectedTrip != nil {
         NavigationStack {
           List(friends, id: \.self, selection: $paidBy) { friend in  // TODO do I need id?
-            //if selectedTrip.friends.contains(friend) { // TODO get this to work as a filter
-              Text("\(friend.firstName)")
-            //}
+            // if selectedTrip.friends.contains(friend) { // TODO get this to work as a filter
+            Text("\(friend.firstName)")
+            // }
           }
           .navigationTitle("Who paid for this?")
         }
@@ -103,4 +97,3 @@ struct AddTransactionView: View {
     .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     .modelContainer(previewContainer)
 }
-

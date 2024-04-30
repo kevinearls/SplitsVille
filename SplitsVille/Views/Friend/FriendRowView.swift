@@ -12,7 +12,15 @@ struct FriendRowView: View {
   var friend: Friend
   var body: some View {
     HStack {
-      InitialsAvatar(friend: friend)
+      if let uiImage = UIImage(data: friend.avatarImageData) {
+        Image(uiImage: uiImage)
+          .resizable()
+          .frame(maxWidth: 50, maxHeight: 50)
+      } else {
+        Image(.defaultAvatar)
+          .resizable()
+          .frame(maxWidth: 50, maxHeight: 50)
+      }
       Text(friend.lastName + ", " + friend.firstName + "  " + friend.currency)
         .font(.title2)
     }

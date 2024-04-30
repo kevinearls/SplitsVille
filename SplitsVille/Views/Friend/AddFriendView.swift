@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import PhotosUI
 
 struct AddFriendView: View {
   @Environment(\.modelContext)
@@ -16,7 +17,9 @@ struct AddFriendView: View {
   @State var firstName: String = ""
   @State var lastName: String = ""
   @State private var selectedCurrency: Currency = .USD
-  
+  @State private var avatarItem: PhotosPickerItem?
+  @State private var avatarImageData: Data?
+
   var body: some View {
     Form {
       HStack {  // TODO move this into its own view?
@@ -36,13 +39,24 @@ struct AddFriendView: View {
         }
         Section {
           Button("Add") {
-            let newFriend = Friend(firstName: firstName, lastName: lastName, currency: selectedCurrency.rawValue)
-            modelContext.insert(newFriend)
-            showModal = false
+            Task {
+              if let imageData = try? await avatarItem?.loadTransferable(type: Data.self) {
+                let newFriend = Friend(
+                  firstName: firstName,
+                  lastName: lastName,
+                  currency: selectedCurrency.rawValue,
+                  imageData: imageData
+                )
+                modelContext.insert(newFriend)
+                showModal = false
+              } else {
+                print("Something failed...") // FIXME add a throw?
+              }
+            }
           }
           .padding()
         }
-        .disabled(firstName.isEmpty || lastName.isEmpty)
+        .disabled(firstName.isEmpty || lastName.isEmpty || avatarItem == nil)
       }
       VStack {
         TextField("First Name:", text: $firstName)
@@ -57,6 +71,8 @@ struct AddFriendView: View {
           }
         }
         .pickerStyle(.menu)
+        Divider()
+        PhotosPicker("Select avatar", selection: $avatarItem, matching: .images)
       }
     }
   }

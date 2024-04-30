@@ -13,7 +13,13 @@ struct FriendDetailView: View {
   var body: some View {
     VStack {
       Text(friend.lastName + ", " + friend.firstName).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-      InitialsAvatar(friend: friend)
+      if let uiImage = UIImage(data: friend.avatarImageData) {
+        Image(uiImage: uiImage)
+          .resizable()
+          .frame(maxWidth: 100, maxHeight: 100)
+      } else {
+        Image(.defaultAvatar)
+      }
     }
   }
 }

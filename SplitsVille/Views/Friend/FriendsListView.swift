@@ -51,9 +51,9 @@ struct FriendsListView: View {
     .modelContainer(previewContainer)
 })
 
-#Preview("Dark, Landscape", body: {
+#Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
   return FriendsListView()
     .preferredColorScheme(.dark)
     .modelContainer(previewContainer)
-})
+}

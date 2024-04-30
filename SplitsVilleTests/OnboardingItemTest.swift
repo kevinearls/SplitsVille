@@ -11,10 +11,10 @@ import XCTest
 // TODO do I really need this?  Does it make any sense to test immutable structs?
 final class OnboardingItemTest: XCTestCase {
   func testOnboardingItem() throws {
-    let item = OnboardingItem(systemImageName: "dollarsign", title: "title", subtitle: "subtitle", instructions: "Instructions")
+    let item = OnboardingItem(systemImageName: "dollarsign", title: "title", subtitle: "sub", instructions: "Do this")
     XCTAssertEqual("dollarsign", item.systemImageName)
     XCTAssertEqual("title", item.title)
-    XCTAssertEqual("subtitle", item.subtitle)
-    XCTAssertEqual("Instructions", item.instructions)
+    XCTAssertEqual("sub", item.subtitle)
+    XCTAssertEqual("Do this", item.instructions)
   }
 }

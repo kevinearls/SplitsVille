@@ -12,8 +12,9 @@ struct TransactionsListView: View {
   @Query(sort: \Transaction.trip.name)
   private var transactions: [Transaction]
   @Query private var trips: [Trip]
+  // swiftlint:disable:next implicitly_unwrapped_optional
   @State private var selectedTrip: Trip!
-  
+
   private var transactionsForThisTrip: [Transaction] {
     var transactionsToShow = transactions
     if selectedTrip != nil {
@@ -24,7 +25,7 @@ struct TransactionsListView: View {
     return transactionsToShow
   }
   @State private var isPresented = false
-  
+
   var body: some View {
     VStack(alignment: .leading) {
       NavigationStack {
@@ -34,7 +35,7 @@ struct TransactionsListView: View {
         .navigationTitle("Which Trip?")
         // FIXME why is there so much wasted space here?
       }
-      
+
       NavigationStack {
         List {
           ForEach(transactionsForThisTrip) { transaction in
@@ -57,7 +58,7 @@ struct TransactionsListView: View {
               .font(.largeTitle)
           }
         }
-        
+
         .sheet(isPresented: $isPresented) {
           AddTransactionView(showModal: $isPresented)
         }

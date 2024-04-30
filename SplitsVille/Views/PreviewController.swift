@@ -10,19 +10,15 @@ import SwiftData
 
 @MainActor
 enum PreviewController {
-  static let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: Currency.EUR.rawValue)
-  static let wilma = Friend(firstName: "Wilma", lastName: "Flintstone", currency: Currency.EUR.rawValue)
-  static let barney = Friend(firstName: "Barney", lastName: "Rubble", currency: Currency.GBP.rawValue)
-  static let betty = Friend(firstName: "Betty", lastName: "Rubble", currency: Currency.GBP.rawValue)
+  // swiftlint:disable line_length
+  static let fred = Friend(firstName: "Fred", lastName: "Flintstone", currency: Currency.EUR.rawValue, imageData: Data())
+  static let wilma = Friend(firstName: "Wilma", lastName: "Flintstone", currency: Currency.EUR.rawValue, imageData: Data())
+  static let barney = Friend(firstName: "Barney", lastName: "Rubble", currency: Currency.GBP.rawValue, imageData: Data())
+  static let betty = Friend(firstName: "Betty", lastName: "Rubble", currency: Currency.GBP.rawValue, imageData: Data())
   static let nightOutInBedrock = Trip(name: "Big Night Out", location: "Bedrock")
   static let anotherNightOut = Trip(name: "Another Night Out", location: "Somewhere")
-  static let dinosaurBurgers = Transaction(
-    currency: Currency.EUR.rawValue,
-    amount: 15.75,
-    payer: fred,
-    trip: nightOutInBedrock,
-    desc: "Dinosaur Burgers"
-  )
+  static let dinosaurBurgers = Transaction(currency: Currency.EUR.rawValue, amount: 15.75, payer: fred, trip: nightOutInBedrock, desc: "Dinosaur Burgers")
+  // swiftlint:enable line_length
 
   static let friedClams = Transaction(
     currency: Currency.EUR.rawValue,

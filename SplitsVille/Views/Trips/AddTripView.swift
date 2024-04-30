@@ -11,7 +11,7 @@ import SwiftData
 struct AddTripView: View {
   @Environment(\.modelContext)
   private var modelContext
-  
+
   @Query private var friends: [Friend]
   @Binding var showModal: Bool
   @State var name: String = ""

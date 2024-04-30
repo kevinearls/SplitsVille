@@ -16,8 +16,6 @@ final class FriendsTests: XCTestCase {
 
     XCTAssertEqual("Fred", fred.firstName)
     XCTAssertEqual("Flintstone", fred.lastName)
-    XCTAssertEqual("FF", fred.initials)
-    XCTAssertNotNil(fred.avatarColor)
     XCTAssertEqual(fred.currency, Currency.EUR.rawValue)
   }
 

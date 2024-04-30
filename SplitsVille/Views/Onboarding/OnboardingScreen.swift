@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingScreen: View {
   let item: OnboardingItem
-  
+
   var body: some View {
     ScrollView {
       VStack {
@@ -19,13 +19,13 @@ struct OnboardingScreen: View {
           .aspectRatio(contentMode: .fit)
           .frame(maxWidth: 200, maxHeight: 200)
           .padding(.bottom)
-        
+
         VStack(alignment: .center) {
           Text(item.title)
             .bold()
             .font(.title)
             .padding(.bottom)
-          
+
           Text(item.subtitle)
             .padding(.bottom)
           HStack {
@@ -52,6 +52,6 @@ struct OnboardingScreen: View {
     subtitle: "A simple but powerful way to track shared expenses while traveling",
     instructions: multilineInstructions
   )
-  
+
   return OnboardingScreen(item: onboardingItem)
 }
