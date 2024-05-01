@@ -16,6 +16,7 @@ struct TripDetailView: View {
     Section {
       Group {
         HStack {
+        // TODO put an icon or image here?
           VStack(alignment: .leading) {
             Text(trip.location)
               .font(.subheadline)
@@ -32,19 +33,13 @@ struct TripDetailView: View {
     Divider()
     Section {
       Group {
-        HStack {
-          Text("What about instructions here?")
-          Spacer()
-        }
-        List {  // FIXME add title, instructions
+        List {
           ForEach(friends) { friend in
             HStack {
               Text("\(friend.firstName) \(friend.lastName)")
-              // .font(.subheadline)  // FIXME what is the right size here?  Should we use FriendRow instead?
-              Spacer()
               Spacer()
               Image(systemName: trip.friends.contains(friend) ? "checkmark.square" : "square")
-                .foregroundColor(trip.friends.contains(friend) ? Color.green : Color.red)  // FIXME colors?
+                .foregroundColor(trip.friends.contains(friend) ? Color.secondary : Color.accentColor)  // FIXME colors?
                 .onTapGesture {
                   if trip.friends.contains(friend) {
                     trip.removeFriend(friend: friend)

@@ -12,7 +12,8 @@ struct FriendDetailView: View {
   var friend: Friend
   var body: some View {
     VStack {
-      Text(friend.lastName + ", " + friend.firstName).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+      Text(friend.lastName + ", " + friend.firstName)
+        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
       if let uiImage = UIImage(data: friend.avatarImageData) {
         Image(uiImage: uiImage)
           .resizable()
@@ -20,20 +21,22 @@ struct FriendDetailView: View {
       } else {
         Image(.defaultAvatar)
       }
+      Text("Preferred Currency: \(friend.currency)")
+        .font(.subheadline)
     }
   }
 }
 
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
-
+  
   return FriendDetailView(friend: PreviewController.barney)
     .modelContainer(previewContainer)
 }
 
 #Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
-
+  
   return FriendDetailView(friend: PreviewController.barney)
     .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     .modelContainer(previewContainer)

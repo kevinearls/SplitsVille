@@ -21,8 +21,13 @@ struct FriendRowView: View {
           .resizable()
           .frame(maxWidth: 50, maxHeight: 50)
       }
-      Text(friend.lastName + ", " + friend.firstName + "  " + friend.currency)
-        .font(.title2)
+      VStack(alignment: .leading) {
+        Text(friend.firstName)
+          .font(.headline)
+        Text("Preferred Currency: \(friend.currency)")
+          .font(.subheadline)
+      }
+      Spacer()
     }
   }
 }
