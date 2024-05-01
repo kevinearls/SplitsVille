@@ -12,14 +12,24 @@ struct AddTripView: View {
   @Environment(\.modelContext)
   private var modelContext
 
-  @Query private var friends: [Friend]
   @Binding var showModal: Bool
+  @Query private var friends: [Friend]
   @State var name: String = ""
   @State var location: String = ""
+  @State private var startDate = Date()
+  @State private var endDate = Date()
+
+  private func addTrip() {
+    withAnimation {
+      let newTrip = Trip(name: name, location: location, startDate: startDate, endDate: endDate)
+      modelContext.insert(newTrip)
+    }
+  }
+
   var body: some View {
-    HStack {  // TODO move this into its own view?
+    HStack {
       Section {
-        Button("Cancel") {
+        Button("Dismiss") {
           showModal = false
         }
         .padding()
@@ -33,7 +43,7 @@ struct AddTripView: View {
         Spacer()
       }
       Section {
-        Button("Add") {
+        Button("Done") {
           let newTrip = Trip(name: name, location: location)
           modelContext.insert(newTrip)
           showModal = false
@@ -42,11 +52,19 @@ struct AddTripView: View {
       }
       .disabled(name.isEmpty || location.isEmpty)
     }
-    VStack {
-      TextField("Name:", text: $name)
-        .padding()
-      TextField("Location", text: $location, axis: .vertical)
-        .padding()
+    Form {
+      Section(header: Text("Trip Name")) {
+        TextField("Name:", text: $name)
+      }
+      Section(header: Text("Trip Location")) {
+        TextField("Location:", text: $location)
+      }
+      DatePicker(selection: $startDate, displayedComponents: .date) {
+        Label("Start Date", systemImage: "calendar")
+      }
+      DatePicker(selection: $endDate, displayedComponents: .date) {
+        Label("End Date", systemImage: "calendar")
+      }
     }
   }
 }

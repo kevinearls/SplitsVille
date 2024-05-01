@@ -15,16 +15,21 @@ final class Trip: Equatable, Identifiable, Hashable {
   @Attribute(.unique)
   let name: String
   let location: String
+  var startDate: Date
+  var endDate: Date
+
   @Relationship()
   var friends: [Friend] = []
 
-  // FIXME add start and end date
-  // FIXME add transactions with @RelationShip(.cascade)?
+  @Relationship(deleteRule: .cascade, inverse: \Transaction.trip)
+  var transactions: [Transaction] = []
 
-  init(id: UUID = UUID(), name: String, location: String, friends: [Friend] = []) {
+  init(id: UUID = UUID(), name: String, location: String, startDate: Date = .now, endDate: Date = .distantFuture) {
     self.id = id
     self.name = name
     self.location = location
+    self.startDate = startDate
+    self.endDate = endDate
     self.friends = friends
   }
 
