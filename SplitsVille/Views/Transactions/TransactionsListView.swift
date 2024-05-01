@@ -11,34 +11,13 @@ import SwiftData
 struct TransactionsListView: View {
   @Query(sort: \Transaction.trip.name)
   private var transactions: [Transaction]
-  @Query private var trips: [Trip]
-  // swiftlint:disable:next implicitly_unwrapped_optional
-  @State private var selectedTrip: Trip!
-
-  private var transactionsForThisTrip: [Transaction] {
-    var transactionsToShow = transactions
-    if selectedTrip != nil {
-      transactionsToShow = transactionsToShow.filter {
-        $0.trip == selectedTrip
-      }
-    }
-    return transactionsToShow
-  }
   @State private var isPresented = false
 
   var body: some View {
     VStack(alignment: .leading) {
       NavigationStack {
-        List(trips, id: \.self, selection: $selectedTrip) { trip in
-          Text("\(trip.name)")
-        }
-        .navigationTitle("Which Trip?")
-        // FIXME why is there so much wasted space here?
-      }
-
-      NavigationStack {
         List {
-          ForEach(transactionsForThisTrip) { transaction in
+          ForEach(transactions) { transaction in
             NavigationLink(value: transaction) {
               TransactionRowView(transaction: transaction)
             }
