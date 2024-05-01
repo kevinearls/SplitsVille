@@ -11,12 +11,20 @@ import SwiftData
 struct TripRowView: View {
   var trip: Trip
   var body: some View {
-    HStack {
+    VStack(alignment: .leading) {
       Text(trip.name)
-        .font(.title2)
+        .font(.headline)
       Text(trip.location)
-        .font(.title2)
-      // TODO add friends...navigate to tipe detail?
+        .font(.subheadline)
+      if case let (start?, end?) = (trip.startDate, trip.endDate) {
+        Divider()
+        HStack {
+          Text(start, style: .date)
+          Image(systemName: "arrow.right")
+          Text(end, style: .date)
+        }
+        .font(.caption)
+      }
     }
   }
 }
