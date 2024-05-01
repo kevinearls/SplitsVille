@@ -31,6 +31,9 @@
 		C3C65CF82BC85ABF00B21711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C65CF72BC85ABF00B21711 /* Preview Assets.xcassets */; };
 		C3C65D0C2BC85ABF00B21711 /* SplitsVilleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */; };
 		C3C65D0E2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */; };
+		C3D5D92E2BE283380019E994 /* TripDetailFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D5D92D2BE283380019E994 /* TripDetailFriendsView.swift */; };
+		C3D5D9302BE284850019E994 /* TripDetailTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D5D92F2BE284850019E994 /* TripDetailTransactionsView.swift */; };
+		C3D5D9332BE285110019E994 /* TripDetailBalancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D5D9322BE285110019E994 /* TripDetailBalancesView.swift */; };
 		C3EFF0DA2BD7BB9F00716E9F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFF0D92BD7BB9F00716E9F /* Currency.swift */; };
 		C3EFF0DF2BD7D89F00716E9F /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFF0DE2BD7D89F00716E9F /* PreviewController.swift */; };
 		C3F0AA192BCFC6B600CC8AB2 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */; };
@@ -92,6 +95,9 @@
 		C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleUITests.swift; sourceTree = "<group>"; };
 		C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C3C65D1D2BCAD5D600B21711 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C3D5D92D2BE283380019E994 /* TripDetailFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailFriendsView.swift; sourceTree = "<group>"; };
+		C3D5D92F2BE284850019E994 /* TripDetailTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailTransactionsView.swift; sourceTree = "<group>"; };
+		C3D5D9322BE285110019E994 /* TripDetailBalancesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailBalancesView.swift; sourceTree = "<group>"; };
 		C3EFF0D82BD6A29700716E9F /* SplitsVille.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SplitsVille.xctestplan; sourceTree = "<group>"; };
 		C3EFF0D92BD7BB9F00716E9F /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C3EFF0DE2BD7D89F00716E9F /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
@@ -145,9 +151,12 @@
 			isa = PBXGroup;
 			children = (
 				C30AF6802BD10DD800F081E3 /* TripDetailView.swift */,
+				C3D5D92F2BE284850019E994 /* TripDetailTransactionsView.swift */,
 				C30AF67E2BD10DC500F081E3 /* TripRowView.swift */,
 				C3F0AA1A2BCFC6C400CC8AB2 /* TripsListView.swift */,
 				C30AF6822BD10E0400F081E3 /* AddTripView.swift */,
+				C3D5D92D2BE283380019E994 /* TripDetailFriendsView.swift */,
+				C3D5D9322BE285110019E994 /* TripDetailBalancesView.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -466,15 +475,18 @@
 				C36006582BD2C4020026ACCF /* Money.swift in Sources */,
 				C32F56BF2BE1333200B8FD8D /* DatePickerExample.swift in Sources */,
 				C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */,
+				C3D5D92E2BE283380019E994 /* TripDetailFriendsView.swift in Sources */,
 				C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */,
 				C3F0AA212BCFCB4400CC8AB2 /* TransactionsListView.swift in Sources */,
 				C307C4AB2BDE66DC00ED9348 /* TransactionDetailView.swift in Sources */,
+				C3D5D9302BE284850019E994 /* TripDetailTransactionsView.swift in Sources */,
 				C33B23C22BCD55B300750F14 /* OnboardingView.swift in Sources */,
 				C30AF67F2BD10DC500F081E3 /* TripRowView.swift in Sources */,
 				C3F0AA192BCFC6B600CC8AB2 /* FriendsListView.swift in Sources */,
 				C33B23BD2BCD54C900750F14 /* Constants.swift in Sources */,
 				C3B8DA0F2BD3EAC000440280 /* Transaction.swift in Sources */,
 				C3F0AA1B2BCFC6C400CC8AB2 /* TripsListView.swift in Sources */,
+				C3D5D9332BE285110019E994 /* TripDetailBalancesView.swift in Sources */,
 				C3F0AA312BD035BD00CC8AB2 /* FriendDetailView.swift in Sources */,
 				C30AF6832BD10E0400F081E3 /* AddTripView.swift in Sources */,
 				C3F0AA332BD03D3E00CC8AB2 /* FriendRowView.swift in Sources */,

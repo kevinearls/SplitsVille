@@ -1,23 +1,20 @@
 //
-//  TransactionsListView.swift
+//  TripDetailTransactionsView.swift
 //  SplitsVille
 //
-//  Created by Kevin Earls on 17/04/2024.
+//  Created by Kevin Earls on 01/05/2024.
 //
 
 import SwiftUI
-import SwiftData
 
-struct TransactionsListView: View {
-  @Query(sort: \Transaction.trip.name)
-  private var transactions: [Transaction]
-  @State private var isPresented = false
-
+struct TripDetailTransactionsView: View {
+  var trip: Trip
   var body: some View {
     VStack(alignment: .leading) {
+      Divider()
       NavigationStack {
         List {
-          ForEach(transactions) { transaction in
+          ForEach(trip.transactions) { transaction in
             NavigationLink(value: transaction) {
               TransactionRowView(transaction: transaction)
             }
@@ -27,18 +24,10 @@ struct TransactionsListView: View {
           TransactionDetailView(transaction: transaction)
         }
         .toolbar {
-          ToolbarItem(placement: .navigationBarTrailing) {
-            Button(action: { isPresented.toggle() }, label: {
-              Image(systemName: "plus.circle.fill")
-            })
-          }
           ToolbarItem(placement: .navigationBarLeading) {
-            Text("Transactions")
-              .font(.largeTitle)
+            Text("Transactions for \(trip.name)")
+              .font(.headline)
           }
-        }
-        .sheet(isPresented: $isPresented) {
-          AddTransactionView(showModal: $isPresented)
         }
       }
     }
@@ -47,13 +36,13 @@ struct TransactionsListView: View {
 
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
-  return TransactionsListView()
+  return TripDetailTransactionsView(trip: PreviewController.nightOutInBedrock)
     .modelContainer(previewContainer)
 }
 
 #Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
-  return TransactionsListView()
-    .preferredColorScheme(.dark)
+  return TripDetailTransactionsView(trip: PreviewController.nightOutInBedrock)
+    .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     .modelContainer(previewContainer)
 }

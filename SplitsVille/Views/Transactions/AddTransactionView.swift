@@ -21,7 +21,6 @@ struct AddTransactionView: View {
   @State private var paidBy: Friend!
   // swiftlint:disable:next implicitly_unwrapped_optional
   @State private var selectedTrip: Trip!
-  @State private var selectedTrip2: Trip!
 
   var body: some View {
     HStack {
@@ -63,40 +62,14 @@ struct AddTransactionView: View {
       Section(header: Text("Amount")) {
         TextField("Amount:", value: $amount, format: .number)
       }
-      //Section(header: Text("Trip")) {
-        //        Picker("Trip", selection: $selectedTrip2) {
-        //          ForEach(trips) { trip in
-        //            Text(trip.name)
-        //              .font(.largeTitle)
-        //          }
-        //        }
-        //        .pickerStyle(.menu)
-      }
-     // }
-      //      TextField("Description:", text: $desc)
-      //        .padding()
-      //      HStack {
-      //        Spacer()
-      //        Text("Amount:")
-      //        TextField("Amount:", value: $amount, format: .number)
-      //          .padding()
-      //      }
-      //    NavigationStack {
-      //      List(trips, id: \.self, selection: $selectedTrip) { trip in
-      //        Text("\(trip.name)")
-      //          .font(.headline)
-      //      }
-      //      .navigationTitle("Select a Trip")
-      //      // FIXME why is there so much wasted space here?
-      //    }
-      // FIXM: Figure out how to only show friends on this trip
-        NavigationStack {
-          List(trips, id: \.self, selection: $selectedTrip) { trip in
-            Text("\(trip.name)")
-              .font(.headline)
-          }
-          .navigationTitle("Select a Trip")
+      // FIXME: Figure out how to only show friends on this trip
+      NavigationStack {
+        List(trips, id: \.self, selection: $selectedTrip) { trip in
+          Text("\(trip.name)")
+            .font(.headline)
         }
+        .navigationTitle("Select a Trip")
+      }
       if selectedTrip != nil {
         NavigationStack {
           List(friends, id: \.self, selection: $paidBy) { friend in  // TODO do I need id?
@@ -107,19 +80,19 @@ struct AddTransactionView: View {
           .navigationTitle("Select the person who paid")
         }
       }
-
     }
   }
+}
 
-  #Preview("Light, Portrait") {
-    let previewContainer = PreviewController.previewContainer
-    return AddTransactionView(showModal: .constant(true))
-      .modelContainer(previewContainer)
-  }
+#Preview("Light, Portrait") {
+  let previewContainer = PreviewController.previewContainer
+  return AddTransactionView(showModal: .constant(true))
+    .modelContainer(previewContainer)
+}
 
-  #Preview("Dark, Landscape", traits: .landscapeLeft) {
-    let previewContainer = PreviewController.previewContainer
-    return AddTransactionView(showModal: .constant(true))
-      .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
-      .modelContainer(previewContainer)
-  }
+#Preview("Dark, Landscape", traits: .landscapeLeft) {
+  let previewContainer = PreviewController.previewContainer
+  return AddTransactionView(showModal: .constant(true))
+    .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+    .modelContainer(previewContainer)
+}

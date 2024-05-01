@@ -5,6 +5,10 @@
 //  Created by Kevin Earls on 18/04/2024.
 //
 
+
+// FIXME! For some reason my attemps at navigation have not worked here
+// I tried to use a TabView, but that didn't seem to want to work inseide
+// Another tab view.  I also tried a NavigationStack without any luck
 import SwiftUI
 import SwiftData
 struct TripDetailView: View {
@@ -16,7 +20,6 @@ struct TripDetailView: View {
     Section {
       Group {
         HStack {
-        // TODO put an icon or image here?
           VStack(alignment: .leading) {
             Text(trip.location)
               .font(.subheadline)
@@ -53,7 +56,36 @@ struct TripDetailView: View {
       }
     } header: {  // FIXME move this?
       HStack {
-        Text("Click checkbox to add or delete friends")
+        Text("Click to add or delete friends from this trip")
+        Spacer()
+      }
+    }
+    Divider()
+    Section {
+      Group {
+        List {
+          ForEach(trip.transactions) { transaction in
+            TransactionRowView(transaction: transaction)
+          }
+        }
+      }
+    } header: {  // FIXME move this?
+      HStack {
+        Text("Transactions for this trip")
+        Spacer()
+      }
+    }
+    Divider()
+    Section {
+      Group {
+        let total = trip.transactions.reduce(0) { partialResult, transaction in
+          partialResult + transaction.amount
+        }
+        Text("Total: \(total)")
+      }
+    } header: {
+      HStack {
+        Text("Balances go here!")
         Spacer()
       }
     }

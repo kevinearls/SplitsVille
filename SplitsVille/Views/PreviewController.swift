@@ -15,8 +15,11 @@ enum PreviewController {
   static let wilma = Friend(firstName: "Wilma", lastName: "Flintstone", currency: Currency.EUR.rawValue, imageData: Data())
   static let barney = Friend(firstName: "Barney", lastName: "Rubble", currency: Currency.GBP.rawValue, imageData: Data())
   static let betty = Friend(firstName: "Betty", lastName: "Rubble", currency: Currency.GBP.rawValue, imageData: Data())
+
   static let nightOutInBedrock = Trip(name: "Big Night Out", location: "Bedrock")
   static let anotherNightOut = Trip(name: "Another Night Out", location: "Somewhere")
+
+  // FIXME how to get transactions to show uo in previews?  Create them after trip and friend have been added to context?
   static let dinosaurBurgers = Transaction(currency: Currency.EUR.rawValue, amount: 15.75, payer: fred, trip: nightOutInBedrock, desc: "Dinosaur Burgers")
   // swiftlint:enable line_length
 
@@ -40,6 +43,7 @@ enum PreviewController {
       context.insert(betty)
       context.insert(nightOutInBedrock)
       context.insert(anotherNightOut)
+
       nightOutInBedrock.addFriend(friend: fred)
       nightOutInBedrock.addFriend(friend: barney)
       anotherNightOut.addFriend(friend: betty)
