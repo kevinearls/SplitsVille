@@ -37,4 +37,6 @@ enum Constants {
     static let frameWidth: CGFloat = 85.0
     static let initialsSize: CGFloat = frameHeight * 0.6
   }
+
+  public static let currencyFreaksBaseURL = "https://api.currencyfreaks.com/v2.0/rates/latest/"
 }

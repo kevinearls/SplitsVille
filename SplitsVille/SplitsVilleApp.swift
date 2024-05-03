@@ -17,6 +17,7 @@ struct SplitsVilleApp: App {
       if hasSeenOnboardingView {
         ContentView()
           .modelContainer(for: [Friend.self, Trip.self, Transaction.self])
+          .environmentObject(ExchangeRatesStore())
       } else {
         OnboardingView()
       }
