@@ -11,7 +11,7 @@ import SwiftData
 struct AddTransactionView: View {
   @Environment(\.modelContext)
   private var modelContext
-  @Query private var friends: [Friend]
+  @Query private var friends: [Friend]  // FIXME sort these?
   @Query private var trips: [Trip]
   @Binding var showModal: Bool
   @State var desc: String = ""
@@ -53,7 +53,7 @@ struct AddTransactionView: View {
         }
         .padding()
       }
-      .disabled(desc.isEmpty || amount == 0 || paidBy == nil || selectedTrip == nil)
+      .disabled(desc.isEmpty || amount == 0)   // FIXME?
     }
     Form {
       Section(header: Text("Description")) {
@@ -61,25 +61,30 @@ struct AddTransactionView: View {
       }
       Section(header: Text("Amount")) {
         TextField("Amount:", value: $amount, format: .number)
-      }
-      // FIXME: Figure out how to only show friends on this trip
-      NavigationStack {
-        List(trips, id: \.self, selection: $selectedTrip) { trip in
-          Text("\(trip.name)")
-            .font(.headline)
-        }
-        .navigationTitle("Select a Trip")
-      }
-      if selectedTrip != nil {
-        NavigationStack {
-          List(friends, id: \.self, selection: $paidBy) { friend in  // TODO do I need id?
-            // if selectedTrip.friends.contains(friend) { // TODO get this to work as a filter
-            Text("\(friend.firstName)")
-            // }
+        Picker("Currency", selection: $selectedCurrency) {
+          ForEach(Currency.allCases) { option in
+            Text(String(describing: option))
+              .font(.largeTitle)
           }
-          .navigationTitle("Select the person who paid")
+        }
+        .pickerStyle(.menu)
+
+      }
+      Picker("Which trip?", selection: $selectedTrip) {
+        ForEach(trips) { trip in
+          Text(trip.name)
+            .font(.largeTitle)
         }
       }
+      .pickerStyle(.menu)
+      // FIXME: Figure out how to only show friends on this trip
+      Picker("Who paid?", selection: $paidBy) {
+        ForEach(friends) { friend in
+          Text(friend.fullName)
+            .font(.largeTitle)
+        }
+      }
+      .pickerStyle(.menu)
     }
   }
 }

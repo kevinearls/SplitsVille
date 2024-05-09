@@ -52,7 +52,8 @@ struct ContentView: View {
 
 // TODO fix this?  For some reason this is crashing xcode, even though the app runs
 #Preview("Light, Portrait") {
-let previewContainer = PreviewController.previewContainer
+  let previewContainer = PreviewController.previewContainer
   return ContentView()
     .modelContainer(previewContainer)
+    .environmentObject(ExchangeRatesStore())
 }
