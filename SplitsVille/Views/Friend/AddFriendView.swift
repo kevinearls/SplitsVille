@@ -18,7 +18,7 @@ struct AddFriendView: View {
   @State var lastName: String = ""
   @State private var selectedCurrency: Currency = .USD
   @State private var avatarItem: PhotosPickerItem?
-  @State private var avatarImageData: Data?
+  //@State private var avatarImageData: Data?
 
   var body: some View {
     Form {
