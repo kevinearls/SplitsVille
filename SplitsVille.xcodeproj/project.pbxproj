@@ -15,6 +15,8 @@
 		C30AF67F2BD10DC500F081E3 /* TripRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AF67E2BD10DC500F081E3 /* TripRowView.swift */; };
 		C30AF6812BD10DD800F081E3 /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AF6802BD10DD800F081E3 /* TripDetailView.swift */; };
 		C30AF6832BD10E0400F081E3 /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AF6822BD10E0400F081E3 /* AddTripView.swift */; };
+		C31141982BEE857500BABFA5 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31141942BEE857500BABFA5 /* OnboardingScreen.swift */; };
+		C31141992BEE857500BABFA5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31141952BEE857500BABFA5 /* OnboardingView.swift */; };
 		C32F56BF2BE1333200B8FD8D /* DatePickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32F56BE2BE1333200B8FD8D /* DatePickerExample.swift */; };
 		C32F56C12BE133A400B8FD8D /* PhotoPickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32F56C02BE133A400B8FD8D /* PhotoPickerExample.swift */; };
 		C33B23B92BCD526D00750F14 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B23B82BCD526D00750F14 /* OnboardingItem.swift */; };
@@ -80,6 +82,8 @@
 		C30AF67E2BD10DC500F081E3 /* TripRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRowView.swift; sourceTree = "<group>"; };
 		C30AF6802BD10DD800F081E3 /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
 		C30AF6822BD10E0400F081E3 /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
+		C31141942BEE857500BABFA5 /* OnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		C31141952BEE857500BABFA5 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C32F56BE2BE1333200B8FD8D /* DatePickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerExample.swift; sourceTree = "<group>"; };
 		C32F56C02BE133A400B8FD8D /* PhotoPickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerExample.swift; sourceTree = "<group>"; };
 		C33B23B82BCD526D00750F14 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
@@ -171,6 +175,15 @@
 			path = Trips;
 			sourceTree = "<group>";
 		};
+		C31141972BEE857500BABFA5 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C31141942BEE857500BABFA5 /* OnboardingScreen.swift */,
+				C31141952BEE857500BABFA5 /* OnboardingView.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
 		C33B23B62BCD523800750F14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +208,7 @@
 		C33B23BE2BCD550C00750F14 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				C31141972BEE857500BABFA5 /* Onboarding */,
 				C33B23BF2BCD552800750F14 /* OnboardingScreen.swift */,
 				C33B23C12BCD55B300750F14 /* OnboardingView.swift */,
 			);
@@ -525,6 +539,7 @@
 				C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */,
 				C3D5D92E2BE283380019E994 /* TripDetailFriendsView.swift in Sources */,
 				C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */,
+				C31141992BEE857500BABFA5 /* OnboardingView.swift in Sources */,
 				C3F0AA212BCFCB4400CC8AB2 /* TransactionsListView.swift in Sources */,
 				C307C4AB2BDE66DC00ED9348 /* TransactionDetailView.swift in Sources */,
 				C3D5D9302BE284850019E994 /* TripDetailTransactionsView.swift in Sources */,
@@ -532,6 +547,7 @@
 				C30AF67F2BD10DC500F081E3 /* TripRowView.swift in Sources */,
 				C3F0AA192BCFC6B600CC8AB2 /* FriendsListView.swift in Sources */,
 				C33B23BD2BCD54C900750F14 /* Constants.swift in Sources */,
+				C31141982BEE857500BABFA5 /* OnboardingScreen.swift in Sources */,
 				C3B8DA0F2BD3EAC000440280 /* Transaction.swift in Sources */,
 				C3F0AA1B2BCFC6C400CC8AB2 /* TripsListView.swift in Sources */,
 				C3D5D9332BE285110019E994 /* TripDetailBalancesView.swift in Sources */,
