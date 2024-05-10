@@ -11,8 +11,8 @@ import SwiftData
 struct AddTransactionView: View {
   @Environment(\.modelContext)
   private var modelContext
-  @Query private var friends: [Friend]  // FIXME sort these?
-  @Query private var trips: [Trip]
+  @Query(sort: \Friend.firstName) private var friends: [Friend]
+  @Query(sort: \Trip.name) private var trips: [Trip]
   @Binding var showModal: Bool
   @State var desc: String = ""
   @State private var selectedCurrency: Currency = .USD
@@ -49,6 +49,7 @@ struct AddTransactionView: View {
             )
             modelContext.insert(newTransaction)
           }
+          // Add debugging code here...
           showModal = false
         }
         .padding()
@@ -68,12 +69,12 @@ struct AddTransactionView: View {
           }
         }
         .pickerStyle(.menu)
-
       }
       Picker("Which trip?", selection: $selectedTrip) {
         ForEach(trips) { trip in
           Text(trip.name)
             .font(.largeTitle)
+            .tag(Optional(trip))
         }
       }
       .pickerStyle(.menu)
@@ -82,9 +83,22 @@ struct AddTransactionView: View {
         ForEach(friends) { friend in
           Text(friend.fullName)
             .font(.largeTitle)
+            .tag(Optional(friend))
         }
       }
       .pickerStyle(.menu)
+      // TODO remove
+//      if let paidBy {
+//        Text("PaidBy: \(paidBy.fullName)")
+//      } else {
+//        Text("PaidBy is nil")
+//      }
+//      if let selectedTrip {
+//        Text("Trip: \(selectedTrip.name)")
+//      } else {
+//        Text("Trip is nil")
+//      }
+
     }
   }
 }
