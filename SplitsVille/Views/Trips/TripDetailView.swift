@@ -6,13 +6,17 @@
 //
 
 
-// FIXME! For some reason my attemps at navigation have not worked here
-// I tried to use a TabView, but that didn't seem to want to work inseide
+// FIXME! For some reason my attempts at navigation have not worked here
+// I tried to use a TabView, but that didn't seem to want to work inside
 // Another tab view.  I also tried a NavigationStack without any luck
 import SwiftUI
 import SwiftData
 struct TripDetailView: View {
-  @Query private var friends: [Friend]
+  @Query(sort: \Friend.firstName)
+  private var friends: [Friend]
+
+  @Query(sort: \Transaction.paidBy.firstName)
+  private var transactions: [Transaction]
   @State private var isPresented = false
 
   var trip: Trip
@@ -42,7 +46,7 @@ struct TripDetailView: View {
               Text("\(friend.firstName) \(friend.lastName)")
               Spacer()
               Image(systemName: trip.friends.contains(friend) ? "checkmark.square" : "square")
-                .foregroundColor(trip.friends.contains(friend) ? Color.secondary : Color.accentColor)  // FIXME colors?
+                .foregroundColor(trip.friends.contains(friend) ? Color.secondary : Color.accentColor)
                 .onTapGesture {
                   if trip.friends.contains(friend) {
                     trip.removeFriend(friend: friend)
@@ -54,7 +58,7 @@ struct TripDetailView: View {
           }
         }
       }
-    } header: {  // FIXME move this?
+    } header: {
       HStack {
         Text("Click to add or delete friends from this trip")
         Spacer()
@@ -64,7 +68,8 @@ struct TripDetailView: View {
     Section {
       Group {
         List {
-          ForEach(trip.transactions) { transaction in
+          // FIXME why did this not show when I used trip.transactions?
+          ForEach(transactions.filter { $0.trip == trip }) { transaction in
             TransactionRowView(transaction: transaction)
           }
         }
@@ -78,14 +83,15 @@ struct TripDetailView: View {
     Divider()
     Section {
       Group {
-        let total = trip.transactions.reduce(0) { partialResult, transaction in
-          partialResult + transaction.amount
-        }
+        let total = transactions.filter { $0.trip == trip }
+          .reduce(0) { partialResult, transaction in
+            partialResult + transaction.amount
+          }
         Text("Total: \(total)")
       }
     } header: {
       HStack {
-        Text("Balances go here!")
+        Text("Balances")
         Spacer()
       }
     }
@@ -94,13 +100,13 @@ struct TripDetailView: View {
 
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
-  return TripDetailView(trip: PreviewController.paris)
+  return TripDetailView(trip: PreviewController.anotherNightOut)
     .modelContainer(previewContainer)
 }
 
 #Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
-  return TripDetailView(trip: PreviewController.paris)
+  return TripDetailView(trip: PreviewController.anotherNightOut)
     .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     .modelContainer(previewContainer)
 }

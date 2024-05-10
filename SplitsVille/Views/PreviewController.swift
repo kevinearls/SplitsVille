@@ -141,7 +141,7 @@ enum PreviewController {
       context.insert(dinner)
 
       // FIXME should I add more transactions here?
-      paris.addTransaction(transaction: rerB)
+      // paris.addTransaction(transaction: rerB)
 
       return container
     } catch {

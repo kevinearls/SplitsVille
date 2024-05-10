@@ -80,26 +80,16 @@ struct AddTransactionView: View {
         }
       }
       .pickerStyle(.menu)
-      // FIXME: Figure out how to only show friends on this trip
-      Picker("Who paid?", selection: $paidBy) {
-        ForEach(friends) { friend in
-          Text(friend.fullName)
-            .font(.largeTitle)
-            .tag(Optional(friend))
+      if selectedTrip != nil {
+        Picker("Who paid?", selection: $paidBy) {
+          ForEach(friends.filter { selectedTrip.friends.contains($0) }) { friend in
+            Text(friend.fullName)
+              .font(.largeTitle)
+              .tag(Optional(friend))
+          }
         }
+        .pickerStyle(.menu)
       }
-      .pickerStyle(.menu)
-      // TODO remove
-      //      if let paidBy {
-      //        Text("PaidBy: \(paidBy.fullName)")
-      //      } else {
-      //        Text("PaidBy is nil")
-      //      }
-      //      if let selectedTrip {
-      //        Text("Trip: \(selectedTrip.name)")
-      //      } else {
-      //        Text("Trip is nil")
-      //      }
     }
   }
 }
