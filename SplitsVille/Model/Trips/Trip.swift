@@ -21,7 +21,7 @@ final class Trip: Equatable, Identifiable, Hashable {
   @Relationship()
   var friends: [Friend] = []
 
-  @Relationship(deleteRule: .cascade, inverse: \Transaction.trip)
+  @Relationship()
   var transactions: [Transaction] = []
 
   init(id: UUID = UUID(), name: String, location: String, startDate: Date = .now, endDate: Date = .distantFuture) {
@@ -41,5 +41,9 @@ final class Trip: Equatable, Identifiable, Hashable {
     if let index = friends.firstIndex(of: friend) {
       friends.remove(at: index)
     }
+  }
+
+  public func addTransaction(transaction: Transaction) {
+    transactions.append(transaction)
   }
 }

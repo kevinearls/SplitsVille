@@ -18,7 +18,7 @@ struct AddTransactionView: View {
   @Binding var showModal: Bool
   @State var desc: String = ""
   @State private var selectedCurrency: Currency = .USD
-  @State private var amount: Decimal = 0.0
+  @State private var amount: Double = 0.0
   // swiftlint:disable:next implicitly_unwrapped_optional
   @State private var paidBy: Friend!
   // swiftlint:disable:next implicitly_unwrapped_optional

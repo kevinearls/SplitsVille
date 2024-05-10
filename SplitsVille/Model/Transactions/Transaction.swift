@@ -14,7 +14,7 @@ import SwiftData
 final class Transaction: Identifiable {
   var id = UUID()
   let currency: String
-  let amount: Decimal
+  let amount: Double
   @Relationship()
   let trip: Trip
   @Relationship()
@@ -23,7 +23,7 @@ final class Transaction: Identifiable {
   @Relationship()
   var sharedWith: [Friend]  // By default add all users on this trip, add issue to select?  How to Query this?
 
-  init(id: UUID = UUID(), currency: String, amount: Decimal, payer: Friend, trip: Trip, desc: String, sharedWith: [Friend] = []) {
+  init(id: UUID = UUID(), currency: String, amount: Double, payer: Friend, trip: Trip, desc: String, sharedWith: [Friend] = []) {
     self.id = id
     self.currency = currency
     self.amount = amount

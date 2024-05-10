@@ -41,24 +41,26 @@ final class TripTest: XCTestCase {
 
   @MainActor
   func testHasFriends() throws {
-    context.insert(TestData.portugal)
+    let lisbon = Trip(name: "Street Art", location: "Lisbon")
+
+    context.insert(lisbon)
 
     context.insert(TestData.amy)
     context.insert(TestData.nancy)
     context.insert(TestData.martha)
     context.insert(TestData.kevin)
 
-    TestData.portugal.addFriend(friend: TestData.amy)
-    TestData.portugal.addFriend(friend: TestData.nancy)
-    TestData.portugal.addFriend(friend: TestData.martha)
-    TestData.portugal.addFriend(friend: TestData.kevin)
+    lisbon.addFriend(friend: TestData.amy)
+    lisbon.addFriend(friend: TestData.nancy)
+    lisbon.addFriend(friend: TestData.martha)
+    lisbon.addFriend(friend: TestData.kevin)
 
-    XCTAssertNotNil(TestData.portugal.friends)
-    XCTAssertEqual(TestData.portugal.friends.count, 4)
-    XCTAssertTrue(TestData.portugal.friends.contains(TestData.amy))
-    XCTAssertTrue(TestData.portugal.friends.contains(TestData.nancy))
-    XCTAssertTrue(TestData.portugal.friends.contains(TestData.martha))
-    XCTAssertTrue(TestData.portugal.friends.contains(TestData.kevin))
+    XCTAssertNotNil(lisbon.friends)
+    XCTAssertEqual(lisbon.friends.count, 4)
+    XCTAssertTrue(lisbon.friends.contains(TestData.amy))
+    XCTAssertTrue(lisbon.friends.contains(TestData.nancy))
+    XCTAssertTrue(lisbon.friends.contains(TestData.martha))
+    XCTAssertTrue(lisbon.friends.contains(TestData.kevin))
   }
 
   @MainActor

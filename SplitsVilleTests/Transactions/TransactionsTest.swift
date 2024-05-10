@@ -28,12 +28,14 @@ final class TransactionsTest: XCTestCase {
     context.insert(TestData.barney)  // TODO do in setup()?
     context.insert(TestData.trip1)
 
-//    let transaction = Transaction(currency: "EUR", payer: TestData.barney, desc: "Dinner")
-//
-//    XCTAssertNotNil(transaction)
-//    XCTAssertEqual(Currency.EUR.rawValue, transaction.currency)
-//    //XCTAssertEqual(transaction.trip, TestData.trip1)
-//    XCTAssertEqual(transaction.paidBy, TestData.barney)
-//    XCTAssertEqual(transaction.desc, "Dinner")
+    // swiftlint:disable:next line_length
+    let transaction = Transaction(currency: "EUR", amount: 11.74, payer: TestData.barney, trip: TestData.trip1, desc: "Dinner")
+    context.insert(transaction)
+
+    XCTAssertNotNil(transaction)
+    XCTAssertEqual(Currency.EUR.rawValue, transaction.currency)
+    XCTAssertEqual(transaction.trip, TestData.trip1)
+    XCTAssertEqual(transaction.paidBy, TestData.barney)
+    XCTAssertEqual(transaction.desc, "Dinner")
   }
 }

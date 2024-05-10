@@ -23,7 +23,6 @@
 		C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B23BF2BCD552800750F14 /* OnboardingScreen.swift */; };
 		C33B23C22BCD55B300750F14 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B23C12BCD55B300750F14 /* OnboardingView.swift */; };
 		C3405F242BCE652300D11D55 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3405F232BCE652300D11D55 /* Launch Screen.storyboard */; };
-		C36006582BD2C4020026ACCF /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36006572BD2C4020026ACCF /* Money.swift */; };
 		C3B8DA0F2BD3EAC000440280 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B8DA0E2BD3EAC000440280 /* Transaction.swift */; };
 		C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65CF02BC85ABD00B21711 /* SplitsVilleApp.swift */; };
 		C3C65CF32BC85ABD00B21711 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65CF22BC85ABD00B21711 /* ContentView.swift */; };
@@ -36,6 +35,9 @@
 		C3D5D9332BE285110019E994 /* TripDetailBalancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D5D9322BE285110019E994 /* TripDetailBalancesView.swift */; };
 		C3EFF0DA2BD7BB9F00716E9F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFF0D92BD7BB9F00716E9F /* Currency.swift */; };
 		C3EFF0DF2BD7D89F00716E9F /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFF0DE2BD7D89F00716E9F /* PreviewController.swift */; };
+		C3F09F592BEE159C0053751D /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F09F582BEE159C0053751D /* Balance.swift */; };
+		C3F09F5C2BEE16D10053751D /* BalancesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F09F5B2BEE16D10053751D /* BalancesTest.swift */; };
+		C3F09F5E2BEE59160053751D /* BalanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F09F5D2BEE59160053751D /* BalanceCalculator.swift */; };
 		C3F0AA192BCFC6B600CC8AB2 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */; };
 		C3F0AA1B2BCFC6C400CC8AB2 /* TripsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1A2BCFC6C400CC8AB2 /* TripsListView.swift */; };
 		C3F0AA1F2BCFC6EB00CC8AB2 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */; };
@@ -86,7 +88,6 @@
 		C33B23BF2BCD552800750F14 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		C33B23C12BCD55B300750F14 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C3405F232BCE652300D11D55 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		C36006572BD2C4020026ACCF /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		C3B8DA0E2BD3EAC000440280 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		C3C65CED2BC85ABD00B21711 /* SplitsVille.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitsVille.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C65CF02BC85ABD00B21711 /* SplitsVilleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsVilleApp.swift; sourceTree = "<group>"; };
@@ -104,6 +105,9 @@
 		C3EFF0D82BD6A29700716E9F /* SplitsVille.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SplitsVille.xctestplan; sourceTree = "<group>"; };
 		C3EFF0D92BD7BB9F00716E9F /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C3EFF0DE2BD7D89F00716E9F /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
+		C3F09F582BEE159C0053751D /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		C3F09F5B2BEE16D10053751D /* BalancesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesTest.swift; sourceTree = "<group>"; };
+		C3F09F5D2BEE59160053751D /* BalanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCalculator.swift; sourceTree = "<group>"; };
 		C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
 		C3F0AA1A2BCFC6C400CC8AB2 /* TripsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListView.swift; sourceTree = "<group>"; };
 		C3F0AA1E2BCFC6EB00CC8AB2 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
@@ -170,12 +174,12 @@
 		C33B23B62BCD523800750F14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C3F09F572BEE15850053751D /* Balances */,
 				C3F772B52BE5125400D93A8A /* Currency */,
 				C3B8DA0D2BD3EAAB00440280 /* Transactions */,
 				C3F0AA362BD03F9700CC8AB2 /* Trips */,
 				C3F0AA292BD02F5100CC8AB2 /* Friend */,
 				C33B23B72BCD524600750F14 /* Onboarding */,
-				C36006572BD2C4020026ACCF /* Money.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,7 +216,6 @@
 				C3C65D1D2BCAD5D600B21711 /* README.md */,
 				C3C65CEF2BC85ABD00B21711 /* SplitsVille */,
 				C3C65D002BC85ABF00B21711 /* SplitsVilleTests */,
-				C3C65D0A2BC85ABF00B21711 /* SplitsVilleUITests */,
 				C3C65CEE2BC85ABD00B21711 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -252,12 +255,14 @@
 		C3C65D002BC85ABF00B21711 /* SplitsVilleTests */ = {
 			isa = PBXGroup;
 			children = (
+				C3F09F5A2BEE16360053751D /* Balances */,
 				C3F772BA2BE5135300D93A8A /* Currency */,
 				C307C4A52BDE60E000ED9348 /* Transactions */,
 				C33B23BA2BCD52AF00750F14 /* OnboardingItemTest.swift */,
 				C3F0AA262BD0294B00CC8AB2 /* FriendsTests.swift */,
 				C3F0AA392BD0409D00CC8AB2 /* TripTest.swift */,
 				C307C4A32BDD611F00ED9348 /* TestData.swift */,
+				C3C65D0A2BC85ABF00B21711 /* SplitsVilleUITests */,
 			);
 			path = SplitsVilleTests;
 			sourceTree = "<group>";
@@ -308,6 +313,23 @@
 		C3EFF0DD2BD7C70D00716E9F /* Balances */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Balances;
+			sourceTree = "<group>";
+		};
+		C3F09F572BEE15850053751D /* Balances */ = {
+			isa = PBXGroup;
+			children = (
+				C3F09F582BEE159C0053751D /* Balance.swift */,
+				C3F09F5D2BEE59160053751D /* BalanceCalculator.swift */,
+			);
+			path = Balances;
+			sourceTree = "<group>";
+		};
+		C3F09F5A2BEE16360053751D /* Balances */ = {
+			isa = PBXGroup;
+			children = (
+				C3F09F5B2BEE16D10053751D /* BalancesTest.swift */,
 			);
 			path = Balances;
 			sourceTree = "<group>";
@@ -497,8 +519,8 @@
 				C3F0AA2F2BD0326700CC8AB2 /* AddFriendView.swift in Sources */,
 				C3C65CF32BC85ABD00B21711 /* ContentView.swift in Sources */,
 				C33B23B92BCD526D00750F14 /* OnboardingItem.swift in Sources */,
+				C3F09F592BEE159C0053751D /* Balance.swift in Sources */,
 				C3EFF0DA2BD7BB9F00716E9F /* Currency.swift in Sources */,
-				C36006582BD2C4020026ACCF /* Money.swift in Sources */,
 				C32F56BF2BE1333200B8FD8D /* DatePickerExample.swift in Sources */,
 				C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */,
 				C3D5D92E2BE283380019E994 /* TripDetailFriendsView.swift in Sources */,
@@ -515,6 +537,7 @@
 				C3D5D9332BE285110019E994 /* TripDetailBalancesView.swift in Sources */,
 				C3F0AA312BD035BD00CC8AB2 /* FriendDetailView.swift in Sources */,
 				C3F772B72BE5129300D93A8A /* ExchangeRates.swift in Sources */,
+				C3F09F5E2BEE59160053751D /* BalanceCalculator.swift in Sources */,
 				C30AF6832BD10E0400F081E3 /* AddTripView.swift in Sources */,
 				C3F0AA332BD03D3E00CC8AB2 /* FriendRowView.swift in Sources */,
 				C307C4A92BDE665800ED9348 /* TransactionRowView.swift in Sources */,
@@ -529,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F09F5C2BEE16D10053751D /* BalancesTest.swift in Sources */,
 				C3F772BC2BE5136D00D93A8A /* ExchangeRatesTest.swift in Sources */,
 				C3F0AA3A2BD0409D00CC8AB2 /* TripTest.swift in Sources */,
 				C3F0AA272BD0294B00CC8AB2 /* FriendsTests.swift in Sources */,
