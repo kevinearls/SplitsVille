@@ -33,7 +33,8 @@ enum PreviewController {
   static let nightOutInBedrock = Trip(name: "Big Night Out", location: "Bedrock")
   static let anotherNightOut = Trip(name: "Another Night Out", location: "Somewhere")
 
-  // FIXME how to get transactions to show uo in previews?  Create them after trip and friend have been added to context?
+  // FIXME how to get transactions to show up in previews?  Create them after trip and friend have been added to context?
+  // swiftlint:disable implicitly_unwrapped_optional
   static var dinosaurBurgers: Transaction!
   static var friedClams: Transaction!
 
@@ -45,6 +46,7 @@ enum PreviewController {
   static var novotel: Transaction!
   static var dinner: Transaction!
   static var sainteChapelle: Transaction!
+  // swiftlint:enable implicitly_unwrapped_optional
 
   //  static let dinosaurBurgers = Transaction(currency: Currency.EUR.rawValue, amount: 15.75, payer: fred, trip: nightOutInBedrock, desc: "Dinosaur Burgers")
   //  // swiftlint:enable line_length
@@ -93,7 +95,7 @@ enum PreviewController {
       paris.addFriend(friend: kevin)
       paris.addFriend(friend: martha)
       paris.addFriend(friend: patrick)
-      
+
       portugal.addFriend(friend: amy)
       portugal.addFriend(friend: nancy)
       portugal.addFriend(friend: martha)
@@ -105,6 +107,7 @@ enum PreviewController {
       ireland.addFriend(friend: martha)
       ireland.addFriend(friend: kevin)
 
+      // swiftlint:disable line_length
       dinosaurBurgers = Transaction(currency: Currency.EUR.rawValue, amount: 15.75, payer: fred, trip: nightOutInBedrock, desc: "Dinosaur Burgers")
       // swiftlint:enable line_length
 
@@ -119,6 +122,7 @@ enum PreviewController {
       context.insert(friedClams)
 
       // Paris transactions
+      // swiftlint:disable line_length
       rerB = Transaction(currency: "EUR", amount: 27.90, payer: kevin, trip: paris, desc: "RER B back to the airport")
       sainteChapelle = Transaction(currency: "EUR", amount: 26.00, payer: martha, trip: paris, desc: "Admission to Sainte-Chapelle")
       arcDeTriompe = Transaction(currency: "EUR", amount: 18.00, payer: kevin, trip: paris, desc: "Admission to the arc de triomphe")
@@ -126,6 +130,7 @@ enum PreviewController {
       fiveGuys = Transaction(currency: "EUR", amount: 46.12, payer: patrick, trip: paris, desc: "Lunch")
       novotel = Transaction(currency: "EUR", amount: 278.73, payer: kevin, trip: paris, desc: "Hotel")
       dinner = Transaction(currency: "EUR", amount: 167.75, payer: martha, trip: paris, desc: "Dinner")
+      // swiftlint:enable line_length
 
       context.insert(rerB)
       context.insert(sainteChapelle)
@@ -135,7 +140,8 @@ enum PreviewController {
       context.insert(novotel)
       context.insert(dinner)
 
-      //paris.addTransaction(transaction: rerB)
+      // FIXME should I add more transactions here?
+      paris.addTransaction(transaction: rerB)
 
       return container
     } catch {

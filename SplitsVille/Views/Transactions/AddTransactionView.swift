@@ -11,8 +11,10 @@ import SwiftData
 struct AddTransactionView: View {
   @Environment(\.modelContext)
   private var modelContext
-  @Query(sort: \Friend.firstName) private var friends: [Friend]
-  @Query(sort: \Trip.name) private var trips: [Trip]
+  @Query(sort: \Friend.firstName)
+  private var friends: [Friend]
+  @Query(sort: \Trip.name)
+  private var trips: [Trip]
   @Binding var showModal: Bool
   @State var desc: String = ""
   @State private var selectedCurrency: Currency = .USD
@@ -88,17 +90,16 @@ struct AddTransactionView: View {
       }
       .pickerStyle(.menu)
       // TODO remove
-//      if let paidBy {
-//        Text("PaidBy: \(paidBy.fullName)")
-//      } else {
-//        Text("PaidBy is nil")
-//      }
-//      if let selectedTrip {
-//        Text("Trip: \(selectedTrip.name)")
-//      } else {
-//        Text("Trip is nil")
-//      }
-
+      //      if let paidBy {
+      //        Text("PaidBy: \(paidBy.fullName)")
+      //      } else {
+      //        Text("PaidBy is nil")
+      //      }
+      //      if let selectedTrip {
+      //        Text("Trip: \(selectedTrip.name)")
+      //      } else {
+      //        Text("Trip is nil")
+      //      }
     }
   }
 }

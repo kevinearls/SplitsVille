@@ -67,17 +67,22 @@ final class TripTest: XCTestCase {
     let container = try ModelContainer(for: Trip.self, Friend.self, configurations: config)
     context = container.mainContext
 
-    context.insert(TestData.portugal)
-    context.insert(TestData.michelle)
-    context.insert(TestData.paul)
+    let kevin = Friend(firstName: "Kevin", lastName: "Earls", currency: "EUR", imageData: Data())
+    let martha = Friend(firstName: "Martha", lastName: "Earls", currency: "EUR", imageData: Data())
+    let portugal = Trip(name: "Street Art", location: "Portugal")
 
-    TestData.portugal.addFriend(friend: TestData.michelle)
-    TestData.portugal.addFriend(friend: TestData.paul)
-    XCTAssertEqual(2, TestData.portugal.friends.count)
+    context.insert(portugal)
+    context.insert(kevin)
+    context.insert(martha)
 
-    TestData.portugal.removeFriend(friend: TestData.michelle)
-    XCTAssertEqual(1, TestData.portugal.friends.count)
-    XCTAssertFalse(TestData.portugal.friends.contains(TestData.michelle))
-    XCTAssertTrue(TestData.portugal.friends.contains(TestData.paul))
+    portugal.addFriend(friend: kevin)
+    portugal.addFriend(friend: martha)
+
+    XCTAssertEqual(2, portugal.friends.count)
+
+    portugal.removeFriend(friend: martha)
+    XCTAssertEqual(1, portugal.friends.count)
+    XCTAssertFalse(portugal.friends.contains(martha))
+    XCTAssertTrue(portugal.friends.contains(kevin))
   }
 }
