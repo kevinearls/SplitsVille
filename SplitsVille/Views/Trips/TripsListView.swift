@@ -19,6 +19,7 @@ struct TripsListView: View {
           ForEach(trips) { trip in
             NavigationLink(value: trip) {
               TripRowView(trip: trip)
+                .accessibilityIdentifier(trip.name)
             }
           }
         }

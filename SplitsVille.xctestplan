@@ -20,17 +20,15 @@
       "parallelizable" : true,
       "target" : {
         "containerPath" : "container:SplitsVille.xcodeproj",
-        "identifier" : "C3C65CFC2BC85ABF00B21711",
-        "name" : "SplitsVilleTests"
+        "identifier" : "C3C65D062BC85ABF00B21711",
+        "name" : "SplitsVilleUITests"
       }
     },
     {
-      "enabled" : false,
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:SplitsVille.xcodeproj",
-        "identifier" : "C3C65D062BC85ABF00B21711",
-        "name" : "SplitsVilleUITests"
+        "identifier" : "C3C65CFC2BC85ABF00B21711",
+        "name" : "SplitsVilleTests"
       }
     }
   ],

@@ -33,7 +33,9 @@ struct FriendsListView: View {
             })
           }
           ToolbarItem(placement: .navigationBarLeading) {
-            Text("Friends").font(.largeTitle)
+            Text("Friends")
+              .font(.largeTitle)
+              .accessibilityIdentifier("FriendsTitle")
           }
         }
       }
