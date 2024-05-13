@@ -18,7 +18,7 @@ public class OwedBy: Equatable {
 
   init(friend: Friend, currency: Currency, amount: Double = 0.0) {
     self.friend = friend
-    self.currency = currency
+    self.currency = currency  // FIXME or should currency = friend.currency?
     self.amount = amount
   }
 }
@@ -26,16 +26,17 @@ public class OwedBy: Equatable {
 public class Balance {
   let principal: Friend
   let trip: Trip
-  let friendsOnTrip: [Friend] = []
-  var entries: [OwedBy] = []
+  let friendsOnTrip: [Friend] = [] // TODO do we need this?
+  var entries: [OwedBy] = []  // FIXME should this be a dictionary of OwedBy?
+                              // or a dictionary of [Friend: (currency, amount)
 
   var description: String {
     var desc = "Principal: ["
     desc.append(principal.fullName)
-    desc.append("] is owed ")
+    desc.append("] owes ")
     for entry in entries {
       desc.append(String(entry.amount))
-      desc.append(" by ")
+      desc.append(" to ")
       desc.append(entry.friend.fullName)
       desc.append("; ")
     }
@@ -46,7 +47,7 @@ public class Balance {
     self.principal = principal
     self.trip = trip
     for friend in trip.friends where friend != principal {
-      // TODO: how to set currency here?
+      // TODO: how to set currency here? Does it need to be here?
       let newEntry = OwedBy(friend: friend, currency: .USD, amount: 0.0)
       entries.append(newEntry)
     }

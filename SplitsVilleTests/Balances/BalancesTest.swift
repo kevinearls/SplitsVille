@@ -111,19 +111,27 @@ final class BalancesTest: XCTestCase {
     XCTAssertEqual(grid[patrick]?.entries.count, 2)
     XCTAssertEqual(grid[martha]?.entries.count, 2)
 
-    guard let kevinFirst = grid[kevin]?.entries.first else {
+    guard let kevinsEntries = grid[kevin]?.entries else {
       throw TestError.error
     }
-    XCTAssertEqual(kevinFirst.amount, 31.0)
+    XCTAssertEqual(kevinsEntries.count, 2)
+    for entry in kevinsEntries {
+      if entry.friend == martha {
+        XCTAssertEqual(entry.amount, 8.66, accuracy: 0.1)
+      } else if entry.friend == patrick {
+        XCTAssertEqual(entry.amount, 15.37, accuracy: 0.1)
+      }
+    }
 
-    guard let patrickFirst = grid[patrick]?.entries.first else {
-      throw TestError.error
-    }
-    XCTAssertEqual(patrickFirst.amount, 15.37, accuracy: 0.1)
 
-    guard let marthaFirst = grid[martha]?.entries.first else {
-      throw TestError.error
-    }
-    XCTAssertEqual(marthaFirst.amount, 8.66, accuracy: 0.1)
+//    guard let patrickFirst = grid[patrick]?.entries.first else {
+//      throw TestError.error
+//    }
+//    XCTAssertEqual(patrickFirst.amount, 15.37, accuracy: 0.1)
+//
+//    guard let marthaFirst = grid[martha]?.entries.first else {
+//      throw TestError.error
+//    }
+//    XCTAssertEqual(marthaFirst.amount, 8.66, accuracy: 0.1)
   }
 }

@@ -22,6 +22,13 @@ class BalanceCalculator {
       processTransaction(transaction, grid: grid)
     }
 
+    // TODO for debugging, remove
+    print("--------------------")
+    for balances in grid.values {
+      print(balances.description)
+    }
+    print("--------------------")
+
     return grid
   }
 
@@ -33,12 +40,22 @@ class BalanceCalculator {
     }
 
     let amountToAdd = transaction.amount / Double(transaction.sharedWith.count + 1)
-    print("Calculated amount is \(amountToAdd)")
+
+    for friend in transaction.sharedWith where friend != transaction.paidBy {
+      if let balances = grid[friend] {
+        for entry in balances.entries {
+          if entry.friend == transaction.paidBy {
+           // print(">>>>> Adding to entry for \(friend.firstName)")
+            entry.amount += amountToAdd
+          }
+        }
+      }
+    }
 
     // Find the grid entry for the payer, add amountToAdd to other people who were in on this transaction
-    for entry in paidByBalance.entries {
-      entry.amount += amountToAdd
-    }
+//    for entry in paidByBalance.entries {
+//      entry.amount += amountToAdd
+//    }
   }
 
   // TODO write a simplify function, which can take a [Friend: Balance] and simplify it, i.e

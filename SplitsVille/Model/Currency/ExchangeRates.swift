@@ -7,22 +7,26 @@
 
 import Foundation
 
+enum ExchangeRateError: Error {
+  case CurrencyNotFound
+  case FailedConversionToDouble
+}
+
 struct ExchangeRates: Codable {
   var date: String
   var base: String
   var rates: [String: String]
 
-  func getRateFromBase(for currency: String) -> Double {
+  func getRateFromBase(for currency: String) throws -> Double {
     if let rate = rates[currency] {
       let doubleResult = Double(rate)
       if let doubleResult {
         return doubleResult
+      } else {
+        throw ExchangeRateError.FailedConversionToDouble
       }
-      // TODO log or throw?
-      return 0.0
     } else {
-      // TODO log or throw?
-      return 0.0
+      throw ExchangeRateError.CurrencyNotFound
     }
   }
 
@@ -37,13 +41,13 @@ struct ExchangeRates: Codable {
 
   if the fromCurrency == base, just return the rate from the other getRate function
   */
-  func getRate(fromCurrency: String, toCurrency: String) -> Double {
+  func getRate(fromCurrency: String, toCurrency: String) throws -> Double {
     if fromCurrency == base {
-      return getRateFromBase(for: fromCurrency)
+      return try getRateFromBase(for: fromCurrency)
     } else if toCurrency == base {
-      return 1.0 / getRateFromBase(for: fromCurrency)
+      return try 1.0 / getRateFromBase(for: fromCurrency)
     } else {
-      return 1.0 / getRateFromBase(for: fromCurrency) * getRateFromBase(for: toCurrency)
+      return try 1.0 / getRateFromBase(for: fromCurrency) *  getRateFromBase(for: toCurrency)
     }
   }
 }

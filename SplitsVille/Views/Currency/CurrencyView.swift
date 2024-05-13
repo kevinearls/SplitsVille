@@ -11,18 +11,20 @@ struct CurrencyView: View {
   @EnvironmentObject var exchangeRateStore: ExchangeRatesStore
   @State var downloadError: String = ""
   @State var isDownloading = false
+  @State var showAlert = false
 
   var body: some View {
     VStack {
-      if let rates = exchangeRateStore.exchangeRates {
-        Text("Todays' Exchange rates vs \(rates.base)")
+      if let exchangeRates = exchangeRateStore.exchangeRates {
+        Text("Todays' Exchange rates vs \(exchangeRates.base)")
           .font(.title)
         List {
-          ForEach(Currency.allCases) { currency in
+          ForEach(exchangeRates.rates.keys.sorted(), id: \.self) { key in
             HStack {
-              Text("\(currency.rawValue)")
+              Text("\(key)")
                 .font(.headline)
-              Text("\(rates.getRateFromBase(for: currency.rawValue))")
+              Text("\(exchangeRates.rates[key] ?? "---")")
+                .font(.headline)
             }
           }
         }

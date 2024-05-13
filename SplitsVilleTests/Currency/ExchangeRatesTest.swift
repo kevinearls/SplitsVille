@@ -45,14 +45,18 @@ final class ExchangeRatesTest: XCTestCase {
   }
 
   func testGetRateSingle() throws {
-    XCTAssertEqual(0.9319709990078193, exchangeRates.getRateFromBase(for: "EUR"))
+    XCTAssertEqual(0.9319709990078193, try exchangeRates.getRateFromBase(for: "EUR"))
   }
 
   func testToFromNonUSD() throws {
-    XCTAssertEqual(0.85, exchangeRates.getRate(fromCurrency: "EUR", toCurrency: "GBP"), accuracy: 0.01)
+    XCTAssertEqual(0.85, try exchangeRates.getRate(fromCurrency: "EUR", toCurrency: "GBP"), accuracy: 0.01)
   }
 
   func testToUSDollars() {
-    XCTAssertEqual(1.07, exchangeRates.getRate(fromCurrency: "EUR", toCurrency: "USD"), accuracy: 0.01)
+    XCTAssertEqual(1.07, try exchangeRates.getRate(fromCurrency: "EUR", toCurrency: "USD"), accuracy: 0.01)
+  }
+
+  func testCurrencyNotFoundErrorTest() {
+    XCTAssertThrowsError(try exchangeRates.getRateFromBase(for: "XYZ"))
   }
 }

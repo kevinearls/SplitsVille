@@ -17,8 +17,6 @@
 		C30AF6832BD10E0400F081E3 /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AF6822BD10E0400F081E3 /* AddTripView.swift */; };
 		C31141982BEE857500BABFA5 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31141942BEE857500BABFA5 /* OnboardingScreen.swift */; };
 		C31141992BEE857500BABFA5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31141952BEE857500BABFA5 /* OnboardingView.swift */; };
-		C32F56BF2BE1333200B8FD8D /* DatePickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32F56BE2BE1333200B8FD8D /* DatePickerExample.swift */; };
-		C32F56C12BE133A400B8FD8D /* PhotoPickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32F56C02BE133A400B8FD8D /* PhotoPickerExample.swift */; };
 		C33B23B92BCD526D00750F14 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B23B82BCD526D00750F14 /* OnboardingItem.swift */; };
 		C33B23BB2BCD52AF00750F14 /* OnboardingItemTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B23BA2BCD52AF00750F14 /* OnboardingItemTest.swift */; };
 		C33B23BD2BCD54C900750F14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B23BC2BCD54C900750F14 /* Constants.swift */; };
@@ -84,8 +82,6 @@
 		C30AF6822BD10E0400F081E3 /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
 		C31141942BEE857500BABFA5 /* OnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		C31141952BEE857500BABFA5 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		C32F56BE2BE1333200B8FD8D /* DatePickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerExample.swift; sourceTree = "<group>"; };
-		C32F56C02BE133A400B8FD8D /* PhotoPickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerExample.swift; sourceTree = "<group>"; };
 		C33B23B82BCD526D00750F14 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 		C33B23BA2BCD52AF00750F14 /* OnboardingItemTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemTest.swift; sourceTree = "<group>"; };
 		C33B23BC2BCD54C900750F14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -355,8 +351,6 @@
 				C3F0AA182BCFC6B600CC8AB2 /* FriendsListView.swift */,
 				C3F0AA302BD035BD00CC8AB2 /* FriendDetailView.swift */,
 				C3F0AA322BD03D3E00CC8AB2 /* FriendRowView.swift */,
-				C32F56BE2BE1333200B8FD8D /* DatePickerExample.swift */,
-				C32F56C02BE133A400B8FD8D /* PhotoPickerExample.swift */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -535,7 +529,6 @@
 				C33B23B92BCD526D00750F14 /* OnboardingItem.swift in Sources */,
 				C3F09F592BEE159C0053751D /* Balance.swift in Sources */,
 				C3EFF0DA2BD7BB9F00716E9F /* Currency.swift in Sources */,
-				C32F56BF2BE1333200B8FD8D /* DatePickerExample.swift in Sources */,
 				C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */,
 				C3D5D92E2BE283380019E994 /* TripDetailFriendsView.swift in Sources */,
 				C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */,
@@ -560,7 +553,6 @@
 				C3EFF0DF2BD7D89F00716E9F /* PreviewController.swift in Sources */,
 				C3F0AA352BD03F8700CC8AB2 /* Trip.swift in Sources */,
 				C3F0AA232BD01D2E00CC8AB2 /* Friend.swift in Sources */,
-				C32F56C12BE133A400B8FD8D /* PhotoPickerExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
