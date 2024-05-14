@@ -28,7 +28,7 @@ public class Balance {
   let trip: Trip
   let friendsOnTrip: [Friend] = [] // TODO do we need this?
   var entries: [OwedBy] = []  // FIXME should this be a dictionary of OwedBy?
-                              // or a dictionary of [Friend: (currency, amount)
+  // or a dictionary of [Friend: (currency, amount)
 
   var description: String {
     var desc = "Principal: ["

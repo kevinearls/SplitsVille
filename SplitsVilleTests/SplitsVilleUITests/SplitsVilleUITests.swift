@@ -24,8 +24,8 @@ final class SplitsVilleUITests: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
 
-
   func testHomeScreen() throws {
+  skipOnboarding(app: app)  // TODO can I put this in setup?
     let tabBar = app.tabBars["Tab Bar"]
     // First make sure there are four tabs
     tabBar.buttons["Trips"].tap()
@@ -49,22 +49,14 @@ final class SplitsVilleUITests: XCTestCase {
     checkNavigation(button: friendsButton, expectedText: "Friends")
   }
 
-  func testAddFriendsView() throws {
-  let app = XCUIApplication()
-    app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"]/*@START_MENU_TOKEN@*/.buttons["Add"]/*[[".otherElements[\"Add\"].buttons[\"Add\"]",".buttons[\"Add\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-    
-    let collectionViewsQuery = app.collectionViews
-    let firstNameField = collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["First Name:"]/*[[".cells.textFields[\"First Name:\"]",".textFields[\"First Name:\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-    firstNameField.tap();
-    firstNameField.typeText("Fred")
-
-    let lastNameTextView = collectionViewsQuery/*@START_MENU_TOKEN@*/.textViews["Last Name"]/*[[".cells.textViews[\"Last Name\"]",".textViews[\"Last Name\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-    lastNameTextView.tap()
-    lastNameTextView.typeText("Flintstone")
-
-    print(">>>>>>>>>>>> Picker Count? \(app.pickers.count)")
-    // FIXME - how to find the currency picker, how to add an avatar
-    // collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["USD"]/*[[".cells",".buttons[\"Currency, USD\"].staticTexts[\"USD\"]",".staticTexts[\"USD\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+  public func skipOnboarding(app: XCUIApplication) {
+    if app.collectionViews/*@START_MENU_TOKEN@*/.scrollViews/*[[".cells.scrollViews",".scrollViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements.staticTexts["Welcome to $plitsvill€"].exists {
+      print(">>>>>>>>>> Skipping onboarding...")
+      app.buttons["Next"].tap()
+      app.buttons["Done"].tap()
+    } else {
+      print(">>>>>>>>>> NOT on the onboarding screen")
+    }
   }
 
   // Just tap this button and verify that it goes to the correct page
@@ -74,5 +66,4 @@ final class SplitsVilleUITests: XCTestCase {
     let navBar = app.navigationBars.firstMatch
     XCTAssertTrue(navBar.staticTexts[expectedText].exists)
   }
-
 }

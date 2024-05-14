@@ -8,8 +8,8 @@
 import Foundation
 
 enum ExchangeRateError: Error {
-  case CurrencyNotFound
-  case FailedConversionToDouble
+  case currencyNotFound
+  case failedConversionToDouble
 }
 
 struct ExchangeRates: Codable {
@@ -47,7 +47,7 @@ struct ExchangeRates: Codable {
     } else if toCurrency == base {
       return try 1.0 / getRateFromBase(for: fromCurrency)
     } else {
-      return try 1.0 / getRateFromBase(for: fromCurrency) *  getRateFromBase(for: toCurrency)
+      return try 1.0 / getRateFromBase(for: fromCurrency) * getRateFromBase(for: toCurrency)
     }
   }
 }

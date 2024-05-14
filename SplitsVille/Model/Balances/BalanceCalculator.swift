@@ -33,31 +33,29 @@ class BalanceCalculator {
   }
 
   private func processTransaction(_ transaction: Transaction, grid: [Friend: Balance]) {
-    guard let paidByBalance = grid[transaction.paidBy] else {
-      // FIXME throw here...
-      // throw BalanceCalculatorError.FriendNotFound
-      return
-    }
+    //    guard let paidByBalance = grid[transaction.paidBy] else {
+    //      // FIXME throw here...
+    //      // throw BalanceCalculatorError.FriendNotFound
+    //      return
+    //    }
 
     let amountToAdd = transaction.amount / Double(transaction.sharedWith.count + 1)
 
     for friend in transaction.sharedWith where friend != transaction.paidBy {
       if let balances = grid[friend] {
-        for entry in balances.entries {
-          if entry.friend == transaction.paidBy {
-           // print(">>>>> Adding to entry for \(friend.firstName)")
-            entry.amount += amountToAdd
-          }
+        for entry in balances.entries where entry.friend == transaction.paidBy {
+          entry.amount += amountToAdd
         }
       }
     }
-
-    // Find the grid entry for the payer, add amountToAdd to other people who were in on this transaction
-//    for entry in paidByBalance.entries {
-//      entry.amount += amountToAdd
-//    }
   }
 
-  // TODO write a simplify function, which can take a [Friend: Balance] and simplify it, i.e
-  // if I owe you $10 and you owe me $20, it will update the amounts so that you owe me $10
+  // Find the grid entry for the payer, add amountToAdd to other people who were in on this transaction
+  //    for entry in paidByBalance.entries {
+  //      entry.amount += amountToAdd
+  //    }
+}
+
+// TODO write a simplify function, which can take a [Friend: Balance] and simplify it, i.e
+// if I owe you $10 and you owe me $20, it will update the amounts so that you owe me $10
 }

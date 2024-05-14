@@ -22,6 +22,8 @@
 		C33B23C02BCD552800750F14 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B23BF2BCD552800750F14 /* OnboardingScreen.swift */; };
 		C33B23C22BCD55B300750F14 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B23C12BCD55B300750F14 /* OnboardingView.swift */; };
 		C3405F242BCE652300D11D55 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3405F232BCE652300D11D55 /* Launch Screen.storyboard */; };
+		C38842962BF3629800CF1FA7 /* FriendsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38842952BF3629800CF1FA7 /* FriendsTest.swift */; };
+		C38842982BF366AF00CF1FA7 /* TransactionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38842972BF366AF00CF1FA7 /* TransactionsTest.swift */; };
 		C3AE1F962BF25E9600EC347D /* CurrencyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE1F952BF25E9600EC347D /* CurrencyTest.swift */; };
 		C3B8DA0F2BD3EAC000440280 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B8DA0E2BD3EAC000440280 /* Transaction.swift */; };
 		C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65CF02BC85ABD00B21711 /* SplitsVilleApp.swift */; };
@@ -87,6 +89,8 @@
 		C33B23BF2BCD552800750F14 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		C33B23C12BCD55B300750F14 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C3405F232BCE652300D11D55 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C38842952BF3629800CF1FA7 /* FriendsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTest.swift; sourceTree = "<group>"; };
+		C38842972BF366AF00CF1FA7 /* TransactionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTest.swift; sourceTree = "<group>"; };
 		C3AE1F952BF25E9600EC347D /* CurrencyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTest.swift; sourceTree = "<group>"; };
 		C3B8DA0E2BD3EAC000440280 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		C3C65CED2BC85ABD00B21711 /* SplitsVille.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitsVille.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +205,44 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		C38842902BF360EF00CF1FA7 /* UI Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UI Tests";
+			sourceTree = "<group>";
+		};
+		C38842912BF3622A00CF1FA7 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				C38842952BF3629800CF1FA7 /* FriendsTest.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		C38842922BF3624000CF1FA7 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				C32C12242BF23FDF00227DF8 /* TripsUITests.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		C38842932BF3624B00CF1FA7 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
+		C38842942BF3625400CF1FA7 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				C38842972BF366AF00CF1FA7 /* TransactionsTest.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
 		C3B8DA0D2BD3EAAB00440280 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +254,7 @@
 		C3C65CE42BC85ABD00B21711 = {
 			isa = PBXGroup;
 			children = (
+				C38842902BF360EF00CF1FA7 /* UI Tests */,
 				C3EFF0D82BD6A29700716E9F /* SplitsVille.xctestplan */,
 				C3C65D1D2BCAD5D600B21711 /* README.md */,
 				C3C65CEF2BC85ABD00B21711 /* SplitsVille */,
@@ -270,9 +313,12 @@
 		C3C65D0A2BC85ABF00B21711 /* SplitsVilleUITests */ = {
 			isa = PBXGroup;
 			children = (
+				C38842942BF3625400CF1FA7 /* Transactions */,
+				C38842932BF3624B00CF1FA7 /* Currency */,
+				C38842922BF3624000CF1FA7 /* Trips */,
+				C38842912BF3622A00CF1FA7 /* Friends */,
 				C3C65D0B2BC85ABF00B21711 /* SplitsVilleUITests.swift */,
 				C3C65D0D2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift */,
-				C32C12242BF23FDF00227DF8 /* TripsUITests.swift */,
 			);
 			path = SplitsVilleUITests;
 			sourceTree = "<group>";
@@ -565,9 +611,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38842982BF366AF00CF1FA7 /* TransactionsTest.swift in Sources */,
 				C3C65D0E2BC85ABF00B21711 /* SplitsVilleUITestsLaunchTests.swift in Sources */,
 				C3C65D0C2BC85ABF00B21711 /* SplitsVilleUITests.swift in Sources */,
 				C32C12252BF23FDF00227DF8 /* TripsUITests.swift in Sources */,
+				C38842962BF3629800CF1FA7 /* FriendsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

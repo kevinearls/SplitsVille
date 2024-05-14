@@ -20,6 +20,7 @@ struct FriendsListView: View {
           ForEach(friends) { friend in
             NavigationLink(value: friend) {
               FriendRowView(friend: friend)
+                .accessibilityIdentifier(friend.firstName + friend.lastName + "Row")
             }
           }
         }
@@ -31,6 +32,7 @@ struct FriendsListView: View {
             Button(action: { isPresented.toggle() }, label: {
               Image(systemName: "plus.circle.fill")
             })
+            .accessibilityIdentifier(Constants.ButtonNames.addFriendButton)
           }
           ToolbarItem(placement: .navigationBarLeading) {
             Text("Friends")

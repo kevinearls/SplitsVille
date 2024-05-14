@@ -58,7 +58,7 @@ struct AddFriendView: View {
         .disabled(firstName.isEmpty || lastName.isEmpty || avatarItem == nil)
       }
       VStack {
-        TextField("First Name:", text: $firstName)
+        TextField("First Name", text: $firstName)
           .padding()
         TextField("Last Name", text: $lastName, axis: .vertical)
           .padding()

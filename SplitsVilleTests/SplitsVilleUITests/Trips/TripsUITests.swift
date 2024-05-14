@@ -20,15 +20,15 @@ final class TripsUITests: XCTestCase {
   }
 
   /*
-   A simple test of the trip views
+  A simple test of the trip views
 
-   1. Click on the trips tab - it should take us to the TripsListView
-   2. Click on the + to add a trip  ; maybe with a generated name?
-   3. Add the trip
-   4. Make sure that trip exists
-   5  Click on that trip to go to the detail view
-   6. Navigate back to the list view
-   */
+  1. Click on the trips tab - it should take us to the TripsListView
+  2. Click on the + to add a trip  ; maybe with a generated name?
+  3. Add the trip
+  4. Make sure that trip exists
+  5  Click on that trip to go to the detail view
+  6. Navigate back to the list view
+  */
   func testExample() throws {
     // 1. Go to the trips page
     app.tabBars["Tab Bar"].buttons["Trips"].tap()
