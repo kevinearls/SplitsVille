@@ -11,6 +11,9 @@ enum BalanceCalculatorError {
   case friendNotFound
 }
 
+
+// TODO write a simplify function, which can take a [Friend: Balance] and simplify it, i.e
+// if I owe you $10 and you owe me $20, it will update the amounts so that you owe me $10
 class BalanceCalculator {
   public func calculateBalances(trip: Trip) -> [Friend: Balance] {
     var grid: [Friend: Balance] = [:]
@@ -49,13 +52,4 @@ class BalanceCalculator {
       }
     }
   }
-
-  // Find the grid entry for the payer, add amountToAdd to other people who were in on this transaction
-  //    for entry in paidByBalance.entries {
-  //      entry.amount += amountToAdd
-  //    }
-}
-
-// TODO write a simplify function, which can take a [Friend: Balance] and simplify it, i.e
-// if I owe you $10 and you owe me $20, it will update the amounts so that you owe me $10
 }

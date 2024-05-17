@@ -16,10 +16,19 @@ struct TripsListView: View {
     VStack(alignment: .leading) {
       NavigationStack {
         List {
-          ForEach(trips) { trip in
-            NavigationLink(value: trip) {
-              TripRowView(trip: trip)
-                .accessibilityIdentifier(trip.name)
+          if trips.isEmpty {
+            VStack {
+              Spacer()
+              Text("There are no trips so far.  To add some, click on the + above")
+                .font(.largeTitle)
+              Spacer()
+            }
+          } else {
+            ForEach(trips) { trip in
+              NavigationLink(value: trip) {
+                TripRowView(trip: trip)
+                  .accessibilityIdentifier(trip.name)
+              }
             }
           }
         }
@@ -49,6 +58,12 @@ struct TripsListView: View {
   let previewContainer = PreviewController.previewContainer
   return TripsListView()
     .modelContainer(previewContainer)
+}
+
+#Preview("Light, Portrait, Empty") {
+  let emptyContainer = PreviewController.emptyContainer
+  return TripsListView()
+    .modelContainer(emptyContainer)
 }
 
 #Preview("Dark, Landscape") {

@@ -23,10 +23,10 @@ struct ExchangeRates: Codable {
       if let doubleResult {
         return doubleResult
       } else {
-        throw ExchangeRateError.FailedConversionToDouble
+        throw ExchangeRateError.failedConversionToDouble
       }
     } else {
-      throw ExchangeRateError.CurrencyNotFound
+      throw ExchangeRateError.currencyNotFound
     }
   }
 

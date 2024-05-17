@@ -17,9 +17,18 @@ struct TransactionsListView: View {
     VStack(alignment: .leading) {
       NavigationStack {
         List {
-          ForEach(transactions) { transaction in
-            NavigationLink(value: transaction) {
-              TransactionRowView(transaction: transaction)
+          if transactions.isEmpty {
+            VStack {
+              Spacer()
+              Text("There are no transactions so far.  To add some, click on the + above")
+                .font(.largeTitle)
+              Spacer()
+            }
+          } else {
+            ForEach(transactions) { transaction in
+              NavigationLink(value: transaction) {
+                TransactionRowView(transaction: transaction)
+              }
             }
           }
         }
@@ -49,6 +58,12 @@ struct TransactionsListView: View {
   let previewContainer = PreviewController.previewContainer
   return TransactionsListView()
     .modelContainer(previewContainer)
+}
+
+#Preview("Light, Portrait, Empty") {
+  let emptyContainer = PreviewController.emptyContainer
+  return TransactionsListView()
+    .modelContainer(emptyContainer)
 }
 
 #Preview("Dark, Landscape", traits: .landscapeLeft) {

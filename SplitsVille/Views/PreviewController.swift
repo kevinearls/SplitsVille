@@ -148,4 +148,16 @@ enum PreviewController {
       fatalError("Failed to create model container for previewing: \(error.localizedDescription)")
     }
   }()
+
+  static var emptyContainer: ModelContainer = {
+    do {
+      let config = ModelConfiguration(isStoredInMemoryOnly: true)
+      let container = try ModelContainer(for: Trip.self, Friend.self, Transaction.self, configurations: config)
+      let context = container.mainContext
+
+      return container
+    } catch {
+      fatalError("Failed to create model container for previewing: \(error.localizedDescription)")
+    }
+  }()
 }
