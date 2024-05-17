@@ -91,6 +91,11 @@ struct AddTransactionView: View {
         .pickerStyle(.menu)
       }
     }
+    .onAppear(perform: {
+      // This is required to get the Pickers to work correctly with SwiftData
+      paidBy = friends.first
+      selectedTrip = trips.first
+    })
   }
 }
 
