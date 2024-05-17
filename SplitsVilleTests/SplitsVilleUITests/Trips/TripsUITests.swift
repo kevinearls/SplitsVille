@@ -8,6 +8,7 @@
 import XCTest
 
 final class TripsUITests: XCTestCase {
+  // swiftlint:disable:next implicitly_unwrapped_optional
   var app: XCUIApplication!
 
   override func setUpWithError() throws {
@@ -35,6 +36,7 @@ final class TripsUITests: XCTestCase {
     // 2. Verify that we're on that page and click the add button
     let navBar = app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"]
     XCTAssert(app.staticTexts["Trips"].exists)
+    // swiftlint:disable:next line_length
     navBar/*@START_MENU_TOKEN@*/.buttons["Add"]/*[[".otherElements[\"Add\"].buttons[\"Add\"]",".buttons[\"Add\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     XCTAssert(app.staticTexts["Add a Trip"].exists)
 
@@ -45,10 +47,12 @@ final class TripsUITests: XCTestCase {
     let tripLocation = "Location+\(tripUuid)"
 
     let collectionViewsQuery = app.collectionViews
+    // swiftlint:disable:next line_length
     let nameTextField = collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["Name:"]/*[[".cells.textFields[\"Name:\"]",".textFields[\"Name:\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
     nameTextField.tap()
     nameTextField.typeText(tripName)
 
+    // swiftlint:disable:next line_length
     let locationTextField = collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["Location:"]/*[[".cells.textFields[\"Location:\"]",".textFields[\"Location:\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
     XCTAssertTrue(locationTextField.waitForExistence(timeout: 5))
     locationTextField.tap()

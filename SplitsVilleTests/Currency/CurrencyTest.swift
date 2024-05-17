@@ -9,7 +9,6 @@ import XCTest
 @testable import SplitsVille
 
 final class CurrencyTest: XCTestCase {
-
   // This doesn't do much but increases code coverage numbers
   func testExample() throws {
     XCTAssertEqual(Currency.allCases.count, 8)

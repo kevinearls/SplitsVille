@@ -8,6 +8,7 @@
 import XCTest
 
 final class SplitsVilleUITests: XCTestCase {
+  // swiftlint:disable:next implicitly_unwrapped_optional
   var app: XCUIApplication!
 
   override func setUpWithError() throws {
@@ -41,15 +42,16 @@ final class SplitsVilleUITests: XCTestCase {
     let friendsButton = tabBar.buttons["Friends"]
     let tripsButton = tabBar.buttons["Trips"]
     let transactionsButton = tabBar.buttons["Transactions"]
-    //let currencyButton = tabBar.buttons["Currency"]
+    // let currencyButton = tabBar.buttons["Currency"]
 
     checkNavigation(button: tripsButton, expectedText: "Trips")
-    checkNavigation(button: transactionsButton , expectedText: "Transactions")
-    //checkNavigation(button: currencyButton, expectedText: "Todays' Exchange rates vs USD")  // FIXME
+    checkNavigation(button: transactionsButton, expectedText: "Transactions")
+    // checkNavigation(button: currencyButton, expectedText: "Todays' Exchange rates vs USD")  // FIXME
     checkNavigation(button: friendsButton, expectedText: "Friends")
   }
 
   public func skipOnboarding(app: XCUIApplication) {
+    // swiftlint:disable:next line_length
     if app.collectionViews/*@START_MENU_TOKEN@*/.scrollViews/*[[".cells.scrollViews",".scrollViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements.staticTexts["Welcome to $plitsvill€"].exists {
       print(">>>>>>>>>> Skipping onboarding...")
       app.buttons["Next"].tap()
