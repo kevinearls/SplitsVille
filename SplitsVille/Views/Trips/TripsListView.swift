@@ -9,8 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct TripsListView: View {
-  @Query private var trips: [Trip]
+  @Environment(\.modelContext)
+  private var modelContext
+
+  @Query(sort: \Trip.name) private var trips: [Trip]
   @State private var isPresented = false
+  @State private var tripToDelete:Trip!
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -30,6 +34,12 @@ struct TripsListView: View {
                   .accessibilityIdentifier(trip.name)
               }
             }
+            .onDelete(perform: { indexSet in
+              for offset in indexSet {
+                let trip = trips[offset]
+                modelContext.delete(trip)
+              }
+            })
           }
         }
         .navigationDestination(for: Trip.self) { trip in

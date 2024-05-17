@@ -8,7 +8,9 @@ import SwiftUI
 import SwiftData
 
 struct FriendsListView: View {
-  @Query private var friends: [Friend]
+  @Environment(\.modelContext)
+  private var modelContext
+  @Query(sort: \Friend.firstName)  private var friends: [Friend]
   @State private var isPresented = false
   var body: some View {
     VStack(alignment: .leading) {
@@ -28,6 +30,12 @@ struct FriendsListView: View {
                   .accessibilityIdentifier(friend.firstName + friend.lastName + "Row")
               }
             }
+             .onDelete(perform: { indexSet in
+              for offset in indexSet {
+                let friend = friends[offset]
+                modelContext.delete(friend)
+              }
+            })
           }
         }
         .navigationDestination(for: Friend.self) { friend in

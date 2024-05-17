@@ -9,7 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct TransactionsListView: View {
-  @Query(sort: \Transaction.trip.name)
+  @Environment(\.modelContext)
+  private var modelContext
+
+  @Query(sort: \Transaction.trip.name)  // TODO can we do more than 1 sort here?  
   private var transactions: [Transaction]
   @State private var isPresented = false
 
@@ -30,6 +33,12 @@ struct TransactionsListView: View {
                 TransactionRowView(transaction: transaction)
               }
             }
+             .onDelete(perform: { indexSet in
+              for offset in indexSet {
+                let transaction = transactions[offset]
+                modelContext.delete(transaction)
+              }
+            })
           }
         }
         .navigationDestination(for: Transaction.self) { transaction in

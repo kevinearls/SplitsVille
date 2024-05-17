@@ -22,7 +22,7 @@ struct FriendRowView: View {
           .frame(maxWidth: 50, maxHeight: 50)
       }
       VStack(alignment: .leading) {
-        Text(friend.firstName)
+        Text(friend.fullName)
           .font(.headline)
         Text("Preferred Currency: \(friend.currency)")
           .font(.subheadline)
