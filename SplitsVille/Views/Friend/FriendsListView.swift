@@ -10,7 +10,8 @@ import SwiftData
 struct FriendsListView: View {
   @Environment(\.modelContext)
   private var modelContext
-  @Query(sort: \Friend.firstName)  private var friends: [Friend]
+  @Query(sort: \Friend.firstName)
+  private var friends: [Friend]
   @State private var isPresented = false
   var body: some View {
     VStack(alignment: .leading) {
@@ -21,6 +22,9 @@ struct FriendsListView: View {
               Spacer()
               Text("There are no friends so far.  To add some, click on the + above")
                 .font(.largeTitle)
+                Divider()
+              Text("Don't forget to add yourself!")
+                .font(.title)
               Spacer()
             }
           } else {
@@ -30,7 +34,7 @@ struct FriendsListView: View {
                   .accessibilityIdentifier(friend.firstName + friend.lastName + "Row")
               }
             }
-             .onDelete(perform: { indexSet in
+            .onDelete(perform: { indexSet in
               for offset in indexSet {
                 let friend = friends[offset]
                 modelContext.delete(friend)

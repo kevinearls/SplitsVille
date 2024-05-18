@@ -33,7 +33,7 @@ struct TransactionsListView: View {
                 TransactionRowView(transaction: transaction)
               }
             }
-             .onDelete(perform: { indexSet in
+            .onDelete(perform: { indexSet in
               for offset in indexSet {
                 let transaction = transactions[offset]
                 modelContext.delete(transaction)

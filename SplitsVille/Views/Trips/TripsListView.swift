@@ -12,9 +12,12 @@ struct TripsListView: View {
   @Environment(\.modelContext)
   private var modelContext
 
-  @Query(sort: \Trip.name) private var trips: [Trip]
+  @Query(sort: \Trip.name)
+  private var trips: [Trip]
+
   @State private var isPresented = false
-  @State private var tripToDelete:Trip!
+  // swiftlint:disable:next implicitly_unwrapped_optional
+  @State private var tripToDelete: Trip!
 
   var body: some View {
     VStack(alignment: .leading) {

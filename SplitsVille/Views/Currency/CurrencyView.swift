@@ -12,6 +12,8 @@ struct CurrencyView: View {
   @State var downloadError: String = ""
   @State var isDownloading = false
   @State var showAlert = false
+  @State var showDownloadFailedAlert = false
+  @State var downloadCompleted = false
 
   var body: some View {
     VStack {
@@ -30,22 +32,39 @@ struct CurrencyView: View {
         }
       } else {
         Text("Waiting to load exchange rates...")
+        VStack {
+          ProgressView("Downloading")
+          Spacer()
+        }
       }
     }
     .onAppear {
       downloadExchangeRates()  // FIXME should this be done when the program starts?
-    }
+    }.alert("Download failed", isPresented: $showDownloadFailedAlert, actions: {
+      Button("Dismiss", role: .cancel) {
+        showDownloadFailedAlert = false
+      }
+    }, message: {
+      Text(downloadError)
+    })
   }
 
   func downloadExchangeRates() {
+    if downloadCompleted {
+      return
+    }
+
     Task {
       do {
         isDownloading = true
         try await exchangeRateStore.getExchangeRates()
         isDownloading = false
+        downloadCompleted = true
       } catch {
         print(error)
         isDownloading = false
+        showDownloadFailedAlert = true
+        downloadError = error.localizedDescription
       }
     }
   }
