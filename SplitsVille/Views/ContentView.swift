@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum Tabs {
+  case balances
   case friends
   case trips
   case currency
@@ -21,36 +22,42 @@ struct ContentView: View {
     TabView(selection: $selection) {
       FriendsListView()
         .tabItem {
-          Text("Friends")
-          Image(systemName: "person")
+          Text(Constants.HomeScreen.friendsViewName)
+          Image(systemName: Constants.HomeScreen.friendsViewImage)
         }
         .tag(Tabs.friends)
 
-      TripsListView()   // FIXME call everything groups or trips
+      TripsListView()
         .tabItem {
-          Text("Trips")
-          Image(systemName: "person.3")
+          Text(Constants.HomeScreen.tripsViewName)
+          Image(systemName: Constants.HomeScreen.tripsViewImage)
         }
         .tag(Tabs.trips)
 
       TransactionsListView()
         .tabItem {
-          Text("Transactions")
-          Image(systemName: "purchased")
+          Text(Constants.HomeScreen.transactionsViewName)
+          Image(systemName: Constants.HomeScreen.transactionsViewImage)
         }
         .tag(Tabs.transactions)
 
+      BalancesView()
+        .tabItem {
+          Text(Constants.HomeScreen.balancesViewName)
+          Image(systemName: Constants.HomeScreen.balancesViewImage)
+        }
+        .tag(Tabs.balances)
+
       CurrencyView()
         .tabItem {
-          Text("Currency")
-          Image(systemName: "dollarsign.arrow.circlepath")  // TODO add constancts for all of this
+          Text(Constants.HomeScreen.currencyViewName)
+          Image(systemName: Constants.HomeScreen.currencyViewImage)
         }
         .tag(Tabs.currency)
     }
   }
 }
 
-// TODO fix this?  For some reason this is crashing xcode, even though the app runs
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
   return ContentView()

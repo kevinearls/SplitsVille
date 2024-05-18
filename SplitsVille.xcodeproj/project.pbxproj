@@ -24,6 +24,7 @@
 		C3405F242BCE652300D11D55 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3405F232BCE652300D11D55 /* Launch Screen.storyboard */; };
 		C38842962BF3629800CF1FA7 /* FriendsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38842952BF3629800CF1FA7 /* FriendsTest.swift */; };
 		C38842982BF366AF00CF1FA7 /* TransactionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38842972BF366AF00CF1FA7 /* TransactionsTest.swift */; };
+		C39803F92BF90EE900120D49 /* BalancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39803F82BF90EE900120D49 /* BalancesView.swift */; };
 		C3AE1F962BF25E9600EC347D /* CurrencyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE1F952BF25E9600EC347D /* CurrencyTest.swift */; };
 		C3B8DA0F2BD3EAC000440280 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B8DA0E2BD3EAC000440280 /* Transaction.swift */; };
 		C3C65CF12BC85ABD00B21711 /* SplitsVilleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C65CF02BC85ABD00B21711 /* SplitsVilleApp.swift */; };
@@ -91,6 +92,7 @@
 		C3405F232BCE652300D11D55 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C38842952BF3629800CF1FA7 /* FriendsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTest.swift; sourceTree = "<group>"; };
 		C38842972BF366AF00CF1FA7 /* TransactionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTest.swift; sourceTree = "<group>"; };
+		C39803F82BF90EE900120D49 /* BalancesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesView.swift; sourceTree = "<group>"; };
 		C3AE1F952BF25E9600EC347D /* CurrencyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTest.swift; sourceTree = "<group>"; };
 		C3B8DA0E2BD3EAC000440280 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		C3C65CED2BC85ABD00B21711 /* SplitsVille.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitsVille.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -360,6 +362,7 @@
 		C3EFF0DD2BD7C70D00716E9F /* Balances */ = {
 			isa = PBXGroup;
 			children = (
+				C39803F82BF90EE900120D49 /* BalancesView.swift */,
 			);
 			path = Balances;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C30AF6812BD10DD800F081E3 /* TripDetailView.swift in Sources */,
+				C39803F92BF90EE900120D49 /* BalancesView.swift in Sources */,
 				C307C4AD2BDE674B00ED9348 /* AddTransactionView.swift in Sources */,
 				C3F772B92BE512FD00D93A8A /* ExchangeRatesStore.swift in Sources */,
 				C3F0AA1F2BCFC6EB00CC8AB2 /* CurrencyView.swift in Sources */,

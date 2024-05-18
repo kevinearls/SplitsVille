@@ -16,6 +16,19 @@ enum Constants {
     static let applicationName = "$plitsvill€"
   }
 
+  enum HomeScreen {
+    static let friendsViewName = "Friends"
+    static let friendsViewImage = "person"
+    static let tripsViewName = "Trips"
+    static let tripsViewImage = "globe"
+    static let transactionsViewName = "Transactions"
+    static let transactionsViewImage = "cart"
+    static let balancesViewName = "Balances"
+    static let balancesViewImage = "creditcard"
+    static let currencyViewName = "Currency"
+    static let currencyViewImage = "dollarsign.arrow.circlepath"
+  }
+
 //  enum AvatarColor {
 //    static let blue = "blueAvatar"
 //    static let brown = "brownAvatar"

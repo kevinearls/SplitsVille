@@ -12,8 +12,14 @@ struct TransactionsListView: View {
   @Environment(\.modelContext)
   private var modelContext
 
-  @Query(sort: \Transaction.trip.name)  // TODO can we do more than 1 sort here?  
+  @Query(sort: \Transaction.trip.name)  // TODO can we do more than 1 sort here?
   private var transactions: [Transaction]
+  @Query(sort: \Trip.name)
+  private var trips: [Trip]
+
+  // swiftlint:disable:next implicitly_unwrapped_optional
+  @State private var selectedTrip: Trip!
+
   @State private var isPresented = false
 
   var body: some View {
@@ -28,21 +34,35 @@ struct TransactionsListView: View {
               Spacer()
             }
           } else {
-            ForEach(transactions) { transaction in
-              NavigationLink(value: transaction) {
-                TransactionRowView(transaction: transaction)
+            Picker("Which trip?", selection: $selectedTrip) {
+              ForEach(trips) { trip in
+                Text(trip.name)
+                  .font(.largeTitle)
+                  .tag(Optional(trip))
               }
             }
-            .onDelete(perform: { indexSet in
-              for offset in indexSet {
-                let transaction = transactions[offset]
-                modelContext.delete(transaction)
+            .pickerStyle(.menu)
+            if let selectedTrip {
+              ForEach(transactions.filter { $0.trip == selectedTrip} ) { transaction in
+                NavigationLink(value: transaction) {
+                  TransactionRowView(transaction: transaction)
+                }
               }
-            })
+              .onDelete(perform: { indexSet in
+                for offset in indexSet {
+                  let transaction = transactions[offset]
+                  modelContext.delete(transaction)
+                }
+              })
+            }
           }
         }
         .navigationDestination(for: Transaction.self) { transaction in
           TransactionDetailView(transaction: transaction)
+        }
+        .onAppear {
+          // This is required for the picker to work with Swift Data
+          selectedTrip = trips.first
         }
         .toolbar {
           ToolbarItem(placement: .navigationBarTrailing) {
