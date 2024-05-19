@@ -8,10 +8,9 @@
 import Foundation
 import SwiftData
 
-// TODO add start and end dates, image?, deleteFriend
-@Model
+  @Model
 final class Trip: Equatable, Identifiable, Hashable {
-  var id = UUID()   // FIXME do I need this?
+  var id = UUID()
   @Attribute(.unique)
   let name: String
   let location: String
@@ -24,7 +23,7 @@ final class Trip: Equatable, Identifiable, Hashable {
   @Relationship()
   var transactions: [Transaction] = []
 
-  init(id: UUID = UUID(), name: String, location: String, startDate: Date = .now, endDate: Date = .distantFuture) {
+  init(id: UUID = UUID(), name: String, location: String, startDate: Date = .now, endDate: Date = Constants.Trips.oneWeekFromNow) {
     self.id = id
     self.name = name
     self.location = location

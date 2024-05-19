@@ -16,8 +16,8 @@ struct AddTripView: View {
   @Query private var friends: [Friend]
   @State var name: String = ""
   @State var location: String = ""
-  @State private var startDate = Date()
-  @State private var endDate = Date()
+  @State private var startDate = Date.now
+  @State private var endDate = Constants.Trips.oneWeekFromNow
 
   private func addTrip() {
     withAnimation {

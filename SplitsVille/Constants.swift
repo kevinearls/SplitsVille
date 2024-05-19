@@ -29,6 +29,10 @@ enum Constants {
     static let currencyViewImage = "dollarsign.arrow.circlepath"
   }
 
+  enum Trips {
+    static let oneWeekFromNow: Date = .now.addingTimeInterval(86400 * 7)
+  }
+
 //  enum AvatarColor {
 //    static let blue = "blueAvatar"
 //    static let brown = "brownAvatar"
