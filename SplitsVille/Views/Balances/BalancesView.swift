@@ -6,14 +6,72 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct BalancesView: View {
+  // swiftlint:disable:next implicitly_unwrapped_optional
+  @State private var selectedTrip: Trip!
+  @Query(sort: \Transaction.paidBy.firstName)
+  private var transactions: [Transaction]
+
+  @Query(sort: \Trip.name)
+  private var trips: [Trip]
+
   var body: some View {
-    Text("This will be the balances view")
-      .font(.largeTitle)
+    VStack(alignment: .leading) {
+      List {
+        if transactions.isEmpty {
+          VStack {
+            Spacer()
+            Text("There are no transactions so far.  To add some, click on the + above")
+              .font(.largeTitle)
+            Spacer()
+          }
+        } else {
+          Picker("Which trip?", selection: $selectedTrip) {
+            ForEach(trips) { trip in
+              Text(trip.name)
+                .font(.largeTitle)
+                .tag(Optional(trip))
+            }
+          }
+          .pickerStyle(.menu)
+          if let selectedTrip {
+            let balances = BalanceCalculator().calculateBalances(trip: selectedTrip, transactions: transactions)
+
+            ForEach(selectedTrip.friends) { friend in
+              Text("\(friend.firstName)")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+              let balance = balances[friend]
+              if let balance {
+                //ForEach(balance.entries) { entry in
+                Text(formatBalance(balance: balance))
+                  .font(.subheadline)
+              }
+            }
+          }
+        }
+      }
+      .onAppear {
+        // This is required for the picker to work with Swift Data
+        selectedTrip = trips.first
+      }
+    }
+  }
+
+  func formatBalance(balance: Balance) -> String {
+    var result = """
+    """
+    for entry in balance.entries {
+      result += "owes \(entry.friend.firstName) \(entry.amount.toTwoDecimalPlaces) \(entry.currency)\n"
+    }
+
+    return result
   }
 }
 
 #Preview {
-  BalancesView()
+  let previewContainer = PreviewController.previewContainer
+  return BalancesView()
+    .modelContainer(previewContainer)
 }

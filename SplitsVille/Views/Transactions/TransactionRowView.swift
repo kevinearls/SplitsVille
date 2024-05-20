@@ -12,12 +12,11 @@ struct TransactionRowView: View {
   var body: some View {
     HStack {
       VStack {
-        // FIXME format the amount - reformat this whole view
         HStack {
           Text("\(transaction.desc)")
             .fontWeight(.bold)
           Spacer()
-          Text("\(transaction.amount) \(transaction.currency)" )
+          Text("\(transaction.amount.toTwoDecimalPlaces) \(transaction.currency)" )
         }
         HStack {
           Text("Paid by: \(transaction.paidBy.fullName)")
@@ -31,10 +30,16 @@ struct TransactionRowView: View {
   }
 }
 
+extension Double {
+  var toTwoDecimalPlaces:String {
+    return String(format: "%.2f", self)
+  }
+}
+
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
 
-  return TransactionRowView(transaction: PreviewController.dinosaurBurgers)
+  return TransactionRowView(transaction: PreviewController.rerB)
     .modelContainer(previewContainer)
 }
 

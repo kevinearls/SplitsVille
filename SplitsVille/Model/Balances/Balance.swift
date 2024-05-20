@@ -26,7 +26,6 @@ public class OwedBy: Equatable {
 public class Balance {
   let principal: Friend
   let trip: Trip
-  let friendsOnTrip: [Friend] = [] // TODO do we need this?
   var entries: [OwedBy] = []  // FIXME should this be a dictionary of OwedBy?
   // or a dictionary of [Friend: (currency, amount)
 
@@ -53,14 +52,13 @@ public class Balance {
     }
   }
 
-
   // FIXME do we need both of these?
-  func addBalanceEntry(friend: Friend, currency: Currency, amount: Double) {
-    let entry = OwedBy(friend: friend, currency: currency, amount: amount)
-    entries.append(entry)
-  }
-
-  func addBalanceEntry(_ entry: OwedBy) {
-    entries.append(entry)
-  }
+//  func addBalanceEntry(friend: Friend, currency: Currency, amount: Double) {
+//    let entry = OwedBy(friend: friend, currency: currency, amount: amount)
+//    entries.append(entry)
+//  }
+//
+//  func addBalanceEntry(_ entry: OwedBy) {
+//    entries.append(entry)
+//  }
 }

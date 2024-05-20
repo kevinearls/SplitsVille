@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-  @Model
+@Model
 final class Trip: Equatable, Identifiable, Hashable {
   var id = UUID()
   @Attribute(.unique)
@@ -22,6 +22,10 @@ final class Trip: Equatable, Identifiable, Hashable {
 
   @Relationship()
   var transactions: [Transaction] = []
+
+  var debugDescription: String {
+    return "Trip: \(name) to \(location)"
+  }
 
   init(id: UUID = UUID(), name: String, location: String, startDate: Date = .now, endDate: Date = Constants.Trips.oneWeekFromNow) {
     self.id = id

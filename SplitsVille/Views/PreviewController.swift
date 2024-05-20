@@ -123,25 +123,40 @@ enum PreviewController {
 
       // Paris transactions
       // swiftlint:disable line_length
-      rerB = Transaction(currency: "EUR", amount: 27.90, payer: kevin, trip: paris, desc: "RER B back to the airport")
+      //rerB = Transaction(currency: "EUR", amount: 27.90, payer: kevin, trip: paris, desc: "RER B back to the airport")
       sainteChapelle = Transaction(currency: "EUR", amount: 26.00, payer: martha, trip: paris, desc: "Admission to Sainte-Chapelle")
-      arcDeTriompe = Transaction(currency: "EUR", amount: 18.00, payer: kevin, trip: paris, desc: "Admission to the arc de triomphe")
+      //arcDeTriompe = Transaction(currency: "EUR", amount: 18.00, payer: kevin, trip: paris, desc: "Admission to the arc de triomphe")
       taxi = Transaction(currency: "EUR", amount: 62.00, payer: kevin, trip: paris, desc: "Taxi from airport")
       fiveGuys = Transaction(currency: "EUR", amount: 46.12, payer: patrick, trip: paris, desc: "Lunch")
-      novotel = Transaction(currency: "EUR", amount: 278.73, payer: kevin, trip: paris, desc: "Hotel")
-      dinner = Transaction(currency: "EUR", amount: 167.75, payer: martha, trip: paris, desc: "Dinner")
+      //novotel = Transaction(currency: "EUR", amount: 278.73, payer: kevin, trip: paris, desc: "Hotel")
+      //dinner = Transaction(currency: "EUR", amount: 167.75, payer: martha, trip: paris, desc: "Dinner")
       // swiftlint:enable line_length
 
-      context.insert(rerB)
+     // context.insert(rerB)
       context.insert(sainteChapelle)
-      context.insert(arcDeTriompe)
+      //context.insert(arcDeTriompe)
       context.insert(taxi)
       context.insert(fiveGuys)
-      context.insert(novotel)
-      context.insert(dinner)
+      //context.insert(novotel)
+      //context.insert(dinner)
+
+      //rerB.addSharedWith(friend: patrick)
+      //rerB.addSharedWith(friend: martha)
+      sainteChapelle.addSharedWith(friend: kevin)
+      //arcDeTriompe.addSharedWith(friend: kevin)
+      taxi.addSharedWith(friend: patrick)
+      fiveGuys.addSharedWith(friend: kevin)
+      fiveGuys.addSharedWith(friend: martha)
+//      novotel.addSharedWith(friend: martha)
+//      novotel.addSharedWith(friend: patrick)
+//      dinner.addSharedWith(friend: kevin)
+//      dinner.addSharedWith(friend: patrick)
 
       // FIXME should I add more transactions here?
       // paris.addTransaction(transaction: rerB)
+      paris.addTransaction(transaction: sainteChapelle)
+      paris.addTransaction(transaction: fiveGuys)
+      paris.addTransaction(transaction: taxi)
 
       return container
     } catch {

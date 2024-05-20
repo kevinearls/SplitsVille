@@ -10,7 +10,10 @@ import SwiftUI
 import SwiftData
 
 @Model
-final class Friend: Identifiable {
+final class Friend: Identifiable, Hashable {
+  var debugDescription: String {
+    return fullName
+  }
   var id = UUID()
   let firstName: String
   let lastName: String

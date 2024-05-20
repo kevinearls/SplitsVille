@@ -50,6 +50,10 @@ struct AddTransactionView: View {
               desc: desc
             )
             modelContext.insert(newTransaction)
+
+            for friend in selectedTrip.friends {
+              newTransaction.addSharedWith(friend: friend)
+            }
           }
           // Add debugging code here...
           showModal = false

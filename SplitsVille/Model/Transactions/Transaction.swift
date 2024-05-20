@@ -19,9 +19,12 @@ final class Transaction: Identifiable {
   let trip: Trip
   @Relationship()
   let paidBy: Friend
-  let desc: String  // TODO rename
+  let desc: String
   @Relationship()
   var sharedWith: [Friend]  // By default add all users on this trip, add issue to select?  How to Query this?
+  var debugDescription: String {
+    return "Transaction: \(desc) Paid by: \(paidBy.firstName) \(amount) on \(trip.name)" 
+  }
 
   init(id: UUID = UUID(), currency: String, amount: Double, payer: Friend, trip: Trip, desc: String, sharedWith: [Friend] = []) {
     self.id = id
