@@ -39,14 +39,14 @@ extension Double {
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
 
-  return TransactionRowView(transaction: PreviewController.rerB)
+  return TransactionRowView(transaction: PreviewController.fiveGuys)
     .modelContainer(previewContainer)
 }
 
 #Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
 
-  return TransactionRowView(transaction: PreviewController.dinosaurBurgers)
+  return TransactionRowView(transaction: PreviewController.fiveGuys)
     .preferredColorScheme(.dark)
     .modelContainer(previewContainer)
 }

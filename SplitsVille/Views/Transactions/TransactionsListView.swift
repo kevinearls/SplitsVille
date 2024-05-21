@@ -11,7 +11,6 @@ import SwiftData
 struct TransactionsListView: View {
   @Environment(\.modelContext)
   private var modelContext
-
   @Query(sort: \Transaction.trip.name)  // TODO can we do more than 1 sort here?
   private var transactions: [Transaction]
   @Query(sort: \Trip.name)
@@ -19,7 +18,6 @@ struct TransactionsListView: View {
 
   // swiftlint:disable:next implicitly_unwrapped_optional
   @State private var selectedTrip: Trip!
-
   @State private var isPresented = false
 
   var body: some View {
@@ -48,12 +46,12 @@ struct TransactionsListView: View {
                   TransactionRowView(transaction: transaction)
                 }
               }
-              .onDelete(perform: { indexSet in
+              .onDelete { indexSet in
                 for offset in indexSet {
                   let transaction = transactions[offset]
                   modelContext.delete(transaction)
                 }
-              })
+              }
             }
           }
         }

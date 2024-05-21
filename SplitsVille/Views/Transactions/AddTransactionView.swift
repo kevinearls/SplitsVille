@@ -58,8 +58,10 @@ struct AddTransactionView: View {
       .disabled(desc.isEmpty || amount == 0)   // FIXME?
     }
     Form {
-      Section(header: Text("Description")) {
+      Section {
         TextField("Description:", text: $desc)
+      } header: {
+        Text("Description")
       }
       Section(header: Text("Amount")) {
         TextField("Amount:", value: $amount, format: .number)
@@ -90,18 +92,18 @@ struct AddTransactionView: View {
         .pickerStyle(.menu)
       }
     }
-    .onAppear(perform: {
+    .onAppear {
       // This is required to get the Pickers to work correctly with SwiftData
       paidBy = friends.first
       selectedTrip = trips.first
-    })
-    .onDisappear(perform: {
+    }
+    .onDisappear {  // FIXME do we need this?
       do {
         try modelContext.save()
       } catch {
         print(error)
       }
-    })
+    }
   }
 }
 

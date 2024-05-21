@@ -31,13 +31,13 @@ struct TripRowView: View {
 
 #Preview {
   let previewContainer = PreviewController.previewContainer
-  return TripRowView(trip: PreviewController.nightOutInBedrock)
+  return TripRowView(trip: PreviewController.paris)
     .modelContainer(previewContainer)
 }
 
 #Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
-  return TripRowView(trip: PreviewController.nightOutInBedrock)
+  return TripRowView(trip: PreviewController.paris)
     .preferredColorScheme(.dark)
     .modelContainer(previewContainer)
 }

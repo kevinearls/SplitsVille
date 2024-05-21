@@ -30,14 +30,14 @@ struct FriendDetailView: View {
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
 
-  return FriendDetailView(friend: PreviewController.barney)
+  return FriendDetailView(friend: PreviewController.patrick)
     .modelContainer(previewContainer)
 }
 
 #Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
 
-  return FriendDetailView(friend: PreviewController.barney)
+  return FriendDetailView(friend: PreviewController.patrick)
     .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     .modelContainer(previewContainer)
 }

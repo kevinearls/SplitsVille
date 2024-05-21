@@ -40,12 +40,12 @@ struct TripsListView: View {
                     .accessibilityIdentifier(trip.name)
                 }
               }
-              .onDelete(perform: { indexSet in
+              .onDelete { indexSet in
                 for offset in indexSet {
                   let trip = trips[offset]
                   modelContext.delete(trip)
                 }
-              })
+              }
             }
           }
         }

@@ -65,13 +65,13 @@ struct TripDetailView: View {
 
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
-  return TripDetailView(trip: PreviewController.anotherNightOut)
+  return TripDetailView(trip: PreviewController.paris)
     .modelContainer(previewContainer)
 }
 
 #Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
-  return TripDetailView(trip: PreviewController.anotherNightOut)
+  return TripDetailView(trip: PreviewController.paris)
     .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     .modelContainer(previewContainer)
 }

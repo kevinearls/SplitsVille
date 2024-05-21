@@ -35,14 +35,14 @@ struct FriendRowView: View {
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
 
-  return FriendRowView(friend: PreviewController.fred)
+  return FriendRowView(friend: PreviewController.patrick)
     .modelContainer(previewContainer)
 }
 
 #Preview("Dark, Landscape", traits: .landscapeLeft) {
   let previewContainer = PreviewController.previewContainer
 
-  return FriendRowView(friend: PreviewController.fred)
+  return FriendRowView(friend: PreviewController.patrick)
     .preferredColorScheme(.dark)
     .modelContainer(previewContainer)
 }

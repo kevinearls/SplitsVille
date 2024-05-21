@@ -148,12 +148,7 @@ final class BalancesTest: XCTestCase {
     paris.addTransaction(transaction: taxi)
     paris.addTransaction(transaction: sainteChapelle)
 
-//    fiveGuys.addSharedWith(friend: kevin)
-//    fiveGuys.addSharedWith(friend: martha)
-//    taxi.addSharedWith(friend: patrick)
-//    sainteChapelle.addSharedWith(friend: kevin)
-//    sainteChapelle.addSharedWith(friend: patrick)
-
+    // I don't know why swiftlint thinks this is a violation
     let grid = BalanceCalculator().calculateBalances(trip: paris, transactions: [fiveGuys, taxi, sainteChapelle])
 
     XCTAssertNotNil(grid)

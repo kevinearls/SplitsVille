@@ -27,7 +27,7 @@ struct TransactionDetailView: View {
 #Preview("Light, Portrait") {
   let previewContainer = PreviewController.previewContainer
 
-  return TransactionDetailView(transaction: PreviewController.dinosaurBurgers)
+  return TransactionDetailView(transaction: PreviewController.fiveGuys)
     .modelContainer(previewContainer)
 }
 
