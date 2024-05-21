@@ -18,6 +18,7 @@ struct AddFriendView: View {
   @State var lastName: String = ""
   @State private var selectedCurrency: Currency = .USD
   @State private var avatarItem: PhotosPickerItem?
+  @State private var avatarImage: Image?
 
   var body: some View {
     Form {
@@ -72,6 +73,19 @@ struct AddFriendView: View {
         .pickerStyle(.menu)
         Divider()
         PhotosPicker("Select avatar", selection: $avatarItem, matching: .images)
+        avatarImage?
+          .resizable()
+          .scaledToFit()
+          .frame(width: 200, height: 200)
+      }
+      .onChange(of: avatarItem) {
+        Task {
+          if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
+            avatarImage = loaded
+          } else {
+            print("Failed")
+          }
+        }
       }
     }
   }

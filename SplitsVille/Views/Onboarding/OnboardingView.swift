@@ -15,7 +15,7 @@ struct OnboardingView: View {
 
   1. Add yourself and some friends on the friends tab
   2. Add a trip on the Trips tab
-  3. Add friends to the tip on the trip's detail page
+  3. Add friends to the trip on the trip's detail page
   4. Add transactions on the transactions tab
   """
 
