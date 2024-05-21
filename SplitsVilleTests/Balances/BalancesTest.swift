@@ -89,7 +89,7 @@ final class BalancesTest: XCTestCase {
     context.insert(fiveGuys)
     context.insert(taxi)
     context.insert(sainteChapelle)
-    
+
     paris.addTransaction(transaction: fiveGuys)
     paris.addTransaction(transaction: taxi)
     paris.addTransaction(transaction: sainteChapelle)

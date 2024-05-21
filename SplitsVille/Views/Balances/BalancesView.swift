@@ -44,7 +44,6 @@ struct BalancesView: View {
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
               let balance = balances[friend]
               if let balance {
-                //ForEach(balance.entries) { entry in
                 Text(formatBalance(balance: balance))
                   .font(.subheadline)
               }

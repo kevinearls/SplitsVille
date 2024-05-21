@@ -31,7 +31,7 @@ struct TransactionRowView: View {
 }
 
 extension Double {
-  var toTwoDecimalPlaces:String {
+  var toTwoDecimalPlaces: String {
     return String(format: "%.2f", self)
   }
 }

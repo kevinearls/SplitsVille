@@ -56,7 +56,6 @@ struct OnboardingScreen: View {
   2. Add a trip on the Trips tab
   3. Add friends to the tip on the trip's detail page
   4. Add transactions on the transactions tab
-  
   """
   let onboardingItem = OnboardingItem(
     systemImageName: "dollarsign",

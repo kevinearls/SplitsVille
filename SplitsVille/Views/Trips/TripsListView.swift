@@ -66,7 +66,6 @@ struct TripsListView: View {
       .sheet(isPresented: $isPresented) {
         AddTripView(showModal: $isPresented)
       }
-
     }
     .padding()
   }

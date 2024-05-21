@@ -43,7 +43,7 @@ struct TransactionsListView: View {
             }
             .pickerStyle(.menu)
             if let selectedTrip {
-              ForEach(transactions.filter { $0.trip == selectedTrip} ) { transaction in
+              ForEach(transactions.filter { $0.trip == selectedTrip }) { transaction in
                 NavigationLink(value: transaction) {
                   TransactionRowView(transaction: transaction)
                 }

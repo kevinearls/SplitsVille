@@ -28,6 +28,7 @@ struct FriendsListView: View {
               Spacer()
             }
           } else {
+            // swiftlint:disable:next trailing_closure
             ForEach(friends) { friend in
               NavigationLink(value: friend) {
                 FriendRowView(friend: friend)
