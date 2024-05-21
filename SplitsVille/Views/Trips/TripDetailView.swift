@@ -5,10 +5,6 @@
 //  Created by Kevin Earls on 18/04/2024.
 //
 
-
-// FIXME! For some reason my attempts at navigation have not worked here
-// I tried to use a TabView, but that didn't seem to want to work inside
-// Another tab view.  I also tried a NavigationStack without any luck
 import SwiftUI
 import SwiftData
 struct TripDetailView: View {
@@ -61,37 +57,6 @@ struct TripDetailView: View {
     } header: {
       HStack {
         Text("Click to add or delete friends from this trip")
-        Spacer()
-      }
-    }
-    Divider()
-    Section {
-      Group {
-        List {
-          // FIXME why did this not show when I used trip.transactions?
-          ForEach(transactions.filter { $0.trip == trip }) { transaction in
-            TransactionRowView(transaction: transaction)
-          }
-        }
-      }
-    } header: {  // FIXME move this?
-      HStack {
-        Text("Transactions for this trip")
-        Spacer()
-      }
-    }
-    Divider()
-    Section {
-      Group {
-        let total = transactions.filter { $0.trip == trip }
-          .reduce(0) { partialResult, transaction in
-            partialResult + transaction.amount
-          }
-        Text("Total: \(total)")
-      }
-    } header: {
-      HStack {
-        Text("Balances")
         Spacer()
       }
     }

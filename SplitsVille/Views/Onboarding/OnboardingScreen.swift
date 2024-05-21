@@ -30,10 +30,11 @@ struct OnboardingScreen: View {
 
           Text(item.subtitle)
             .padding(.bottom)
+            .font(.title2)
           HStack {
-            Text(item.instructions)
+            Text("\(item.instructions)")
+              .font(.callout)
               .multilineTextAlignment(.leading)
-            Spacer()
           }
         }
       }
@@ -48,16 +49,20 @@ struct OnboardingScreen: View {
 }
 
 #Preview("Light, Portrait") {
-  let multilineInstructions = """
-  This is the first line
-  And this is the second line
-  Finally this is the third line
+  let screen1Instructions = """
+  To use SplitsVille:
+
+  1. Add yourself and some friends on the friends tab
+  2. Add a trip on the Trips tab
+  3. Add friends to the tip on the trip's detail page
+  4. Add transactions on the transactions tab
+  
   """
   let onboardingItem = OnboardingItem(
     systemImageName: "dollarsign",
     title: Constants.Application.applicationName,
     subtitle: "A simple but powerful way to track shared expenses while traveling",
-    instructions: multilineInstructions
+    instructions: screen1Instructions
   )
 
   return OnboardingScreen(item: onboardingItem)

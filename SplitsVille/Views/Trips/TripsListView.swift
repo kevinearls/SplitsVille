@@ -31,18 +31,22 @@ struct TripsListView: View {
               Spacer()
             }
           } else {
-            ForEach(trips) { trip in
-              NavigationLink(value: trip) {
-                TripRowView(trip: trip)
-                  .accessibilityIdentifier(trip.name)
+            VStack {
+              Text("After adding a trip be sure to select the trip below and add friends")
+                .italic()
+              ForEach(trips) { trip in
+                NavigationLink(value: trip) {
+                  TripRowView(trip: trip)
+                    .accessibilityIdentifier(trip.name)
+                }
               }
+              .onDelete(perform: { indexSet in
+                for offset in indexSet {
+                  let trip = trips[offset]
+                  modelContext.delete(trip)
+                }
+              })
             }
-            .onDelete(perform: { indexSet in
-              for offset in indexSet {
-                let trip = trips[offset]
-                modelContext.delete(trip)
-              }
-            })
           }
         }
         .navigationDestination(for: Trip.self) { trip in
@@ -62,6 +66,7 @@ struct TripsListView: View {
       .sheet(isPresented: $isPresented) {
         AddTripView(showModal: $isPresented)
       }
+
     }
     .padding()
   }

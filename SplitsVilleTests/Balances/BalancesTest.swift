@@ -94,11 +94,11 @@ final class BalancesTest: XCTestCase {
     paris.addTransaction(transaction: taxi)
     paris.addTransaction(transaction: sainteChapelle)
 
-    fiveGuys.addSharedWith(friend: kevin)
-    fiveGuys.addSharedWith(friend: martha)
-    taxi.addSharedWith(friend: patrick)
-    sainteChapelle.addSharedWith(friend: kevin)
-    sainteChapelle.addSharedWith(friend: patrick)
+//    fiveGuys.addSharedWith(friend: kevin)
+//    fiveGuys.addSharedWith(friend: martha)
+//    taxi.addSharedWith(friend: patrick)
+//    sainteChapelle.addSharedWith(friend: kevin)
+//    sainteChapelle.addSharedWith(friend: patrick)
 
 //    let wtf = BalanceCalculator().getBalances(trip: paris, transact)
 //    print("---------------------------------------")
@@ -148,11 +148,11 @@ final class BalancesTest: XCTestCase {
     paris.addTransaction(transaction: taxi)
     paris.addTransaction(transaction: sainteChapelle)
 
-    fiveGuys.addSharedWith(friend: kevin)
-    fiveGuys.addSharedWith(friend: martha)
-    taxi.addSharedWith(friend: patrick)
-    sainteChapelle.addSharedWith(friend: kevin)
-    sainteChapelle.addSharedWith(friend: patrick)
+//    fiveGuys.addSharedWith(friend: kevin)
+//    fiveGuys.addSharedWith(friend: martha)
+//    taxi.addSharedWith(friend: patrick)
+//    sainteChapelle.addSharedWith(friend: kevin)
+//    sainteChapelle.addSharedWith(friend: patrick)
 
     let grid = BalanceCalculator().calculateBalances(trip: paris, transactions: [fiveGuys, taxi, sainteChapelle])
 

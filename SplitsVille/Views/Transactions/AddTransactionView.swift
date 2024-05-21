@@ -50,12 +50,7 @@ struct AddTransactionView: View {
               desc: desc
             )
             modelContext.insert(newTransaction)
-
-            for friend in selectedTrip.friends {
-              newTransaction.addSharedWith(friend: friend)
-            }
           }
-          // Add debugging code here...
           showModal = false
         }
         .padding()
@@ -99,6 +94,13 @@ struct AddTransactionView: View {
       // This is required to get the Pickers to work correctly with SwiftData
       paidBy = friends.first
       selectedTrip = trips.first
+    })
+    .onDisappear(perform: {
+      do {
+        try modelContext.save()
+      } catch {
+        print(error)
+      }
     })
   }
 }

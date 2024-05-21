@@ -41,8 +41,8 @@ struct AddFriendView: View {
             Task {
               if let imageData = try? await avatarItem?.loadTransferable(type: Data.self) {
                 let newFriend = Friend(
-                  firstName: firstName,
-                  lastName: lastName,
+                  firstName: firstName.trimmingCharacters(in: .whitespacesAndNewlines),
+                  lastName: lastName.trimmingCharacters(in: .whitespacesAndNewlines),
                   currency: selectedCurrency.rawValue,
                   imageData: imageData
                 )
