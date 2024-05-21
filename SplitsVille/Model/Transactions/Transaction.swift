@@ -8,8 +8,6 @@
 import Foundation
 import SwiftData
 
-
-// TODO add Date, ability to take photos of a receipt?
 @Model
 final class Transaction: Identifiable {
   var id = UUID()

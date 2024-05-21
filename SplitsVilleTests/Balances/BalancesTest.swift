@@ -29,11 +29,6 @@ final class BalancesTest: XCTestCase {
     context = container.mainContext
   }
 
-
-  override func tearDownWithError() throws {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-  }
-
   func testBalanceEntryTest() throws {
     let entry = OwedBy(friend: mike, currency: .EUR, amount: 11.17)
     XCTAssertNotNil(entry)
@@ -66,7 +61,7 @@ final class BalancesTest: XCTestCase {
     let container = try ModelContainer(for: Trip.self, Friend.self, Transaction.self, configurations: config)
     context = container.mainContext
 
-    let paris = Trip(name: "Patrick's Paris Adventure", location: "Paris")  // TODO add dates
+    let paris = Trip(name: "Patrick's Paris Adventure", location: "Paris")
     context.insert(paris)
 
     let kevin = Friend(firstName: "Kevin", lastName: "Earls", currency: "EUR", imageData: Data())
@@ -121,7 +116,7 @@ final class BalancesTest: XCTestCase {
     let container = try ModelContainer(for: Trip.self, Friend.self, Transaction.self, configurations: config)
     context = container.mainContext
 
-    let paris = Trip(name: "Patrick's Paris Adventure", location: "Paris")  // TODO add dates
+    let paris = Trip(name: "Patrick's Paris Adventure", location: "Paris")
     context.insert(paris)
 
     let kevin = Friend(firstName: "Kevin", lastName: "Earls", currency: "EUR", imageData: Data())

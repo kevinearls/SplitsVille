@@ -15,10 +15,9 @@ enum TestData {
   static let nancy = Friend(firstName: "Nancy", lastName: "Peterson", currency: "GBP", imageData: Data())
   static let patrick = Friend(firstName: "Patrick", lastName: "Riordan", currency: "USD", imageData: Data())
 
-  static let paris = Trip(name: "Patrick's Paris Adventure", location: "Paris")  // TODO add dates
+  static let paris = Trip(name: "Patrick's Paris Adventure", location: "Paris")
   static let portugal = Trip(name: "Street Art", location: "Portugal")
 
-  // TODO do we need to add trips and friends to the container first?
   // swiftlint:disable line_length
   static let sainteChapelle = Transaction(currency: "EUR", amount: 26.00, payer: martha, trip: paris, desc: "Admission to Sainte-Chapelle")
   // swiftlint:enable line_length

@@ -20,10 +20,9 @@ final class TransactionsTest: XCTestCase {
     context = container.mainContext
   }
 
-  func testExample() throws {
-    context.insert(TestData.kevin)  // TODO do in setup()?
+  func testSimple() throws {
+    context.insert(TestData.kevin)
     context.insert(TestData.patrick)
-
     context.insert(TestData.paris)
 
     // swiftlint:disable:next line_length

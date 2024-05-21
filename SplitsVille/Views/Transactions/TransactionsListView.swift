@@ -11,7 +11,7 @@ import SwiftData
 struct TransactionsListView: View {
   @Environment(\.modelContext)
   private var modelContext
-  @Query(sort: \Transaction.trip.name)  // TODO can we do more than 1 sort here?
+  @Query(sort: \Transaction.trip.name)
   private var transactions: [Transaction]
   @Query(sort: \Trip.name)
   private var trips: [Trip]

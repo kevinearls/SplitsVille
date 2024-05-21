@@ -23,8 +23,6 @@ final class TransactionsTest: XCTestCase {
   }
 
   func testExample() throws {
-    // FIXME I need at least one trip and one friend for this to work
-
     let app = XCUIApplication()
     app.tabBars["Tab Bar"].buttons["Transactions"].tap()
     // swiftlint:disable:next line_length

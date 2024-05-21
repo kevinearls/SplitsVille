@@ -41,7 +41,6 @@ final class TripsUITests: XCTestCase {
     XCTAssert(app.staticTexts["Add a Trip"].exists)
 
     // 3.  Add the trip
-    // TODO find a shorter identifier that uuid...
     let tripUuid = UUID()
     let tripName = "TripName+\(tripUuid)"
     let tripLocation = "Location+\(tripUuid)"

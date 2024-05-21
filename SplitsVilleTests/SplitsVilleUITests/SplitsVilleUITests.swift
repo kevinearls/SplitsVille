@@ -26,7 +26,7 @@ final class SplitsVilleUITests: XCTestCase {
   }
 
   func testHomeScreen() throws {
-  skipOnboarding(app: app)  // TODO can I put this in setup?
+    skipOnboarding(app: app)
     let tabBar = app.tabBars["Tab Bar"]
     // First make sure there are four tabs
     tabBar.buttons["Trips"].tap()
