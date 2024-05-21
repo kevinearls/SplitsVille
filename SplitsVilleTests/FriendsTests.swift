@@ -12,11 +12,9 @@ import SwiftData
 final class FriendsTests: XCTestCase {
   @MainActor
   func testSimple() throws {
-    let fred = TestData.fred
-
-    XCTAssertEqual("Fred", fred.firstName)
-    XCTAssertEqual("Flintstone", fred.lastName)
-    XCTAssertEqual(fred.currency, Currency.EUR.rawValue)
+    XCTAssertEqual("Kevin", TestData.kevin.firstName)
+    XCTAssertEqual("Earls", TestData.kevin.lastName)
+    XCTAssertEqual(TestData.kevin.currency, Currency.EUR.rawValue)
   }
 
   // FIXME move these tests to more appropriate places.  Neither really does

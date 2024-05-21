@@ -20,22 +20,20 @@ final class TransactionsTest: XCTestCase {
     context = container.mainContext
   }
 
-  override func tearDownWithError() throws {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-  }
-
   func testExample() throws {
-    context.insert(TestData.barney)  // TODO do in setup()?
-    context.insert(TestData.trip1)
+    context.insert(TestData.kevin)  // TODO do in setup()?
+    context.insert(TestData.patrick)
+
+    context.insert(TestData.paris)
 
     // swiftlint:disable:next line_length
-    let transaction = Transaction(currency: "EUR", amount: 11.74, payer: TestData.barney, trip: TestData.trip1, desc: "Dinner")
+    let transaction = Transaction(currency: "EUR", amount: 11.74, payer: TestData.patrick, trip: TestData.paris, desc: "Dinner")
     context.insert(transaction)
 
     XCTAssertNotNil(transaction)
     XCTAssertEqual(Currency.EUR.rawValue, transaction.currency)
-    XCTAssertEqual(transaction.trip, TestData.trip1)
-    XCTAssertEqual(transaction.paidBy, TestData.barney)
+    XCTAssertEqual(transaction.trip, TestData.paris)
+    XCTAssertEqual(transaction.paidBy, TestData.patrick)
     XCTAssertEqual(transaction.desc, "Dinner")
   }
 }

@@ -17,7 +17,7 @@ final class TripTest: XCTestCase {
   @MainActor
   override func setUpWithError() throws {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
-    let container = try ModelContainer(for: Trip.self, Friend.self, configurations: config)
+    let container = try ModelContainer(for: Trip.self, Friend.self, Transaction.self, configurations: config)
     context = container.mainContext
   }
 
@@ -31,36 +31,34 @@ final class TripTest: XCTestCase {
     }
   }
 
-  @MainActor
-  func testSimple() throws {
-    let trip = Trip(name: "Street Art", location: "Lisbon")
-    XCTAssertNotNil(trip)
-    XCTAssertEqual("Street Art", trip.name)
-    XCTAssertEqual("Lisbon", trip.location)
-  }
 
   @MainActor
   func testHasFriends() throws {
-    let lisbon = Trip(name: "Street Art", location: "Lisbon")
+    let kevin = Friend(firstName: "Kevin", lastName: "Earls", currency: "EUR", imageData: Data())
+    let amy = Friend(firstName: "Amy", lastName: "Costa", currency: "USD", imageData: Data())
+    let nancy = Friend(firstName: "Nancy", lastName: "Peterson", currency: "GBP", imageData: Data())
 
+    context.insert(amy)
+    context.insert(nancy)
+    context.insert(kevin)
+
+    let lisbon = Trip(name: "Street Art", location: "Lisbon")
     context.insert(lisbon)
 
-    context.insert(TestData.amy)
-    context.insert(TestData.nancy)
-    context.insert(TestData.martha)
-    context.insert(TestData.kevin)
+    XCTAssertNotNil(lisbon)
+    XCTAssertEqual("Street Art", lisbon.name)
+    XCTAssertEqual("Lisbon", lisbon.location)
 
-    lisbon.addFriend(friend: TestData.amy)
-    lisbon.addFriend(friend: TestData.nancy)
-    lisbon.addFriend(friend: TestData.martha)
-    lisbon.addFriend(friend: TestData.kevin)
+
+    lisbon.addFriend(friend: amy)
+    lisbon.addFriend(friend: nancy)
+    lisbon.addFriend(friend: kevin)
 
     XCTAssertNotNil(lisbon.friends)
-    XCTAssertEqual(lisbon.friends.count, 4)
-    XCTAssertTrue(lisbon.friends.contains(TestData.amy))
-    XCTAssertTrue(lisbon.friends.contains(TestData.nancy))
-    XCTAssertTrue(lisbon.friends.contains(TestData.martha))
-    XCTAssertTrue(lisbon.friends.contains(TestData.kevin))
+    XCTAssertEqual(lisbon.friends.count, 3)
+    XCTAssertTrue(lisbon.friends.contains(amy))
+    XCTAssertTrue(lisbon.friends.contains(nancy))
+    XCTAssertTrue(lisbon.friends.contains(kevin))
   }
 
   @MainActor

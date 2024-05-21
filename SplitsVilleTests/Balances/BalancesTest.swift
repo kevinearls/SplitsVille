@@ -35,18 +35,18 @@ final class BalancesTest: XCTestCase {
   }
 
   func testBalanceEntryTest() throws {
-    let entry = OwedBy(friend: TestData.mike, currency: .EUR, amount: 11.17)
+    let entry = OwedBy(friend: mike, currency: .EUR, amount: 11.17)
     XCTAssertNotNil(entry)
-    XCTAssertEqual(entry.friend, TestData.mike)
+    XCTAssertEqual(entry.friend, mike)
     XCTAssertEqual(entry.currency, Currency.EUR)
     XCTAssertEqual(entry.amount, 11.17)
   }
 
   func testBalanceTest() throws {
     // FIXME update!
-    let balance = Balance(principal: TestData.paul, trip: TestData.portugal)
+    let balance = Balance(principal: paul, trip: TestData.portugal)
     XCTAssertNotNil(balance)
-    XCTAssertEqual(balance.principal, TestData.paul)
+    XCTAssertEqual(balance.principal, paul)
     XCTAssertEqual(0, balance.entries.count)
 
     let entry1 = OwedBy(friend: mike, currency: .USD, amount: 11.17)
