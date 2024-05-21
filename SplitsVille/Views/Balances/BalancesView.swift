@@ -62,7 +62,7 @@ struct BalancesView: View {
     var result = """
     """
     for entry in balance.entries {
-      result += "owes \(entry.friend.firstName) \(entry.amount.toTwoDecimalPlaces) \(entry.currency)\n"
+      result += "owes \(entry.friend.firstName) \(entry.amount.toTwoDecimalPlaces) \(entry.friend.currency)\n"
     }
 
     return result
