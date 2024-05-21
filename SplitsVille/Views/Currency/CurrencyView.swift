@@ -39,7 +39,7 @@ struct CurrencyView: View {
       }
     }
     .onAppear {
-      downloadExchangeRates()  // FIXME should this be done when the program starts?
+      downloadExchangeRates()
     }
     .alert("Download failed", isPresented: $showDownloadFailedAlert, actions: {
       Button("Dismiss", role: .cancel) {

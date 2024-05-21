@@ -39,7 +39,6 @@ enum CurrencyFreaksDownloadError: Error {
 class ExchangeRatesStore: ObservableObject {
   // swiftlint:disable:next implicitly_unwrapped_optional
   @MainActor @Published var exchangeRates: ExchangeRates!
-  // FIXME add a note about API key being sent in the clear and limits of free accounts
   var apiKey = "a353a534a54248b9a31d7edfa2877bfd"
 
   private func getDataFromURL(from urlString: String) async throws -> Data {

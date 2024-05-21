@@ -48,6 +48,7 @@ final class TripTest: XCTestCase {
     XCTAssertNotNil(lisbon)
     XCTAssertEqual("Street Art", lisbon.name)
     XCTAssertEqual("Lisbon", lisbon.location)
+    XCTAssertEqual("Trip: Street Art to Lisbon", lisbon.debugDescription)
 
 
     lisbon.addFriend(friend: amy)

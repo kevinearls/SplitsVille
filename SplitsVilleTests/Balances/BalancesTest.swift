@@ -38,14 +38,13 @@ final class BalancesTest: XCTestCase {
   }
 
   func testBalanceTest() throws {
-    // FIXME update!
     let balance = Balance(principal: paul, trip: TestData.portugal)
     XCTAssertNotNil(balance)
     XCTAssertEqual(balance.principal, paul)
     XCTAssertEqual(0, balance.entries.count)
 
-    let entry1 = OwedBy(friend: mike, currency: .USD, amount: 11.17)
-    let entry2 = OwedBy(friend: paul, currency: .EUR, amount: 9.47)
+//    let entry1 = OwedBy(friend: mike, currency: .USD, amount: 11.17)
+//    let entry2 = OwedBy(friend: paul, currency: .EUR, amount: 9.47)
 //    balance.addBalanceEntry(friend: mike, currency: .USD, amount: 11.17)
 //    balance.addBalanceEntry(entry2)
 //
@@ -56,7 +55,6 @@ final class BalancesTest: XCTestCase {
 
   @MainActor
   func testBalancesGetter() throws {
-  // FIXME Can this be moved into setup or TestData itself
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try ModelContainer(for: Trip.self, Friend.self, Transaction.self, configurations: config)
     context = container.mainContext
@@ -88,30 +86,10 @@ final class BalancesTest: XCTestCase {
     paris.addTransaction(transaction: fiveGuys)
     paris.addTransaction(transaction: taxi)
     paris.addTransaction(transaction: sainteChapelle)
-
-//    fiveGuys.addSharedWith(friend: kevin)
-//    fiveGuys.addSharedWith(friend: martha)
-//    taxi.addSharedWith(friend: patrick)
-//    sainteChapelle.addSharedWith(friend: kevin)
-//    sainteChapelle.addSharedWith(friend: patrick)
-
-//    let wtf = BalanceCalculator().getBalances(trip: paris, transact)
-//    print("---------------------------------------")
-//    for blah  in paris.friends {
-//      let line = wtf[blah]
-//      if let line {
-//        print("Blah: \(blah) Value: \(line)")
-//      } else {
-//        print("No entry for \(blah.firstName)")
-//      }
-//    }
-//    print("---------------------------------------")
-
   }
 
   @MainActor
   func testBalanceComputation() throws {
-    // FIXME Can this be moved into setup or TestData itself
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try ModelContainer(for: Trip.self, Friend.self, Transaction.self, configurations: config)
     context = container.mainContext
@@ -151,6 +129,11 @@ final class BalancesTest: XCTestCase {
     XCTAssertNotNil(grid[kevin])
     XCTAssertNotNil(grid[patrick])
     XCTAssertNotNil(grid[martha])
+
+    let kevinsBalance = grid[kevin]
+    if let kevinsBalance {
+      print(">>>>>> [\(kevinsBalance.description)]")
+    }
 
     XCTAssertEqual(grid[kevin]?.entries.count, 2)
     XCTAssertEqual(grid[patrick]?.entries.count, 2)

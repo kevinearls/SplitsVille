@@ -34,5 +34,6 @@ final class TransactionsTest: XCTestCase {
     XCTAssertEqual(transaction.trip, TestData.paris)
     XCTAssertEqual(transaction.paidBy, TestData.patrick)
     XCTAssertEqual(transaction.desc, "Dinner")
+    print("\(transaction.debugDescription)")
   }
 }

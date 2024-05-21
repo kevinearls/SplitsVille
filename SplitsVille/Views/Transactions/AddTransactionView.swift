@@ -55,7 +55,7 @@ struct AddTransactionView: View {
         }
         .padding()
       }
-      .disabled(desc.isEmpty || amount == 0)   // FIXME?
+      .disabled(desc.isEmpty || amount == 0)
     }
     Form {
       Section {
@@ -96,13 +96,6 @@ struct AddTransactionView: View {
       // This is required to get the Pickers to work correctly with SwiftData
       paidBy = friends.first
       selectedTrip = trips.first
-    }
-    .onDisappear {  // FIXME do we need this?
-      do {
-        try modelContext.save()
-      } catch {
-        print(error)
-      }
     }
   }
 }

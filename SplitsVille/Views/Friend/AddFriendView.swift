@@ -49,8 +49,6 @@ struct AddFriendView: View {
                 )
                 modelContext.insert(newFriend)
                 showModal = false
-              } else {
-                print("Something failed...") // FIXME add a throw?
               }
             }
           }
@@ -82,7 +80,7 @@ struct AddFriendView: View {
           if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
             avatarImage = loaded
           } else {
-            print("Failed")
+            print("Failed to download avatar image")
           }
         }
       }

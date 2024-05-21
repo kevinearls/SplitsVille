@@ -47,7 +47,6 @@ final class FriendsTest: XCTestCase {
 
 
     // swiftlint:enable line_length
-    // FIXME
     //    let targetRowIdentifier = testFirstName + testLastName + "Row"
     //    let newFriendEntry = app.buttons[targetRowIdentifier]
     //    XCTAssertTrue(newFriendEntry.waitForExistence(timeout: 5))

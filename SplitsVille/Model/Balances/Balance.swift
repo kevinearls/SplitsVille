@@ -14,11 +14,11 @@ public class OwedBy: Equatable {
 
   let friend: Friend
   let currency: Currency
-  var amount: Double = 0.0  // FIXME should I use Decimal for money?
+  var amount: Double = 0.0
 
   init(friend: Friend, currency: Currency, amount: Double = 0.0) {
     self.friend = friend
-    self.currency = currency  // FIXME or should currency = friend.currency?
+    self.currency = currency
     self.amount = amount
   }
 }
@@ -26,8 +26,7 @@ public class OwedBy: Equatable {
 public class Balance {
   let principal: Friend
   let trip: Trip
-  var entries: [OwedBy] = []  // FIXME should this be a dictionary of OwedBy?
-  // or a dictionary of [Friend: (currency, amount)
+  var entries: [OwedBy] = []
 
   var description: String {
     var desc = "Principal: ["
@@ -46,19 +45,8 @@ public class Balance {
     self.principal = principal
     self.trip = trip
     for friend in trip.friends where friend != principal {
-      // TODO: how to set currency here? Does it need to be here?
       let newEntry = OwedBy(friend: friend, currency: .USD, amount: 0.0)
       entries.append(newEntry)
     }
   }
-
-  // FIXME do we need both of these?
-//  func addBalanceEntry(friend: Friend, currency: Currency, amount: Double) {
-//    let entry = OwedBy(friend: friend, currency: currency, amount: amount)
-//    entries.append(entry)
-//  }
-//
-//  func addBalanceEntry(_ entry: OwedBy) {
-//    entries.append(entry)
-//  }
 }

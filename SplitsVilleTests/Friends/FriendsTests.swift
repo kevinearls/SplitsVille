@@ -14,10 +14,12 @@ final class FriendsTests: XCTestCase {
   func testSimple() throws {
     XCTAssertEqual("Kevin", TestData.kevin.firstName)
     XCTAssertEqual("Earls", TestData.kevin.lastName)
+    XCTAssertEqual("Kevin Earls", TestData.kevin.fullName)
+    XCTAssertEqual("Kevin Earls", TestData.kevin.debugDescription)
     XCTAssertEqual(TestData.kevin.currency, Currency.EUR.rawValue)
   }
 
-  // FIXME move these tests to more appropriate places.  Neither really does
+  // Move these if you can think of a better place. Neither really does
   // much other than increase coverage numbers
   @MainActor
   func testPreviewController() throws {

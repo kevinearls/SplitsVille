@@ -46,7 +46,7 @@ final class SplitsVilleUITests: XCTestCase {
 
     checkNavigation(button: tripsButton, expectedText: "Trips")
     checkNavigation(button: transactionsButton, expectedText: "Transactions")
-    // checkNavigation(button: currencyButton, expectedText: "Todays' Exchange rates vs USD")  // FIXME
+    // checkNavigation(button: currencyButton, expectedText: "Todays' Exchange rates vs USD")
     checkNavigation(button: friendsButton, expectedText: "Friends")
   }
 

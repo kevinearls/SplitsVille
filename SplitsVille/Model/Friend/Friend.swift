@@ -20,7 +20,7 @@ final class Friend: Identifiable, Hashable {
   var fullName: String {
     firstName + " " + lastName
   }
-  let currency: String   // FIXME wtf?  why won't this let me make this a Constants.Currency????
+  let currency: String
   let avatarImageData: Data
 
   init(firstName: String, lastName: String, currency: String = "USD", imageData: Data) {
