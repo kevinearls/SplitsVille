@@ -17,8 +17,13 @@ struct BalancesView: View {
   @Query(sort: \Trip.name)
   private var trips: [Trip]
 
+  @EnvironmentObject var exchangeRateStore: ExchangeRatesStore
+
   var body: some View {
     VStack(alignment: .leading) {
+      Text("Balances")
+        .font(.largeTitle)
+        .accessibilityLabel("title")
       List {
         if transactions.isEmpty {
           VStack {
@@ -36,8 +41,9 @@ struct BalancesView: View {
             }
           }
           .pickerStyle(.menu)
-          if let selectedTrip {
-            let balances = BalanceCalculator().calculateBalances(trip: selectedTrip, transactions: transactions)
+          if let selectedTrip, let rates = exchangeRateStore.exchangeRates {
+            let balances = BalanceCalculator()
+              .calculateBalances(trip: selectedTrip, transactions: transactions, rates: rates)
 
             ForEach(selectedTrip.friends) { friend in
               Text("\(friend.firstName)")
@@ -54,6 +60,12 @@ struct BalancesView: View {
       .onAppear {
         // This is required for the picker to work with Swift Data
         selectedTrip = trips.first
+        Task {
+          do {
+            try await exchangeRateStore.getExchangeRates()
+            // FIXME handle errors?
+          }
+        }
       }
     }
   }
@@ -73,4 +85,5 @@ struct BalancesView: View {
   let previewContainer = PreviewController.previewContainer
   return BalancesView()
     .modelContainer(previewContainer)
+    .environmentObject(ExchangeRatesStore())
 }

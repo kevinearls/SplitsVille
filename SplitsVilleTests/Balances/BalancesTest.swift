@@ -22,11 +22,24 @@ final class BalancesTest: XCTestCase {
   // swiftlint:disable:next implicitly_unwrapped_optional
   var context: ModelContext!
 
+   let rates = [
+    "CHF": "0.909835",
+    "JPY": "153.0640314133071",
+    "MXN": "16.979733333333332",
+    "EUR": "0.9319709990078193",
+    "GBP": "0.7974587918635101",
+    "CAD": "1.3666883333333333",
+    "INR": "83.41031742883256"
+  ]
+  // swiftlint:disable:next implicitly_unwrapped_optional
+  var exchangeRates: ExchangeRates!
+
   @MainActor
   override func setUpWithError() throws {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try ModelContainer(for: Trip.self, Friend.self, Transaction.self, configurations: config)
     context = container.mainContext
+    exchangeRates = ExchangeRates(date: "2024-05-03 00:00:00+00", base: "USD", rates: rates)
   }
 
   func testBalanceEntryTest() throws {
@@ -122,7 +135,7 @@ final class BalancesTest: XCTestCase {
     paris.addTransaction(transaction: sainteChapelle)
 
     // I don't know why swiftlint thinks this is a violation
-    let grid = BalanceCalculator().calculateBalances(trip: paris, transactions: [fiveGuys, taxi, sainteChapelle])
+    let grid = BalanceCalculator().calculateBalances(trip: paris, transactions: [fiveGuys, taxi, sainteChapelle], rates: exchangeRates)
 
     XCTAssertNotNil(grid)
     XCTAssertEqual(grid.count, 3)
