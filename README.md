@@ -7,7 +7,7 @@ of people traveling together to keep track of shared expenses.  Since I will not
 end at this time, this will not have the full functionality of SplitWise.  Instead, one person will add
 friends on their app and enter all the expense for everyone.
 
-- The app user will add themselves as a user, and then can add friends to the app.  Each friend can
+- The app user will add themselves as a friend, and then can add other friends to the app.  Each friend can
   have an image and preferred currency.
 - They can then add trips, and select known friends to be on trips.  During the trip they can add
   expenses, noting who paid for this and what the amount was in what currency.
@@ -25,6 +25,7 @@ your features and any specific file names so that your mentor doesn’t have to 
 See above
 ### The app has a splash screen suitable for the app.
 *It can be either a static or animated splash screen.*
+
 ### All features in the app should be completed.
 *Any unfinished feature should be commented out.*
 ### The app has at least one screen with a list using a view of your choice (List, grid, ScrollView .. etc).

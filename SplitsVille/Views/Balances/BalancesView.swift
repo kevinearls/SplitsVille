@@ -24,6 +24,7 @@ struct BalancesView: View {
       Text("Balances")
         .font(.largeTitle)
         .accessibilityLabel("title")
+        .padding(.horizontal)
       List {
         if transactions.isEmpty {
           VStack {
