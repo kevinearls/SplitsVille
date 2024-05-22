@@ -41,6 +41,7 @@ struct BalanceCalculator {
           if transaction.currency != transaction.paidBy.currency {
             do {
               try rate = rates.getRate(fromCurrency: transaction.currency, toCurrency: transaction.paidBy.currency)
+              // swiftlint:disable:next line_length
               print("Converting transaction \(transaction.desc) from \(transaction.currency) to \(transaction.paidBy.currency) using \(rate)")
               entry.amount += amountToAdd * rate
             } catch {

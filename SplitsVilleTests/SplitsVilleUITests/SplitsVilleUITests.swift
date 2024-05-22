@@ -53,7 +53,7 @@ final class SplitsVilleUITests: XCTestCase {
     balancesButton.tap()
     let title = app.staticTexts["title"]
 
-    XCTAssertTrue(title.exists);
+    XCTAssertTrue(title.exists)
   }
 
   public func skipOnboarding(app: XCUIApplication) {

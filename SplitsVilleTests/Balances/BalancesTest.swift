@@ -22,7 +22,7 @@ final class BalancesTest: XCTestCase {
   // swiftlint:disable:next implicitly_unwrapped_optional
   var context: ModelContext!
 
-   let rates = [
+  let rates = [
     "CHF": "0.909835",
     "JPY": "153.0640314133071",
     "MXN": "16.979733333333332",
@@ -31,6 +31,7 @@ final class BalancesTest: XCTestCase {
     "CAD": "1.3666883333333333",
     "INR": "83.41031742883256"
   ]
+
   // swiftlint:disable:next implicitly_unwrapped_optional
   var exchangeRates: ExchangeRates!
 
@@ -134,9 +135,8 @@ final class BalancesTest: XCTestCase {
     paris.addTransaction(transaction: taxi)
     paris.addTransaction(transaction: sainteChapelle)
 
-    // I don't know why swiftlint thinks this is a violation
+    // swiftlint:disable:next line_length
     let grid = BalanceCalculator().calculateBalances(trip: paris, transactions: [fiveGuys, taxi, sainteChapelle], rates: exchangeRates)
-
     XCTAssertNotNil(grid)
     XCTAssertEqual(grid.count, 3)
     XCTAssertNotNil(grid[kevin])
