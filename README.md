@@ -2,18 +2,18 @@
 Kevin Earls  
 Capstone Project for Kodeco iOS boot camp.
 ## Basic explanation of the app
-Splitsville is inspired by the popular iOS app [SplitWise](https://www.splitwise.com) which allows a group
-of people traveling together to keep track of shared expenses.  Since I will not be writing a full back
-end at this time, this will not have the full functionality of SplitWise.  Instead, one person will add
-friends on their app and enter all the expense for everyone.
+Splitsville is inspired by the popular iOS app [SplitWise](https://www.splitwise.com) which
+allows a group of people traveling together to keep track of shared expenses.  Since I will 
+not be writing a full back end at this time, this will not have the full functionality of 
+SplitWise.  Instead, one person will add friends on their app and enter all the expense for everyone.
 
-- The app user will add themselves as a friend, and then can add other friends to the app.  Each friend can
-  have an image and preferred currency.
+- The app user will add themselves as a friend, and then can add other friends to the app.  Each 
+friend will have an image and preferred currency.
 - They can then add trips, and select known friends to be on trips.  During the trip they can add
   expenses, noting who paid for this and what the amount was in what currency.
-- There will be a running account of which friends are owed money by others, and in what currency.   
--  Currency conversion rates will be the API part of this project, as they will be obtained from 
-- a known and respected public source.
+- There will be a balances tab which will calculate which friends are owed money by others, and in what currency.   
+- Currency conversion rates will be the API part of this project, as they will be obtained from 
+a known and respected public source.
 
 ## How I will fulfill requirements
 
@@ -34,10 +34,10 @@ should be styled appropriately. Pressing on items in this list should lead to de
 data in the list with some further details such as a longer description, bigger picture, price, and a Buy/Order button.
 Include enough items to ensure that the user has to scroll the list to see all the items in it.*  
   
-The app will have views with lists of Friends, Trips, and Transactions, all of which will have multiple elements.  The 
+The app will have views with lists of Friends, Trips, Transactions, and Balances,  all of which will have multiple elements.  The 
 Friends list will also include an image, which will be a photo selected when the friend is added.
 ### This should appear in a tab view with at least two tabs.
-The primary view will be a tab view, and allow selection of the Friends, Trips, or Transactions views.
+The primary view will be a tab view, and allow selection of the Friends, Trips, Balances, Exchange Rates, or Transactions views.
 ### The app has one or more network call(s) to download/upload data that relates to the core tasks of the app. Using strictly Apple’s URLSession.
 *The app handles all typical errors related to network calls.
 Including at least: No network connection, server error.*  
@@ -76,7 +76,8 @@ Implemented as a storyboard
 ### Onboarding Screens
 There will be an onboarding screen, currently with 2 sections
 ### Home Screen (ContentView.swift)
-This will be a tabbed view which will allow selection of the Friends, Trips, or Transactions screens
+This will be a tabbed view which will allow selection of the Friends, 
+Trips, Transactions, Balances, or Currency screens
 ### Friend Screens
 - **FriendListView:** 
 - **FriendDetailView:**
@@ -85,19 +86,15 @@ This will be a tabbed view which will allow selection of the Friends, Trips, or 
 - **TripListView**
 - **TripDetailView** 
 - **AddTripView**
-- **TripDetailFriendsView**
-- **TripDetailTransactionsView**
-- **TripDetailBalancesView**  
-
-
-**Note:** I have not yet decided the best way to implement these.  I may either do it as listed here, where you
-can get Friends, Transactions, and balances associated with a trip from the **TripDetailView**, or I may 
-implement these as options on the **FriendListView** and **TripListView** (and create a **BalancesListView**) where 
-you can select a trip on those views and see the associated data.
 ### Transaction Views
 - **TransactionListView:** 
 - **TransactionDetailView**
 - **AddTransactionsView**
+### Balances Views
+- **BalancesView**
+## Currency Views
+- **CurrencyView**
+
 
 
 

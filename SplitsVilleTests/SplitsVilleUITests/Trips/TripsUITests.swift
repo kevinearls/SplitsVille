@@ -68,8 +68,8 @@ final class TripsUITests: XCTestCase {
     // 5. Make sure we're on the Details page
     XCTAssert(app.staticTexts[tripName].exists)
     app.staticTexts["Click to add or delete friends from this trip"].tap()
-    app.staticTexts["Transactions for this trip"].tap()
-    app.staticTexts["Balances"].tap()
+//    app.staticTexts["Transactions for this trip"].tap()
+//    app.staticTexts["Balances"].tap()
 
     // 6. Hit Back and verify that we're on the trips list view
     navBar.buttons["Back"].tap()

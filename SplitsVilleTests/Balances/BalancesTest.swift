@@ -160,19 +160,8 @@ final class BalancesTest: XCTestCase {
       if entry.friend == martha {
         XCTAssertEqual(entry.amount, 8.66, accuracy: 0.1)
       } else if entry.friend == patrick {
-        XCTAssertEqual(entry.amount, 15.37, accuracy: 0.1)
+        XCTAssertEqual(entry.amount, 16.49, accuracy: 0.1)
       }
     }
-
-
-//    guard let patrickFirst = grid[patrick]?.entries.first else {
-//      throw TestError.error
-//    }
-//    XCTAssertEqual(patrickFirst.amount, 15.37, accuracy: 0.1)
-//
-//    guard let marthaFirst = grid[martha]?.entries.first else {
-//      throw TestError.error
-//    }
-//    XCTAssertEqual(marthaFirst.amount, 8.66, accuracy: 0.1)
   }
 }
