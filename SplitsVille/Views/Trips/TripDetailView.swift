@@ -10,9 +10,6 @@ import SwiftData
 struct TripDetailView: View {
   @Query(sort: \Friend.firstName)
   private var friends: [Friend]
-
-  @Query(sort: \Transaction.paidBy.firstName)
-  private var transactions: [Transaction]
   @State private var isPresented = false
 
   var trip: Trip

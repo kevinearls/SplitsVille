@@ -11,14 +11,14 @@ import SwiftData
 struct TripsListView: View {
   @Environment(\.modelContext)
   private var modelContext
-
+  
   @Query(sort: \Trip.name)
   private var trips: [Trip]
-
+  
   @State private var isPresented = false
   // swiftlint:disable:next implicitly_unwrapped_optional
   @State private var tripToDelete: Trip!
-
+  
   var body: some View {
     VStack(alignment: .leading) {
       NavigationStack {
@@ -34,19 +34,19 @@ struct TripsListView: View {
             VStack {
               Text("After adding a trip be sure to select the trip below and add friends")
                 .italic()
-              ForEach(trips) { trip in
-                NavigationLink(value: trip) {
-                  TripRowView(trip: trip)
-                    .accessibilityIdentifier(trip.name)
-                }
+            }
+            ForEach(trips) { trip in
+              NavigationLink(value: trip) {
+                TripRowView(trip: trip)
+                  .accessibilityIdentifier(trip.name)
               }
-              .onDelete { indexSet in
+            }
+            .onDelete { indexSet in
                 for offset in indexSet {
                   let trip = trips[offset]
                   modelContext.delete(trip)
                 }
               }
-            }
           }
         }
         .navigationDestination(for: Trip.self) { trip in
@@ -63,9 +63,9 @@ struct TripsListView: View {
           }
         }
       }
-      .sheet(isPresented: $isPresented) {
-        AddTripView(showModal: $isPresented)
-      }
+    }
+    .sheet(isPresented: $isPresented) {
+      AddTripView(showModal: $isPresented)
     }
     .padding()
   }
