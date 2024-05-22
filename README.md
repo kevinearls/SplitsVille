@@ -67,7 +67,7 @@ As I am using **SwiftData** all model objects are **Observable** and **Published
 - *A custom app icon.*
 - *An onboarding screen.*
 - *A custom display name.*
-- *At least one SwifUI animation.*
+- *At least one SwifUI animation.*  Clinking on the image on the FriendDetailPage uses animation.
 - *Styled text properties. SwiftUI modifiers are sufficient.*
 
 ## A List of planned screens

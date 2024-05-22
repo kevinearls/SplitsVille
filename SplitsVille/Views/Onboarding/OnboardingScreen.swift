@@ -9,7 +9,6 @@ import SwiftUI
 
 struct OnboardingScreen: View {
   let item: OnboardingItem
-  @State var isCurrencySymbolSpinning = true
 
   var body: some View {
     ScrollView {
@@ -20,7 +19,6 @@ struct OnboardingScreen: View {
           .aspectRatio(contentMode: .fit)
           .frame(maxWidth: 200, maxHeight: 200)
           .padding(.bottom)
-          .rotationEffect(.degrees(isCurrencySymbolSpinning ? 0 : 360))
 
         VStack(alignment: .center) {
           Text(item.title)
@@ -39,11 +37,6 @@ struct OnboardingScreen: View {
         }
       }
       .padding()
-      .onAppear {
-        withAnimation(.easeIn(duration: 2)) {
-          isCurrencySymbolSpinning.toggle()
-        }
-      }
     }
   }
 }

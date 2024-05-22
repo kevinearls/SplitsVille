@@ -9,21 +9,35 @@ import SwiftUI
 import SwiftData
 
 struct FriendDetailView: View {
+  @State var selected = false
   var friend: Friend
   var body: some View {
     VStack {
       Text(friend.lastName + ", " + friend.firstName)
         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
       if let uiImage = UIImage(data: friend.avatarImageData) {
-        Image(uiImage: uiImage)
-          .resizable()
-          .frame(maxWidth: 100, maxHeight: 100)
+        FriendImageView(image: Image(uiImage: uiImage), selected: $selected)
       } else {
-        Image(.defaultAvatar)
+        FriendImageView(image: Image(.defaultAvatar), selected: $selected)
       }
       Text("Preferred Currency: \(friend.currency)")
         .font(.subheadline)
     }
+  }
+}
+
+struct FriendImageView: View {
+  var image: Image
+  @Binding var selected: Bool
+  var body: some View {
+   image
+      .resizable()
+      .frame(maxWidth: 100, maxHeight: 100)
+      .scaleEffect(selected ? 2.0 : 1.0)
+      .animation(.bouncy, value: selected)
+      .onTapGesture {
+        selected.toggle()
+      }
   }
 }
 
@@ -41,3 +55,4 @@ struct FriendDetailView: View {
     .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     .modelContainer(previewContainer)
 }
+
