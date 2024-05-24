@@ -30,7 +30,7 @@ struct FriendImageView: View {
   var image: Image
   @Binding var selected: Bool
   var body: some View {
-   image
+    image
       .resizable()
       .frame(maxWidth: 100, maxHeight: 100)
       .scaleEffect(selected ? 2.0 : 1.0)
@@ -55,4 +55,3 @@ struct FriendImageView: View {
     .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     .modelContainer(previewContainer)
 }
-

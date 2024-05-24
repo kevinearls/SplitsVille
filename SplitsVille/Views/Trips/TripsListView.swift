@@ -11,14 +11,14 @@ import SwiftData
 struct TripsListView: View {
   @Environment(\.modelContext)
   private var modelContext
-  
+
   @Query(sort: \Trip.name)
   private var trips: [Trip]
-  
+
   @State private var isPresented = false
   // swiftlint:disable:next implicitly_unwrapped_optional
   @State private var tripToDelete: Trip!
-  
+
   var body: some View {
     VStack(alignment: .leading) {
       NavigationStack {
@@ -42,11 +42,11 @@ struct TripsListView: View {
               }
             }
             .onDelete { indexSet in
-                for offset in indexSet {
-                  let trip = trips[offset]
-                  modelContext.delete(trip)
-                }
+              for offset in indexSet {
+                let trip = trips[offset]
+                modelContext.delete(trip)
               }
+            }
           }
         }
         .navigationDestination(for: Trip.self) { trip in

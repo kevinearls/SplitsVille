@@ -34,16 +34,13 @@ final class SplitsVilleUITests: XCTestCase {
     XCTAssertTrue(tabBar.buttons["Balances"].exists)
     XCTAssertTrue(tabBar.buttons["Currency"].exists)
 
-    // Now, tap on each and make sure it goes to the correct place?
+    // Now, tap on each and make sure it goes to the correct place
     let friendsButton = tabBar.buttons["Friends"]
     let tripsButton = tabBar.buttons["Trips"]
     let transactionsButton = tabBar.buttons["Transactions"]
-    let balancesButton = tabBar.buttons["Balances"]
-    // let currencyButton = tabBar.buttons["Currency"]
 
     checkNavigation(button: tripsButton, expectedText: "Trips")
     checkNavigation(button: transactionsButton, expectedText: "Transactions")
-    // checkNavigation(button: currencyButton, expectedText: "Todays' Exchange rates vs USD")
     checkNavigation(button: friendsButton, expectedText: "Friends")
   }
 
