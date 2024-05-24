@@ -23,7 +23,7 @@ final class Friend: Identifiable, Hashable {
   let currency: String
   let avatarImageData: Data
 
-  init(firstName: String, lastName: String, currency: String = "USD", imageData: Data) {
+  init(firstName: String, lastName: String, currency: String = Currency.USD.rawValue, imageData: Data) {
     self.firstName = firstName
     self.lastName = lastName
     self.currency = currency

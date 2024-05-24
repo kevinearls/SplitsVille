@@ -39,7 +39,6 @@ enum CurrencyFreaksDownloadError: Error {
 class ExchangeRatesStore: ObservableObject {
   // swiftlint:disable:next implicitly_unwrapped_optional
   @MainActor @Published var exchangeRates: ExchangeRates!
-  var apiKey = "a353a534a54248b9a31d7edfa2877bfd"
 
   private func getDataFromURL(from urlString: String) async throws -> Data {
     guard let url = URL(string: urlString) else {
@@ -63,7 +62,8 @@ class ExchangeRatesStore: ObservableObject {
       .filter { $0 != Currency.USD }
       .map { $0.rawValue }
       .joined(separator: ",")
-    let theUrl = Constants.currencyFreaksBaseURL + "?apikey=\(apiKey)&symbols=\(supportedCurrencies)"
+    let theUrl = Constants.CurrencyFreaks.baseURL +
+      "?apikey=\(Constants.CurrencyFreaks.apiKey)&symbols=\(supportedCurrencies)"
     let data = try await getDataFromURL(from: theUrl)
 
     try await MainActor.run {

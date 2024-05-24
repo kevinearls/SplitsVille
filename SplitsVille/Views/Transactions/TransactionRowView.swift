@@ -19,7 +19,7 @@ struct TransactionRowView: View {
           Text("\(transaction.amount.toTwoDecimalPlaces) \(transaction.currency)" )
         }
         HStack {
-          Text("Paid by: \(transaction.paidBy.fullName)")
+          Text("\(Constants.Transactions.paidByLabel) \(transaction.paidBy.fullName)")
           Spacer()
           Text("\(transaction.trip.name)")
         }

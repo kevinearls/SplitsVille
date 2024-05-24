@@ -29,21 +29,21 @@ struct AddTripView: View {
   var body: some View {
     HStack {
       Section {
-        Button("Dismiss") {
+        Button(Constants.Trips.dismissPrompt) {
           showModal = false
         }
         .padding()
         Spacer()
       }
       Section {
-        Text("Add a Trip")
+        Text(Constants.Trips.addTitle)
           .font(.title3)
           .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
           .padding()
         Spacer()
       }
       Section {
-        Button("Done") {
+        Button(Constants.Trips.doneButtonText) {
           let newTrip = Trip(name: name, location: location)
           modelContext.insert(newTrip)
           showModal = false
@@ -53,17 +53,17 @@ struct AddTripView: View {
       .disabled(name.isEmpty || location.isEmpty)
     }
     Form {
-      Section(header: Text("Trip Name")) {
-        TextField("Name:", text: $name)
+      Section(header: Text(Constants.Trips.tripNameTitle)) {
+        TextField(Constants.Trips.tripNamePrompt, text: $name)
       }
-      Section(header: Text("Trip Location")) {
-        TextField("Location:", text: $location)
+      Section(header: Text(Constants.Trips.tripLocationTitle)) {
+        TextField(Constants.Trips.tripLocationPrompt, text: $location)
       }
       DatePicker(selection: $startDate, displayedComponents: .date) {
-        Label("Start Date", systemImage: "calendar")
+        Label(Constants.Trips.startDateLabel, systemImage: Constants.Trips.calendarSystemImage)
       }
       DatePicker(selection: $endDate, displayedComponents: .date) {
-        Label("End Date", systemImage: "calendar")
+        Label(Constants.Trips.endDateLabel, systemImage: Constants.Trips.calendarSystemImage)
       }
     }
   }

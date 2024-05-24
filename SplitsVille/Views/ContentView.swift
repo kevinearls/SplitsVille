@@ -64,8 +64,8 @@ struct ContentView: View {
     .onAppear {
       downloadExchangeRates()
     }
-    .alert("Exchange rates download failed", isPresented: $showDownloadFailedAlert, actions: {
-      Button("Dismiss", role: .cancel) {
+    .alert(Constants.Currency.exchangeRatesDownloadFailed, isPresented: $showDownloadFailedAlert, actions: {
+      Button(Constants.HomeScreen.dismissButtonText, role: .cancel) {
         showDownloadFailedAlert = false
       }
     }, message: {

@@ -24,21 +24,21 @@ struct AddFriendView: View {
     Form {
       HStack {
         Section {
-          Button("Cancel") {
+          Button(Constants.Friends.cancelButtonText) {
             showModal = false
           }
           .padding()
           Spacer()
         }
         Section {
-          Text("Add a friend")
+          Text(Constants.Friends.addFriendTitle)
             .font(.title3)
             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             .padding()
           Spacer()
         }
         Section {
-          Button("Add") {
+          Button(Constants.Friends.addButtonText) {
             Task {
               if let imageData = try? await avatarItem?.loadTransferable(type: Data.self) {
                 let newFriend = Friend(
@@ -57,11 +57,11 @@ struct AddFriendView: View {
         .disabled(firstName.isEmpty || lastName.isEmpty || avatarItem == nil)
       }
       VStack {
-        TextField("First Name", text: $firstName)
+        TextField(Constants.Friends.firstNamePrompt, text: $firstName)
           .padding()
-        TextField("Last Name", text: $lastName, axis: .vertical)
+        TextField(Constants.Friends.lastNamePrompt, text: $lastName, axis: .vertical)
           .padding()
-        Picker("Currency", selection: $selectedCurrency) {
+        Picker(Constants.Friends.currencyPickerPrompt, selection: $selectedCurrency) {
           ForEach(Currency.allCases) { option in
             Text(String(describing: option))
               .font(.largeTitle)
@@ -69,7 +69,7 @@ struct AddFriendView: View {
         }
         .pickerStyle(.menu)
         Divider()
-        PhotosPicker("Select avatar", selection: $avatarItem, matching: .images)
+        PhotosPicker(Constants.Friends.selectAvatarPrompt, selection: $avatarItem, matching: .images)
         avatarImage?
           .resizable()
           .scaledToFit()
@@ -80,7 +80,7 @@ struct AddFriendView: View {
           if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
             avatarImage = loaded
           } else {
-            print("Failed to download avatar image")
+            print(Constants.Friends.photoDownloadFailedMessage)
           }
         }
       }

@@ -21,7 +21,7 @@ struct BalancesView: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-      Text("Balances")
+      Text(Constants.Balances.title)
         .font(.largeTitle)
         .accessibilityLabel("title")
         .padding(.horizontal)
@@ -29,12 +29,12 @@ struct BalancesView: View {
         if transactions.isEmpty {
           VStack {
             Spacer()
-            Text("There are no transactions so far.  To add some, click on the + above")
+            Text(Constants.Balances.noTransactionsMessage)
               .font(.largeTitle)
             Spacer()
           }
         } else {
-          Picker("Which trip?", selection: $selectedTrip) {
+          Picker(Constants.Balances.selectTripPrompt, selection: $selectedTrip) {
             ForEach(trips) { trip in
               Text(trip.name)
                 .font(.largeTitle)

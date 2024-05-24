@@ -24,7 +24,7 @@ struct FriendRowView: View {
       VStack(alignment: .leading) {
         Text(friend.fullName)
           .font(.headline)
-        Text("Preferred Currency: \(friend.currency)")
+        Text("\(Constants.Friends.preferredCurrency): \(friend.currency)")
           .font(.subheadline)
       }
       Spacer()

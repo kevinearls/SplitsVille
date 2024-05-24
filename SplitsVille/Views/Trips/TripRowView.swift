@@ -20,7 +20,7 @@ struct TripRowView: View {
         Divider()
         HStack {
           Text(start, style: .date)
-          Image(systemName: "arrow.right")
+          Image(systemName: Constants.Trips.arrowSystemImage)
           Text(end, style: .date)
         }
         .font(.caption)

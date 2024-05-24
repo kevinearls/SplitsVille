@@ -20,10 +20,10 @@ struct FriendsListView: View {
           if friends.isEmpty {
             VStack {
               Spacer()
-              Text("There are no friends so far.  To add some, click on the + above")
+              Text(Constants.Friends.noFriendsYetPrompt)
                 .font(.largeTitle)
                 Divider()
-              Text("Don't forget to add yourself!")
+              Text(Constants.Friends.addYourselfReminder)
                 .font(.title)
               Spacer()
             }
@@ -50,12 +50,12 @@ struct FriendsListView: View {
         .toolbar {
           ToolbarItem(placement: .navigationBarTrailing) {
             Button(action: { isPresented.toggle() }, label: {
-              Image(systemName: "plus.circle.fill")
+              Image(systemName: Constants.Friends.addFriendsSystemImage)
             })
-            .accessibilityIdentifier(Constants.ButtonNames.addFriendButton)
+            .accessibilityIdentifier(Constants.Friends.addFriendButton)
           }
           ToolbarItem(placement: .navigationBarLeading) {
-            Text("Friends")
+            Text(Constants.Friends.friendsListTitle)
               .font(.largeTitle)
               .accessibilityIdentifier("FriendsTitle")
           }

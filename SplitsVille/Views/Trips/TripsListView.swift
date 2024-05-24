@@ -26,13 +26,13 @@ struct TripsListView: View {
           if trips.isEmpty {
             VStack {
               Spacer()
-              Text("There are no trips so far.  To add some, click on the + above")
+              Text(Constants.Trips.noTripsYetMessage)
                 .font(.largeTitle)
               Spacer()
             }
           } else {
             VStack {
-              Text("After adding a trip be sure to select the trip below and add friends")
+              Text(Constants.Trips.addFriendsReminder)
                 .italic()
             }
             ForEach(trips) { trip in
@@ -55,11 +55,11 @@ struct TripsListView: View {
         .toolbar {
           ToolbarItem(placement: .navigationBarTrailing) {
             Button(action: { isPresented.toggle() }, label: {
-              Image(systemName: "plus.circle.fill")
+              Image(systemName: Constants.Trips.addTripsSystemImage)
             })
           }
           ToolbarItem(placement: .navigationBarLeading) {
-            Text("Trips").font(.largeTitle)
+            Text(Constants.Trips.tripsListTitle).font(.largeTitle)
           }
         }
       }

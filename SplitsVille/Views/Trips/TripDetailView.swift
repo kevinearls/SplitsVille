@@ -38,7 +38,8 @@ struct TripDetailView: View {
             HStack {
               Text("\(friend.firstName) \(friend.lastName)")
               Spacer()
-              Image(systemName: trip.friends.contains(friend) ? "checkmark.square" : "square")
+              Image(systemName: trip.friends.contains(friend) ?
+                Constants.Trips.onTripImage : Constants.Trips.notOnTripImage)
                 .foregroundColor(trip.friends.contains(friend) ? Color.secondary : Color.accentColor)
                 .onTapGesture {
                   if trip.friends.contains(friend) {
@@ -53,7 +54,7 @@ struct TripDetailView: View {
       }
     } header: {
       HStack {
-        Text("Click to add or delete friends from this trip")
+        Text(Constants.Trips.instructionsMessage)
         Spacer()
       }
     }

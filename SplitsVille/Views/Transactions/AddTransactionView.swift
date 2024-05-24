@@ -27,20 +27,20 @@ struct AddTransactionView: View {
   var body: some View {
     HStack {
       Section {
-        Button("Dismiss") {
+        Button(Constants.Transactions.dismissPrompt) {
           showModal = false
         }
         .padding()
         Spacer()
       }
       Section {
-        Text("Add a transaction")
+        Text(Constants.Transactions.addTitle)
           .font(.headline)
           .padding()
         Spacer()
       }
       Section {
-        Button("Add") {
+        Button(Constants.Transactions.addButtonText) {
           if let paidBy = paidBy, let selectedTrip = selectedTrip {
             let newTransaction = Transaction(
               currency: selectedCurrency.rawValue,
@@ -59,13 +59,13 @@ struct AddTransactionView: View {
     }
     Form {
       Section {
-        TextField("Description:", text: $desc)
+        TextField(Constants.Transactions.descriptionPrompt, text: $desc)
       } header: {
-        Text("Description")
+        Text(Constants.Transactions.descriptionTitle)
       }
-      Section(header: Text("Amount")) {
-        TextField("Amount:", value: $amount, format: .number)
-        Picker("Currency", selection: $selectedCurrency) {
+      Section(header: Text(Constants.Transactions.amountHeader)) {
+        TextField(Constants.Transactions.amountPrompt, value: $amount, format: .number)
+        Picker(Constants.Transactions.currencyPickerLabel, selection: $selectedCurrency) {
           ForEach(Currency.allCases) { option in
             Text(String(describing: option))
               .font(.largeTitle)
@@ -73,7 +73,7 @@ struct AddTransactionView: View {
         }
         .pickerStyle(.menu)
       }
-      Picker("Which trip?", selection: $selectedTrip) {
+      Picker(Constants.Transactions.selectTripPrompt, selection: $selectedTrip) {
         ForEach(trips) { trip in
           Text(trip.name)
             .font(.largeTitle)
@@ -82,7 +82,7 @@ struct AddTransactionView: View {
       }
       .pickerStyle(.menu)
       if selectedTrip != nil {
-        Picker("Who paid?", selection: $paidBy) {
+        Picker(Constants.Transactions.selectPaidByPrompt, selection: $paidBy) {
           ForEach(friends.filter { selectedTrip.friends.contains($0) }) { friend in
             Text(friend.fullName)
               .font(.largeTitle)

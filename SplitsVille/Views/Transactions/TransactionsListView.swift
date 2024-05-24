@@ -27,12 +27,12 @@ struct TransactionsListView: View {
           if transactions.isEmpty {
             VStack {
               Spacer()
-              Text("There are no transactions so far.  To add some, click on the + above")
+              Text(Constants.Transactions.noTransactionsMessage)
                 .font(.largeTitle)
               Spacer()
             }
           } else {
-            Picker("Which trip?", selection: $selectedTrip) {
+            Picker(Constants.Transactions.selectTripPrompt, selection: $selectedTrip) {
               ForEach(trips) { trip in
                 Text(trip.name)
                   .font(.largeTitle)
@@ -65,11 +65,11 @@ struct TransactionsListView: View {
         .toolbar {
           ToolbarItem(placement: .navigationBarTrailing) {
             Button(action: { isPresented.toggle() }, label: {
-              Image(systemName: "plus.circle.fill")
+              Image(systemName: Constants.Transactions.addSystemImage)
             })
           }
           ToolbarItem(placement: .navigationBarLeading) {
-            Text("Transactions")
+            Text(Constants.Transactions.transactionsTitle)
               .font(.largeTitle)
           }
         }

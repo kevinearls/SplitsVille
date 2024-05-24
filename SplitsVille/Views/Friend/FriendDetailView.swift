@@ -20,7 +20,7 @@ struct FriendDetailView: View {
       } else {
         FriendImageView(image: Image(.defaultAvatar), selected: $selected)
       }
-      Text("Preferred Currency: \(friend.currency)")
+      Text("\(Constants.Friends.preferredCurrency): \(friend.currency)")
         .font(.subheadline)
     }
   }

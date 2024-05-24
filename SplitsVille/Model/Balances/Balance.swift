@@ -28,19 +28,6 @@ public class Balance {
   let trip: Trip
   var entries: [OwedBy] = []
 
-  var description: String {
-    var desc = "Principal: ["
-    desc.append(principal.fullName)
-    desc.append("] owes ")
-    for entry in entries {
-      desc.append(String(entry.amount))
-      desc.append(" to ")
-      desc.append(entry.friend.fullName)
-      desc.append("; ")
-    }
-    return desc
-  }
-
   init(principal: Friend, trip: Trip) {
     self.principal = principal
     self.trip = trip

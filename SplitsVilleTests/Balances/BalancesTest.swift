@@ -142,12 +142,6 @@ final class BalancesTest: XCTestCase {
     XCTAssertNotNil(grid[kevin])
     XCTAssertNotNil(grid[patrick])
     XCTAssertNotNil(grid[martha])
-
-    let kevinsBalance = grid[kevin]
-    if let kevinsBalance {
-      print(">>>>>> [\(kevinsBalance.description)]")
-    }
-
     XCTAssertEqual(grid[kevin]?.entries.count, 2)
     XCTAssertEqual(grid[patrick]?.entries.count, 2)
     XCTAssertEqual(grid[martha]?.entries.count, 2)

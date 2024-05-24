@@ -11,13 +11,16 @@ struct TransactionDetailView: View {
   var transaction: Transaction
   var body: some View {
     VStack {
-      Text("Transaction Detail View")
+      Text(Constants.Transactions.detailViewTitle)
         .font(.largeTitle)
       Divider()
-      DetailRow(description: "Description", value: transaction.desc)
-      DetailRow(description: "Paid By", value: transaction.paidBy.fullName)
-      DetailRow(description: "Amount", value: String(transaction.amount.description) + transaction.currency)
-      DetailRow(description: "Trip", value: transaction.trip.name)
+      DetailRow(description: Constants.Transactions.descriptionPrompt, value: transaction.desc)
+      DetailRow(description: Constants.Transactions.paidByLabel, value: transaction.paidBy.fullName)
+      DetailRow(
+        description: Constants.Transactions.amountPrompt,
+        value: String(transaction.amount.description) + transaction.currency
+      )
+      DetailRow(description: Constants.Transactions.tripNameLabel, value: transaction.trip.name)
       Spacer()
     }
     .padding()
